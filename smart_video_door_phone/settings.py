@@ -32,12 +32,17 @@ ALLOWED_HOSTS = ['127.0.0.1','smartvideodoorphoneproject.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts.apps.AccountsConfig',
+    'djoser',
+    'rest_framework',
+    'rest_framework_swagger'
 ]
 
 MIDDLEWARE = [
@@ -66,11 +71,33 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries' : {
+                'staticfiles': 'django.templatetags.static',
+            }
         },
     },
 ]
 
-WSGI_APPLICATION = 'smart_video_door_phone.wsgi.application'
+# WSGI_APPLICATION = 'smart_video_door_phone.wsgi.application'
+
+
+
+#channels
+ASGI_APPLICATION = 'smart_video_door_phone.routing.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('redis-15155.c1.asia-northeast1-1.gce.cloud.redislabs.com', 15155)],
+             "symmetric_encryption_keys": ['TGF9glNhMf4sh2iJVIU6vpjHhv0B73GJ'],
+        },
+    },
+}
+
+
+#swagger
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
 
 
 # Database
@@ -122,16 +149,16 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 # Default primary key field type
 # # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# VENV_PATH = os.path.dirname(BASE_DIR)
-# STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+VENV_PATH = os.path.dirname(BASE_DIR)
+STATIC_ROOT = os.path.join(VENV_PATH, 'smart_video_door_phone/static_root')
 
-# MEDIA_URL='/media/'
-# MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
