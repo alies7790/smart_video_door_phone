@@ -1,1 +1,1 @@
-web: gunicorn manage.py:main
+web: gunicorn smart_video_door_phone.wsgi --log-file -
