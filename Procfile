@@ -2,5 +2,4 @@ release: python manage.py makemigrations --no--input
 release: python manage.py migrate --no--input
 
 
-
-web: gunicorn smart_video_door_phone.wsgi --log-file -heroku buildpacks:clear
+web: gunicorn <filename>:<main method name>
