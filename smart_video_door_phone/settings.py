@@ -108,10 +108,15 @@ REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd805ekjcr8l9s6',
+        'HOST':'ec2-54-211-160-34.compute-1.amazonaws.com',
+        'PORT':5432,
+        'USER': 'pjmrwufklrusgp',
+        'PASSWORD': '4b378f4cd70405b3460ab0f9c3c7671460cdc480716b02c117982ed788006e67'
     }
 }
+
 
 
 # Password validation
