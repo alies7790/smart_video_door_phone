@@ -23,7 +23,7 @@ class openDoor(APIView):
             except:
                 return Response({"message": "not login for logout"}, status=status.HTTP_412_PRECONDITION_FAILED)
         else:
-            return Response({"message": "not login for logout"}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
 
 
 

@@ -5,10 +5,11 @@ from . import api
 
 app_name='accounts'
 urlpatterns=[
- path('login/', api.loginViews.as_view(), name='ورودکاربر'),
+ path('loginStep1/', api.loginStep1Api.as_view(), name='ورودکاربر مرحله اول'),
+ path('loginStep2/',api.loginStep2Api.as_view(),name='ورود کاربر مرحله دو'),
  path('logout/', api.LogoutApi.as_view(), name='خروج کاربر'),
- path('requestSendResetPass/', api.SendMassegeToResetPasswordApi.as_view(), name='ارسال پیام احرازهویت ریست پسوورد'),
- path('reciveCodeSmsAndSendTokrn/', api.ReciveCodeSmsAndSendTokenApi.as_view(), name='دریافت SMS و ارسال توکن'),
+ path('requestSendResetPass/', api.SendMassegeToResetPasswordAndGetTokenApi.as_view(), name='ارسال پیام احرازهویت ریست پسوورد و دادن توکن'),
+ path('reciveCodeSmsAndSendToken/', api.ReciveCodeSmsTokenAndSendTokenApi.as_view(), name='دریافت SMS توکن و ارسال توکن'),
  path('changePasswordWithToken/', api.ChangePasswordWithTokenApi.as_view(), name='دریافت توکن و تغییر رمز')
 
 ]

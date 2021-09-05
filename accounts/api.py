@@ -1,11 +1,7 @@
 
 import random
-from datetime import datetime, timedelta
-
-import jwt
 from django.contrib.auth import authenticate, login, logout
 
-import requests
 from django.http import JsonResponse
 
 from rest_framework.response import Response
@@ -13,37 +9,81 @@ from rest_framework.views import APIView
 
 from accounts.models import Profiles, AuthSMS
 from rest_framework import  status
-from . import schemas,serializers
+from . import schemas,serializers,smsHandeller
+from . import cryptografyTokenAndSaveToAuthSMS as cryptografy
 
 
 
 
-
-
-
-
-class loginViews(APIView):
-    schema = schemas.loginSchema()
+class loginStep1Api(APIView):
+    schema =schemas.loginStep1Schema()
     def post(self, request, *args, **kwargs):
-        serializer = serializers.LoginSerializer(data=request.data)
+        serializer = serializers.LoginStep1Serializer(data=request.data)
         if serializer.is_valid():
             data = serializer.validated_data
             mobile = data.get('mobile')
             password = data.get('password')
+
             try:
                 profile = Profiles.objects.get(mobile=mobile)
+                user = authenticate(request, username=profile.user.username, password=password)
+                if user is  None:
+                    return Response({"message": "Username or Password is incorrect."},
+                                    status=status.HTTP_401_UNAUTHORIZED)
 
             except:
                 return Response({"message": "Username or Password is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
+            sms_code = random.randint(100000, 999999)
+            status_send_sms = smsHandeller.sendSmS(text_sending="کد ارسالی احرازهویت:", code_sending=sms_code,
+                                                   mobile=[mobile], flag=0)
+
+            if status_send_sms :
+                for authSms in AuthSMS.objects.filter(profileUser=profile, state_SMS=1,type_SMS=2):
+                    authSms.state_SMS = 2
+                    authSms.save()
+                authSMS = AuthSMS.objects.create(profileUser=profile, codeSended=sms_code, type_SMS=2, state_SMS=1)
+                encode_information = cryptografy.encodeAndSaveToken(user_id=profile.user.username,
+                                                                    password=profile.user.password, authSMS=authSMS,
+                                                                    state_SMS=1, time_expire_token=3, sms_code=sms_code)
+                if encode_information[0]:
+                    return Response({"message": "ok", "token": encode_information[1]}, status=status.HTTP_200_OK)
+                else:
+                    return JsonResponse({"message": "service sms not accesse,please try later time"},
+                                        status=status.HTTP_400_BAD_REQUEST)
+            else:
+                return JsonResponse({"message": "Duplicate code (or other messages)"},
+                                    status=status.HTTP_400_BAD_REQUEST)
+        return Response({'success': "Failed"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+class loginStep2Api(APIView):
+    schema = schemas.loginStep2Schema()
+    def post(self,request,*args,**kwargs):
+        serializer = serializers.LoginStep2Serializer(data=request.data)
+        if serializer.is_valid():
+            data = serializer.validated_data
+            mobile = data.get('mobile')
+            password = data.get('password')
+            token = data.get('token')
+            sms_code=data.get('sms_code')
+            try:
+                profile = Profiles.objects.get(mobile=mobile)
+                auth_sms = AuthSMS.objects.get(state_SMS=1, type_SMS=2, token=token, profileUser=profile)
+                cryptografy.decodeAndSaveStateSMS(authSMS=auth_sms, token=token)
+            except:
+                return Response({"message": " is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
             user = authenticate(request, username=profile.user.username, password=password)
             if user is not None:
                 login(request, user)
                 return Response({"message": "You are logged in successfully."}, status=status.HTTP_200_OK)
             else:
-                return Response({"message": "Username or Password is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
+                return Response({"message": "is incorrect"}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+
         return Response({'success': "Failed"}, status=status.HTTP_400_BAD_REQUEST)
-
-
 
 
 
@@ -67,7 +107,7 @@ class LogoutApi(APIView):
 
 
 
-class SendMassegeToResetPasswordApi(APIView):
+class SendMassegeToResetPasswordAndGetTokenApi(APIView):
     schema = schemas.SendMassegeToResetPasswordSchema()
     def post(self, request, *args, **kwargs):
         serializer = serializers.SendMassegeToResetPasswordSerializer(data=request.data)
@@ -78,23 +118,20 @@ class SendMassegeToResetPasswordApi(APIView):
                 profile = Profiles.objects.get(mobile=mobile)
             except:
                 return Response({"message": "not user with mobile"}, status=status.HTTP_404_NOT_FOUND)
-            numberSend = random.randint(100000, 999999)
-            url = 'https://RestfulSms.com/api/Token'
-            headers = {'Content-Type': 'application/json'}
-            body = {'UserApiKey': 'e5788345d42ddd24882a8e7', 'SecretKey': '415##Dlcs&58dsaw34ew'}
-            response = requests.post(url, headers=headers, json=body)
-
-            url = 'https://restfulsms.com/api/MessageSend'
-            headers = {'Content-Type': 'application/json', 'x-sms-ir-secure-token': response.json()['TokenKey']}
-            body = {"Messages": ["کد ارسالی احرازهویت:" + str(numberSend)], "MobileNumbers": [mobile],
-                    "LineNumber": "30004603370615", "SendDateTime": "", "CanContinueInCaseOfError": "false"}
-            response1 = requests.post(url, headers=headers, json=body)
-            for authSms in AuthSMS.objects.filter(profileUser=profile, state_SMS=1):
-                authSms.state_SMS = 2
-                authSms.save()
-            authSMS = AuthSMS.objects.create(profileUser=profile, codeSended=numberSend, type_SMS=1, state_SMS=1)
-            return Response({"message": "send SMS for auth rest password"}, status=status.HTTP_200_OK)
-        return Response({'success': "Failed"}, status=status.HTTP_400_BAD_REQUEST)
+            sms_code= random.randint(100000, 999999)
+            status_send_sms=smsHandeller.sendSmS(text_sending="کد ارسالی احرازهویت:",code_sending=sms_code,mobile=[mobile],flag=0)
+            if status_send_sms:
+                for authSms in AuthSMS.objects.filter(profileUser=profile, state_SMS=1,type_SMS=1):
+                    authSms.state_SMS = 2
+                    authSms.save()
+                authSMS = AuthSMS.objects.create(profileUser=profile, codeSended=sms_code, type_SMS=1, state_SMS=1)
+                encode_information=cryptografy.encodeAndSaveToken(user_id=profile.user.username,password=profile.user.password,authSMS=authSMS,state_SMS=1,time_expire_token=2,sms_code=sms_code)
+                if encode_information[0]:
+                    return Response({"message": "ok", "token": encode_information[1]}, status=status.HTTP_200_OK)
+                else:
+                    return JsonResponse({"message": "Duplicate code (or other messages)"}, status=status.HTTP_400_BAD_REQUEST)
+            else:
+                return Response({'success': "Failed,please try again time"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -108,7 +145,8 @@ class SendMassegeToResetPasswordApi(APIView):
 
 
 
-class ReciveCodeSmsAndSendTokenApi(APIView):
+
+class ReciveCodeSmsTokenAndSendTokenApi(APIView):
     schema = schemas.ReciveCodeSmsAndSendTokenSchema()
     def post(self,request,*args, **kwargs):
         serializer = serializers.ReciveCodeSmsAndSendTokenSerializer(data=request.data)
@@ -116,34 +154,31 @@ class ReciveCodeSmsAndSendTokenApi(APIView):
             data =serializer.validated_data
             mobile = data.get('mobile')
             sms_code= data.get('sms_code')
+            token=data.get('token')
             try:
                 profile = Profiles.objects.get(mobile=mobile)
             except:
                 return Response({"message": "Duplicate code (or other messages)"}, status=status.HTTP_400_BAD_REQUEST)
             try:
-                authSMS = AuthSMS.objects.get(profileUser__mobile=mobile, state_SMS=1, codeSended=sms_code)
+                authSMS = AuthSMS.objects.get(profileUser__mobile=mobile, state_SMS=1, codeSended=sms_code,type_SMS=1)
             except:
                 return Response({"message": "sms not send or expire"}, status=status.HTTP_408_REQUEST_TIMEOUT)
-            datetimeAuthSms = authSMS.timeSend + timedelta(minutes=2)
-            for authSms in AuthSMS.objects.filter(profileUser=profile, state_SMS=3):
+            for authSms in AuthSMS.objects.filter(profileUser=profile, state_SMS=3,type_SMS=1):
                 authSms.state_SMS = 2
                 authSms.save()
-            if datetimeAuthSms > authSMS.timeSend:
-                try:
-                    dt = datetime.now() + timedelta(minutes=5)
-                    encoded_token = jwt.encode(
-                        {'user_id': profile.user.username, 'password': profile.user.password},
-                        str(sms_code),
-                        algorithm='HS256')
-                    print(encoded_token)
-                    authSMS.token = encoded_token
-                    authSMS.state_SMS = 3
-                    authSMS.save()
-                    return Response({"message": "ok", "token": encoded_token}, status=status.HTTP_200_OK)
-                except:
-                    return JsonResponse({"message": "Duplicate code (or other messages)"}, status=status.HTTP_400_BAD_REQUEST)
+            cryptografy.decodeAndSaveStateSMS(token=token,authSMS=authSMS)
+            if cryptografy.decodeAndSaveStateSMS(token=token,authSMS=authSMS) == False:
+                return Response({"message": "expire token and token not true"}, status=status.HTTP_401_UNAUTHORIZED)
+            # edit
+            encode_information = cryptografy.encodeAndSaveToken(user_id=profile.user.username,
+                                                                password=profile.user.password, authSMS=authSMS,
+                                                                state_SMS=3, time_expire_token=5,sms_code=authSms.codeSended)
+            if encode_information[0]:
+
+                return Response({"message": "ok", "token": encode_information[1]}, status=status.HTTP_200_OK)
             else:
-                return JsonResponse({"message": "expire SMS code"}, status=400)
+                return JsonResponse({"message": "Duplicate code (or other messages)"}, status=status.HTTP_400_BAD_REQUEST)
+
         else:
             return Response({'success': "Failed"}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -167,14 +202,10 @@ class ChangePasswordWithTokenApi(APIView):
             new_password=data.get('new_password')
             repeat_newpassword=data.get('repeat_newpassword')
             try:
-                authSMS = AuthSMS.objects.get(profileUser__mobile=mobile, state_SMS=3)
+                authSMS = AuthSMS.objects.get(profileUser__mobile=mobile, state_SMS=3,type_SMS=1)
             except:
                 return Response({"message": "sms not send or expire"}, status=status.HTTP_408_REQUEST_TIMEOUT)
-            try:
-                decode_token = jwt.decode(token, str(authSMS.codeSended), algorithms=["HS256"])
-                authSMS.state_SMS = 4
-                authSMS.save()
-            except:
+            if cryptografy.decodeAndSaveStateSMS(token=token,authSMS=authSMS) == False:
                 return Response({"message": "expire token and token not true"}, status=status.HTTP_401_UNAUTHORIZED)
 
             try:
