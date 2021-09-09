@@ -1,7 +1,7 @@
 
 from django.contrib.auth.models import User
 from django.db import models
-
+from controllerModules.models import rassperySystem
 # Create your models here.
 
 class Profiles(models.Model):
@@ -11,6 +11,7 @@ class Profiles(models.Model):
 
     user=models.OneToOneField(User ,on_delete=models.CASCADE, verbose_name='حساب کاربری')
     mobile=models.CharField('تلفن همراه',max_length=11,unique=True)
+    rasspery=models.ForeignKey(rassperySystem,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.user.get_full_name()

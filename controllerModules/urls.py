@@ -5,5 +5,5 @@ from . import api
 
 app_name='controllerModules'
 urlpatterns=[
- path('openDoor/', api.openDoor.as_view(), name='بازکردن درب'),
+ path('open_door/', api.openDoor.as_view(), name='بازکردن درب'),
 ]

@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'controllerModules.apps.ControllermodulesConfig',
     'accounts.apps.AccountsConfig',
     'djoser',
     'rest_framework',
@@ -92,8 +94,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('redis-15155.c1.asia-northeast1-1.gce.cloud.redislabs.com', 15155)],
-             "symmetric_encryption_keys": ['TGF9glNhMf4sh2iJVIU6vpjHhv0B73GJ'],
+            "hosts": [{'address':('redis-10763.c1.asia-northeast1-1.gce.cloud.redislabs.com', 10763),'password':'hcos0qqzJdVXzxwEdqThexQMCw319Zhn',}]
         },
     },
 }

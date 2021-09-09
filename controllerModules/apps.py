@@ -2,7 +2,6 @@ from django.apps import AppConfig
 
 
 class ControllermodulesConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
     name = 'controllerModules'
     varbose_name = 'مدیریت ماژول های رزپری پای'
 
