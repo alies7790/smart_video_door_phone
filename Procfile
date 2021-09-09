@@ -1,1 +1,1 @@
-web: gunicorn smart_video_door_phone.wsgi --log-file -
+web: gunicorn smart_video_door_phone.asgi --log-file -
