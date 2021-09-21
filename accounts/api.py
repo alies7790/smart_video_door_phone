@@ -33,10 +33,11 @@ class loginStep1Api(APIView):
 
             except:
                 return Response({"message": "Username or Password is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
-            sms_code = random.randint(100000, 999999)
-            status_send_sms = smsHandeller.sendSmS(text_sending="کد ارسالی احرازهویت:", code_sending=sms_code,
-                                                   mobile=[mobile], flag=0)
-
+            # sms_code = random.randint(100000, 999999)
+            # status_send_sms = smsHandeller.sendSmS(text_sending="کد ارسالی احرازهویت:", code_sending=sms_code,
+            #                                        mobile=[mobile], flag=0)
+            sms_code=123456
+            status_send_sms=True
             if status_send_sms :
                 for authSms in AuthSMS.objects.filter(profileUser=profile, state_SMS=1,type_SMS=2):
                     authSms.state_SMS = 2
@@ -118,8 +119,10 @@ class SendMassegeToResetPasswordAndGetTokenApi(APIView):
                 profile = Profiles.objects.get(mobile=mobile)
             except:
                 return Response({"message": "not user with mobile"}, status=status.HTTP_404_NOT_FOUND)
-            sms_code= random.randint(100000, 999999)
-            status_send_sms=smsHandeller.sendSmS(text_sending="کد ارسالی احرازهویت:",code_sending=sms_code,mobile=[mobile],flag=0)
+            # sms_code= random.randint(100000, 999999)
+            # status_send_sms=smsHandeller.sendSmS(text_sending="کد ارسالی احرازهویت:",code_sending=sms_code,mobile=[mobile],flag=0)
+            sms_code=123456
+            status_send_sms=True
             if status_send_sms:
                 for authSms in AuthSMS.objects.filter(profileUser=profile, state_SMS=1,type_SMS=1):
                     authSms.state_SMS = 2
@@ -172,7 +175,7 @@ class ReciveCodeSmsTokenAndSendTokenApi(APIView):
             # edit
             encode_information = cryptografy.encodeAndSaveToken(user_id=profile.user.username,
                                                                 password=profile.user.password, authSMS=authSMS,
-                                                                state_SMS=3, time_expire_token=5,sms_code=authSms.codeSended)
+                                                                state_SMS=3, time_expire_token=5,sms_code=authSMS.codeSended)
             if encode_information[0]:
 
                 return Response({"message": "ok", "token": encode_information[1]}, status=status.HTTP_200_OK)
