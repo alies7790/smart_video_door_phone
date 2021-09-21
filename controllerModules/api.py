@@ -18,12 +18,12 @@ class openDoor(APIView):
             profile=Profiles.objects.get(user_id=request.user.id)
             channel_layer=get_channel_layer()
             group_name=f"controller_open_door_{profile.rasspery.token}"
-            async_to_sync(channel_layer.group_send)(
+            print(async_to_sync(channel_layer.group_send)(
                 group_name,
                 {
                     'type':'open_door',
-                    'massage':json.dumps({'sender': 'sss', 'receiver': 'sss', 'text': 'ss'})
-                })
+                    'message': json.dumps({'order':'open_door'})
+                }))
 
             try:
                 # GPIO.setmode(GPIO.BCM)

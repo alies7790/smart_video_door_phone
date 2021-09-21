@@ -94,7 +94,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [{'address':('redis-10763.c1.asia-northeast1-1.gce.cloud.redislabs.com', 10763),'password':'hcos0qqzJdVXzxwEdqThexQMCw319Zhn',}]
+            "hosts": [{'address':("redis-18480.c1.asia-northeast1-1.gce.cloud.redislabs.com", 18480),'password':"jc9FqRMffc0kuE3uoiz9sapgjeHSMlqz",}]
         },
     },
 }

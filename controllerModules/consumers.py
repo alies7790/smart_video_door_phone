@@ -23,7 +23,7 @@ class openDoorCunsumer(WebsocketConsumer):
 
     def receive(self, text_data=None, bytes_data=None):
         if text_data:
-            self.send('ssss')
+
             self.group_name = f"controller_open_door_{self.token}"
             channel_layer = get_channel_layer()
             async_to_sync(channel_layer.group_send)(
@@ -32,6 +32,7 @@ class openDoorCunsumer(WebsocketConsumer):
                     'type': 'open_door',
                     'message': json.dumps({'order':'open_door'})
                 })
+            self.send('ssss')
     def open_door(self,event):
         message=event['message']
         self.send(text_data=message)
