@@ -73,12 +73,13 @@ class loginStep2Api(APIView):
                 cryptografy.decodeAndSaveStateSMS(authSMS=auth_sms, token=token)
             except:
                 return Response({"message": " is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
-            user = authenticate(request, username=profile.user.username, password=profile.user.password)
-            if user is not None:
-                login(request, user)
-                return Response({"message": "You are logged in successfully."}, status=status.HTTP_200_OK)
-            else:
-                return Response({"message": "is incorrect"}, status=status.HTTP_401_UNAUTHORIZED)
+            print()
+            login(request, profile.user)
+            return Response({"message": "You are logged in successfully."}, status=status.HTTP_200_OK)
+            # if user is not None:
+            #
+            # else:
+            #     return Response({"message": "is incorrect"}, status=status.HTTP_401_UNAUTHORIZED)
 
 
 
