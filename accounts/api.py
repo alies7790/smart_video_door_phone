@@ -47,7 +47,7 @@ class loginStep1Api(APIView):
                                                                     password=profile.user.password, authSMS=authSMS,
                                                                     state_SMS=1, time_expire_token=3, sms_code=sms_code)
                 if encode_information[0]:
-                    return Response({"message": "ok", "token": encode_information[1]}, status=status.HTTP_200_OK)
+                    return JsonResponse({"message": "ok", "token": encode_information[1]}, status=status.HTTP_200_OK)
                 else:
                     return JsonResponse({"message": "service sms not accesse,please try later time"},
                                         status=status.HTTP_400_BAD_REQUEST)
