@@ -65,17 +65,15 @@ class loginStep2Api(APIView):
         serializer = serializers.LoginStep2Serializer(data=request.data)
         if serializer.is_valid():
             data = serializer.validated_data
-            mobile = data.get('mobile')
-            password = data.get('password')
             token = data.get('token')
             sms_code=data.get('sms_code')
             try:
-                profile = Profiles.objects.get(mobile=mobile)
-                auth_sms = AuthSMS.objects.get(state_SMS=1, type_SMS=2, token=token, profileUser=profile)
+                auth_sms = AuthSMS.objects.get(state_SMS=1, type_SMS=2, token=token,sms_code=sms_code)
+                profile = auth_sms.profileUser
                 cryptografy.decodeAndSaveStateSMS(authSMS=auth_sms, token=token)
             except:
                 return Response({"message": " is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
-            user = authenticate(request, username=profile.user.username, password=password)
+            user = authenticate(request, username=profile.user.username, password=profile.user.password)
             if user is not None:
                 login(request, user)
                 return Response({"message": "You are logged in successfully."}, status=status.HTTP_200_OK)

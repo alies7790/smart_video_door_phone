@@ -25,8 +25,6 @@ class loginStep2Schema(AutoSchema):
         extra_filds=[]
         if method.lower() == 'post':
             extra_filds = [
-                coreapi.Field('mobile'),
-                coreapi.Field('password'),
                 coreapi.Field('token'),
                 coreapi.Field('sms_code')
             ]
