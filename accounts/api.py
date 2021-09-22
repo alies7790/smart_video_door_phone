@@ -3,6 +3,7 @@ import random
 from django.contrib.auth import authenticate, login, logout
 
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_protect
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -87,7 +88,7 @@ class loginStep2Api(APIView):
 
 
 
-
+@csrf_protect
 class LogoutApi(APIView):
     schema = schemas.logoutSchema()
     def post(self, request, *args, **kwargs):
