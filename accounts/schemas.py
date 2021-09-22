@@ -83,6 +83,7 @@ class ChangePasswordWithTokenSchema(AutoSchema):
         extra_filds=[]
         if method.lower() == 'post':
             extra_filds =[
+                coreapi.Field('serial_rest_password'),
                 coreapi.Field('token'),
                 coreapi.Field('new_password'),
                 coreapi.Field('repeat_newpassword'),

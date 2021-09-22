@@ -18,23 +18,12 @@ class openDoor(APIView):
             profile=Profiles.objects.get(user_id=request.user.id)
             channel_layer=get_channel_layer()
             group_name=f"controller_open_door_{profile.rasspery.token}"
-            print(async_to_sync(channel_layer.group_send)(
+            async_to_sync(channel_layer.group_send)(
                 group_name,
                 {
                     'type':'open_door',
                     'message': json.dumps({'order':'open_door'})
-                }))
-
-            try:
-                # GPIO.setmode(GPIO.BCM)
-                # GPIO.setwarnings(False)
-                # GPIO.setup(3, GPIO.OUT)
-                # GPIO.output(3, GPIO.HIGH)
-                # time.sleep(2)
-                # GPIO.output(3, GPIO.LOW)
-                return Response({"message": "open Door"}, status=status.HTTP_200_OK)
-            except:
-                return Response({"message": "not login for logout"}, status=status.HTTP_412_PRECONDITION_FAILED)
+                })
         else:
             return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
 

@@ -43,7 +43,7 @@ schema_view =get_swagger_view('smart_video_door_phone')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls')),
-    path('controllerModule/',include('controllerModules.urls')),
+    path('doorSecurity/',include('doorSecurity.urls')),
     path('',schema_view),
 
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),

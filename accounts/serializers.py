@@ -22,6 +22,7 @@ class ReciveCodeSmsAndSendTokenSerializer(serializers.Serializer):
     token = serializers.CharField()
 
 class ChangePasswordWithTokenSerializer(serializers.Serializer):
+    serial_rest_password=serializers.CharField(max_length=12,min_length=12)
     token = serializers.CharField()
     new_password=serializers.CharField()
     repeat_newpassword=serializers.CharField()

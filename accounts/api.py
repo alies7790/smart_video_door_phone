@@ -13,6 +13,8 @@ from rest_framework.views import APIView
 
 from accounts.models import Profiles, AuthSMS
 from rest_framework import  status
+
+from rassperypiInfo.models import rassperySystem
 from . import schemas,serializers,smsHandeller
 from . import cryptografyTokenAndSaveToAuthSMS as cryptografy
 
@@ -79,7 +81,6 @@ class loginStep2Api(APIView):
                 cryptografy.decodeAndSaveStateSMS(authSMS=auth_sms, token=token)
             except:
                 return Response({"message": " is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
-            print()
             login(request, profile.user)
             return Response({"message": "You are logged in successfully."}, status=status.HTTP_200_OK)
             # if user is not None:
@@ -142,6 +143,8 @@ class SendMassegeToResetPasswordAndGetTokenApi(APIView):
                     return JsonResponse({"message": "Duplicate code (or other messages)"}, status=status.HTTP_400_BAD_REQUEST)
             else:
                 return Response({'success': "Failed,please try again time"}, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return Response({'success': "Failed"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -209,17 +212,22 @@ class ChangePasswordWithTokenApi(APIView):
 
             data=serializer.validated_data
             token=data.get('token')
+            serial_rest_password=data.get('serial_rest_password')
             new_password=data.get('new_password')
             repeat_newpassword=data.get('repeat_newpassword')
             try:
                 authSMS = AuthSMS.objects.get(token=token, state_SMS=3,type_SMS=1)
             except:
-                return Response({"message": "sms not send or expire"}, status=status.HTTP_408_REQUEST_TIMEOUT)
+                return Response({"message": "sms not send or expire"}, status=status.HTTP_401_UNAUTHORIZED)
             if cryptografy.decodeAndSaveStateSMS(token=token,authSMS=authSMS) == False:
                 return Response({"message": "expire token and token not true"}, status=status.HTTP_401_UNAUTHORIZED)
 
             try:
                 profile = authSMS.profileUser
+                try:
+                    rasspery_system = rassperySystem.objects.get(profile=profile,serial_reset_password=serial_rest_password)
+                except:
+                    return Response({"message": "not ture serial reset"}, status=status.HTTP_401_UNAUTHORIZED)
                 if new_password == repeat_newpassword:
                     profile.user.set_password(new_password)
                     profile.user.save()
