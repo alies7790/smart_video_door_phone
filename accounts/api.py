@@ -88,7 +88,7 @@ class loginStep2Api(APIView):
 
 
 
-@csrf_exempt
+
 class LogoutApi(APIView):
     schema = schemas.logoutSchema()
     def post(self, request, *args, **kwargs):
