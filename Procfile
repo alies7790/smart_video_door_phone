@@ -1,1 +1,1 @@
-web: gunicorn smart_video_door_phone.wsgi --log-file -
+web: daphne smart_video_door_phone.asgi:application --log-file -

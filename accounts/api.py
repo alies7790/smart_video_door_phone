@@ -1,8 +1,11 @@
 
 import random
+
+import requests
 from django.contrib.auth import authenticate, login, logout
 
 from django.http import JsonResponse
+from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 
 from rest_framework.response import Response
@@ -62,6 +65,8 @@ class loginStep1Api(APIView):
 
 class loginStep2Api(APIView):
     schema = schemas.loginStep2Schema()
+
+    @csrf_exempt
     def post(self,request,*args,**kwargs):
         serializer = serializers.LoginStep2Serializer(data=request.data)
         if serializer.is_valid():
@@ -88,11 +93,13 @@ class loginStep2Api(APIView):
 
 
 
-
 class LogoutApi(APIView):
     schema = schemas.logoutSchema()
-    def post(self, request, *args, **kwargs):
+
+    @csrf_exempt
+    def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
+            print(request.data)
             logout(request)
             return Response({"message": "you are logout."}, status=status.HTTP_200_OK)
         else:

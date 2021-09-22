@@ -39,7 +39,7 @@ class logoutSchema(AutoSchema):
         return 'for logout'
     def get_manual_fields(self, path, method):
         extra_filds=[]
-        if method.lower() == 'post':
+        if method.lower() == 'get':
             extra_filds = [
             ]
         manual_fields= super().get_manual_fields(path,method)

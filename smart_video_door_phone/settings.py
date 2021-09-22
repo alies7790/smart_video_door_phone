@@ -62,8 +62,6 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-
-
 # CORS enable
 CORS_ORIGIN_ALLOW_ALL = True
 
