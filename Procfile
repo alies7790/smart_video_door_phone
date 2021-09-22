@@ -1,1 +1,1 @@
-web: daphne smart_video_door_phone.asgi:application --log-file -
+web: daphne smart_video_door_phone.asgi:channel_layer --port 8888
