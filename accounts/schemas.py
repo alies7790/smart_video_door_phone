@@ -19,6 +19,7 @@ class loginStep1Schema(AutoSchema):
 
 
 class loginStep2Schema(AutoSchema):
+
     def get_description(self, path, method):
         return 'for login Step2'
     def get_manual_fields(self, path, method):
@@ -38,7 +39,7 @@ class logoutSchema(AutoSchema):
         return 'for logout'
     def get_manual_fields(self, path, method):
         extra_filds=[]
-        if method.lower() == 'get':
+        if method.lower() == 'post':
             extra_filds = [
             ]
         manual_fields= super().get_manual_fields(path,method)
@@ -67,7 +68,6 @@ class ReciveCodeSmsAndSendTokenSchema(AutoSchema):
         extra_filds=[]
         if method.lower() == 'post':
             extra_filds = [
-                coreapi.Field('mobile'),
                 coreapi.Field('sms_code'),
                 coreapi.Field('token')
             ]
@@ -84,7 +84,6 @@ class ChangePasswordWithTokenSchema(AutoSchema):
         if method.lower() == 'post':
             extra_filds =[
                 coreapi.Field('token'),
-                coreapi.Field('mobile'),
                 coreapi.Field('new_password'),
                 coreapi.Field('repeat_newpassword'),
             ]

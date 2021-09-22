@@ -68,7 +68,7 @@ class loginStep2Api(APIView):
             token = data.get('token')
             sms_code=data.get('sms_code')
             try:
-                auth_sms = AuthSMS.objects.get(state_SMS=1, type_SMS=2, token=token,sms_code=sms_code)
+                auth_sms = AuthSMS.objects.get(state_SMS=1, type_SMS=2, token=token,codeSended=int(sms_code))
                 profile = auth_sms.profileUser
                 cryptografy.decodeAndSaveStateSMS(authSMS=auth_sms, token=token)
             except:
@@ -90,7 +90,7 @@ class loginStep2Api(APIView):
 
 class LogoutApi(APIView):
     schema = schemas.logoutSchema()
-    def get(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             logout(request)
             return Response({"message": "you are logout."}, status=status.HTTP_200_OK)
@@ -154,15 +154,16 @@ class ReciveCodeSmsTokenAndSendTokenApi(APIView):
         serializer = serializers.ReciveCodeSmsAndSendTokenSerializer(data=request.data)
         if serializer.is_valid():
             data =serializer.validated_data
-            mobile = data.get('mobile')
             sms_code= data.get('sms_code')
             token=data.get('token')
+
             try:
-                profile = Profiles.objects.get(mobile=mobile)
-            except:
-                return Response({"message": "Duplicate code (or other messages)"}, status=status.HTTP_400_BAD_REQUEST)
-            try:
-                authSMS = AuthSMS.objects.get(profileUser__mobile=mobile, state_SMS=1, codeSended=sms_code,type_SMS=1)
+                authSMS = AuthSMS.objects.get(token=token, state_SMS=1, codeSended=sms_code,type_SMS=1)
+                try:
+                    profile = authSMS.profileUser
+                except:
+                    return Response({"message": "Duplicate code (or other messages)"},
+                                    status=status.HTTP_400_BAD_REQUEST)
             except:
                 return Response({"message": "sms not send or expire"}, status=status.HTTP_408_REQUEST_TIMEOUT)
             for authSms in AuthSMS.objects.filter(profileUser=profile, state_SMS=3,type_SMS=1):
@@ -200,18 +201,17 @@ class ChangePasswordWithTokenApi(APIView):
 
             data=serializer.validated_data
             token=data.get('token')
-            mobile=data.get('mobile')
             new_password=data.get('new_password')
             repeat_newpassword=data.get('repeat_newpassword')
             try:
-                authSMS = AuthSMS.objects.get(profileUser__mobile=mobile, state_SMS=3,type_SMS=1)
+                authSMS = AuthSMS.objects.get(token=token, state_SMS=3,type_SMS=1)
             except:
                 return Response({"message": "sms not send or expire"}, status=status.HTTP_408_REQUEST_TIMEOUT)
             if cryptografy.decodeAndSaveStateSMS(token=token,authSMS=authSMS) == False:
                 return Response({"message": "expire token and token not true"}, status=status.HTTP_401_UNAUTHORIZED)
 
             try:
-                profile = Profiles.objects.get(mobile=mobile)
+                profile = authSMS.profileUser
                 if new_password == repeat_newpassword:
                     profile.user.set_password(new_password)
                     profile.user.save()
