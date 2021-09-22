@@ -1,1 +1,1 @@
-web: daphne smart_video_door_phone.asgi
+web: daphne smart_video_door_phone.asgi --log-file -
