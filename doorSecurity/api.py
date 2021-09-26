@@ -21,17 +21,18 @@ class addMember(APIView):
                 data = serializer.validated_data
                 serial_rasperyPi=data.get('serial_rasperyPi')
                 title=data.get('title')
+                name = data.get('name')
                 try:
                     licenseToUse=LicenseToUse.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
                                                               rassperypiInfo__serial_rasperyPi=serial_rasperyPi)
                 except:
                     return Response({"message": "no lincense for you"},status=status.HTTP_400_BAD_REQUEST)
                 try:
-                    member = Members.objects.create(title_member=title, rassperySystem=licenseToUse.rassperypiInfo)
+                    member = Members.objects.create(title=title, name=name,rassperySystem=licenseToUse.rassperypiInfo)
                     member.save()
                     return Response({"message": "add member succ"}, status=status.HTTP_201_CREATED)
                 except:
-                    return Response({"message": "please try again later"}, status=status.HTTP_201_CREATED)
+                    return Response({"message": "please try again later"}, status=status.HTTP_408_REQUEST_TIMEOUT)
             else:
                 return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
         else:
@@ -41,58 +42,33 @@ class addMember(APIView):
 
 
 
-class ChangeMembersAccessPermissions(APIView):
-    schema = schemas.ChangeMembersAccessPermissions()
-    def post(self,request, *args, **kwargs):
-        serializer = serializers.ChangeMembersAccessPermissions(data=request.data)
-        if serializer.is_valid():
-            if request.user.is_authenticated:
-                data = serializer.validated_data
-                serial_rasperyPi=data.get('serial_rasperyPi')
-                id_member=data.get('id_member')
-                allow=data.get('allow')
-                try:
-                    licenseToUse=LicenseToUse.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
-                                                              rassperypiInfo__serial_rasperyPi=serial_rasperyPi)
-                except:
-                    return Response({"message": "no lincense for you"}, status=status.HTTP_400_BAD_REQUEST)
-                try:
-                    member = Members.objects.get(id=id_member,rassperySystem=licenseToUse.rassperypiInfo)
-                    member.allow_status=allow
-                    member.save()
-                    return Response({"message": "add member succ"}, status=status.HTTP_201_CREATED)
-                except:
-                    return Response({"message": "please try again later"}, status=status.HTTP_201_CREATED)
-            else:
-                return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
-        else:
-            return Response({"message": "Duplicate code (or other messages)"},
-                            status=status.HTTP_400_BAD_REQUEST)
 
+class updateMembers(APIView):
+    schema = schemas.updateMember()
 
-
-
-
-class changeTitleMember(APIView):
-    schema = schemas.changeTitleMember()
-    def post(self,request, *args, **kwargs):
-        serializer = serializers.changeTitleMember(data=request.data)
+    def patch(self, request, *args, **kwargs):
+        serializer = serializers.updateMember(data=request.data)
         if serializer.is_valid():
             if request.user.is_authenticated:
                 data = serializer.validated_data
                 serial_rasperyPi = data.get('serial_rasperyPi')
                 id_member = data.get('id_member')
-                title = data.get('title')
+                allow = data.get('allow')
+                name=data.get('name')
+                title=data.get('title')
                 try:
-                    licenseToUse=LicenseToUse.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
-                                                              rassperypiInfo__serial_rasperyPi=serial_rasperyPi)
+                    licenseToUse = LicenseToUse.objects.get(
+                        rassperypiInfo__profile=Profiles.objects.get(user=request.user),
+                        rassperypiInfo__serial_rasperyPi=serial_rasperyPi)
                 except:
                     return Response({"message": "no lincense for you"}, status=status.HTTP_400_BAD_REQUEST)
                 try:
-                    member = Members.objects.get(id=id_member,rassperySystem=licenseToUse.rassperypiInfo)
-                    member.title_member=title
+                    member = Members.objects.get(id=id_member, rassperySystem=licenseToUse.rassperypiInfo)
+                    member.allow_status = allow
+                    member.title=title
+                    member.name=name
                     member.save()
-                    return Response({"message": "change title succ"}, status=status.HTTP_201_CREATED)
+                    return Response({"message": "update member succ"}, status=status.HTTP_201_CREATED)
                 except:
                     return Response({"message": "please try again later"}, status=status.HTTP_201_CREATED)
             else:
@@ -102,12 +78,10 @@ class changeTitleMember(APIView):
                             status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
 class getAllMemberDoorSecurity(APIView):
     schema = schemas.getAllMemberDoorSecurity()
     def post(self,request, *args, **kwargs):
-        serializer = serializers.getAllMemberDoorSecurity(data=request.data)
+        serializer = serializers.getAllMember(data=request.data)
         if serializer.is_valid():
             if request.user.is_authenticated:
                 data = serializer.validated_data
@@ -123,7 +97,8 @@ class getAllMemberDoorSecurity(APIView):
                 for member in members:
                     d = {}
                     d['id']=member.id
-                    d['title'] = member.title_member
+                    d['title'] = member.title
+                    d['name'] = member.name
                     d['add_date'] = member.add_date
                     d['change_status_date'] = member.change_status_date
                     d['allow_status'] = member.allow_status

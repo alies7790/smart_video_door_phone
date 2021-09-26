@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="add api door security">
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="add api debug doorsecurity App">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/schemas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rassperypiInfo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rassperypiInfo/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dangoDong" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -94,7 +96,8 @@
       <workItem from="1632309822822" duration="4477000" />
       <workItem from="1632323955549" duration="3921000" />
       <workItem from="1632577766670" duration="14701000" />
-      <workItem from="1632669995917" duration="7936000" />
+      <workItem from="1632669995917" duration="8272000" />
+      <workItem from="1632690305592" duration="2257000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug and log">
       <created>1632225561975</created>
@@ -222,7 +225,28 @@
       <option name="project" value="LOCAL" />
       <updated>1632675102169</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add api debug doorsecurity App">
+      <created>1632680572263</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1632680572263</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add api debug doorsecurity App">
+      <created>1632680582867</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1632680582867</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add api debug doorsecurity App">
+      <created>1632680679127</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1632680679127</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +270,7 @@
     <MESSAGE value=" api login step2 delete mobile,password" />
     <MESSAGE value="change my structure for rassinfo securety and delete moduleController" />
     <MESSAGE value="add api door security" />
-    <option name="LAST_COMMIT_MESSAGE" value="add api door security" />
+    <MESSAGE value="add api debug doorsecurity App" />
+    <option name="LAST_COMMIT_MESSAGE" value="add api debug doorsecurity App" />
   </component>
 </project>

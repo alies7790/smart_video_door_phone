@@ -11,6 +11,7 @@ class addMember(AutoSchema):
             extra_filds = [
                 coreapi.Field('serial_rasperyPi'),
                 coreapi.Field('title'),
+                coreapi.Field('name'),
             #     coreapi.Field('picture'),
             ]
         manual_fields= super().get_manual_fields(path,method)
@@ -18,16 +19,18 @@ class addMember(AutoSchema):
 
 
 
-class changeTitleMember(AutoSchema):
+class updateMember(AutoSchema):
     def get_description(self, path, method):
-        return 'change title member'
+        return 'update member: title, name , allow(1 allow, 2 unallow)'
     def get_manual_fields(self, path, method):
         extra_filds=[]
-        if method.lower() == 'post':
+        if method.lower() == 'patch':
             extra_filds = [
                 coreapi.Field('serial_rasperyPi'),
                 coreapi.Field('title'),
-                coreapi.Field('id_member')
+                coreapi.Field('name'),
+                coreapi.Field('id_member'),
+                coreapi.Field('allow')
             #     coreapi.Field('picture'),
             ]
         manual_fields= super().get_manual_fields(path,method)
@@ -58,23 +61,6 @@ class getHistory(AutoSchema):
             ]
         manual_fields= super().get_manual_fields(path,method)
         return  manual_fields + extra_filds
-
-
-class ChangeMembersAccessPermissions(AutoSchema):
-    def get_description(self, path, method):
-        return 'Change members access permissions with id member and type allow(1 allow ,2 unallow)'
-    def get_manual_fields(self, path, method):
-        extra_filds=[]
-        if method.lower() == 'post':
-            extra_filds = [
-                coreapi.Field('serial_rasperyPi'),
-                coreapi.Field('id_member'),
-                coreapi.Field('allow'),
-            ]
-        manual_fields= super().get_manual_fields(path,method)
-        return  manual_fields + extra_filds
-
-
 
 
 

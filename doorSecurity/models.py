@@ -32,17 +32,14 @@ class HistoryDoorSecurity(models.Model):
     request_status = models.IntegerField(choices=type_status_request, default=1, verbose_name='وضعیت درخواست')
 #     picture
 
-
-
-
-
 class Members(models.Model):
     class Meta:
         verbose_name = 'مدیریت افراد برای باز شدن درب'
         verbose_name_plural = 'مدیریت افراد برای باز شدن درب'
     rassperySystem=models.ForeignKey(RassperySystem, on_delete=models.CASCADE)
     add_date=models.DateTimeField(auto_now_add=True)
-    title_member=models.CharField(max_length=20)
+    title=models.CharField(max_length=20)
+    name=models.CharField(max_length=20)
     change_status_date=models.DateTimeField(auto_now=True)
     allow_openDoor=1
     unallow_openDoor=2
