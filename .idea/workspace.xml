@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment=" api login step2 delete mobile,password">
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="change my structure for rassinfo securety and delete moduleController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/consumers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/routing.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/routing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllerModules/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/routing.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/routing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/consumers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rassperypiInfo/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/rassperypiInfo/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rassperypiInfo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rassperypiInfo/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +52,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/doorSeurity" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\django\smart_video_door_phone\static" />
       <recent name="G:\django\smart_video_door_phone\doorSeurity" />
     </key>
   </component>
@@ -109,7 +99,9 @@
       <workItem from="1632294099679" duration="5178000" />
       <workItem from="1632303034861" duration="3154000" />
       <workItem from="1632309822822" duration="4477000" />
-      <workItem from="1632323955549" duration="3677000" />
+      <workItem from="1632323955549" duration="3921000" />
+      <workItem from="1632577766670" duration="14701000" />
+      <workItem from="1632669995917" duration="2530000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug and log">
       <created>1632225561975</created>
@@ -216,7 +208,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632308036533</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary=" api login step2 delete mobile,password">
+      <created>1632332564891</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1632332564891</updated>
+    </task>
+    <task id="LOCAL-00017" summary="change my structure for rassinfo securety and delete moduleController">
+      <created>1632332698738</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1632332698738</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +244,7 @@
     <MESSAGE value="fix bug and log" />
     <MESSAGE value="add CORS" />
     <MESSAGE value=" api login step2 delete mobile,password" />
-    <option name="LAST_COMMIT_MESSAGE" value=" api login step2 delete mobile,password" />
+    <MESSAGE value="change my structure for rassinfo securety and delete moduleController" />
+    <option name="LAST_COMMIT_MESSAGE" value="change my structure for rassinfo securety and delete moduleController" />
   </component>
 </project>

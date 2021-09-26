@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from rassperypiInfo.models import rassperySystem
+from rassperypiInfo.models import RassperySystem
 
-admin.site.register(rassperySystem)
+admin.site.register(RassperySystem)

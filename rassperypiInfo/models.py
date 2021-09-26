@@ -6,7 +6,7 @@ from django.db import models
 from django.db import models
 # Create your models here.
 
-class rassperySystem(models.Model):
+class RassperySystem(models.Model):
     class Meta:
         verbose_name ='سیستم ها(رزپری پای)'
         verbose_name_plural = 'سیستم ها(رزپری پای)'

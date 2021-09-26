@@ -14,7 +14,7 @@ from rest_framework.views import APIView
 from accounts.models import Profiles, AuthSMS
 from rest_framework import  status
 
-from rassperypiInfo.models import rassperySystem
+from rassperypiInfo.models import RassperySystem
 from . import schemas,serializers,smsHandeller
 from . import cryptografyTokenAndSaveToAuthSMS as cryptografy
 
@@ -225,7 +225,7 @@ class ChangePasswordWithTokenApi(APIView):
             try:
                 profile = authSMS.profileUser
                 try:
-                    rasspery_system = rassperySystem.objects.get(profile=profile,serial_reset_password=serial_rest_password)
+                    rasspery_system = RassperySystem.objects.get(profile=profile,serial_reset_password=serial_rest_password)
                 except:
                     return Response({"message": "not ture serial reset"}, status=status.HTTP_401_UNAUTHORIZED)
                 if new_password == repeat_newpassword:
