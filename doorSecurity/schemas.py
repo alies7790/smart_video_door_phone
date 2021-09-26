@@ -36,7 +36,7 @@ class changeTitleMember(AutoSchema):
 
 class getAllMemberDoorSecurity(AutoSchema):
     def get_description(self, path, method):
-        return 'get all member doorSecurity'
+        return 'get all member doorSecurity,allow_status 1 allow, 2 unallow'
     def get_manual_fields(self, path, method):
         extra_filds=[]
         if method.lower() == 'post':
@@ -49,7 +49,7 @@ class getAllMemberDoorSecurity(AutoSchema):
 
 class getHistory(AutoSchema):
     def get_description(self, path, method):
-        return 'get history doorSecurity'
+        return 'get history doorSecurity,request_status 1 opendoor,2 not_allow_openDoor,3 no_memeber'
     def get_manual_fields(self, path, method):
         extra_filds=[]
         if method.lower() == 'post':
@@ -62,7 +62,7 @@ class getHistory(AutoSchema):
 
 class ChangeMembersAccessPermissions(AutoSchema):
     def get_description(self, path, method):
-        return 'Change members access permissions with id member and type allow(1 allow , unallow)'
+        return 'Change members access permissions with id member and type allow(1 allow ,2 unallow)'
     def get_manual_fields(self, path, method):
         extra_filds=[]
         if method.lower() == 'post':

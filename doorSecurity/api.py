@@ -3,7 +3,7 @@ import json
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
+from django.core.serializers import serialize
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 from rest_framework import  status
@@ -44,7 +44,7 @@ class addMember(APIView):
 class ChangeMembersAccessPermissions(APIView):
     schema = schemas.ChangeMembersAccessPermissions()
     def post(self,request, *args, **kwargs):
-        serializer = serializers.addMember(data=request.data)
+        serializer = serializers.ChangeMembersAccessPermissions(data=request.data)
         if serializer.is_valid():
             if request.user.is_authenticated:
                 data = serializer.validated_data
@@ -74,7 +74,7 @@ class ChangeMembersAccessPermissions(APIView):
 
 
 class changeTitleMember(APIView):
-    schema = schemas.ChangeMembersAccessPermissions()
+    schema = schemas.changeTitleMember()
     def post(self,request, *args, **kwargs):
         serializer = serializers.changeTitleMember(data=request.data)
         if serializer.is_valid():
@@ -92,7 +92,7 @@ class changeTitleMember(APIView):
                     member = Members.objects.get(id=id_member,rassperySystem=licenseToUse.rassperypiInfo)
                     member.title_member=title
                     member.save()
-                    return Response({"message": "add member succ"}, status=status.HTTP_201_CREATED)
+                    return Response({"message": "change title succ"}, status=status.HTTP_201_CREATED)
                 except:
                     return Response({"message": "please try again later"}, status=status.HTTP_201_CREATED)
             else:
@@ -119,7 +119,16 @@ class getAllMemberDoorSecurity(APIView):
                     return Response({"message": "no lincense for you"}, status=status.HTTP_400_BAD_REQUEST)
 
                 members=Members.objects.filter(rassperySystem__serial_rasperyPi=serial_rasperyPi).order_by('add_date')
-                return Response({members},status=status.HTTP_200_OK)
+                lis = []
+                for member in members:
+                    d = {}
+                    d['id']=member.id
+                    d['title'] = member.title_member
+                    d['add_date'] = member.add_date
+                    d['change_status_date'] = member.change_status_date
+                    d['allow_status'] = member.allow_status
+                    lis.append(d)
+                return Response({'members':lis},status=status.HTTP_200_OK)
             else:
                 return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
         else:
@@ -143,7 +152,16 @@ class getHistory(APIView):
                 except:
                     return Response({"message": "no lincense for you"}, status=status.HTTP_400_BAD_REQUEST)
                 historys=HistoryDoorSecurity.objects.filter(rassperypiInfo__serial_rasperyPi=serial_rasperyPi).order_by('date')
-                return Response({historys}, status=status.HTTP_200_OK)
+                lis=[]
+                for history in historys:
+                    d={}
+                    d['id']=history.id
+                    if history.member :
+                        d['title']=history.member.title_member
+                    d['dateTime']=history.date
+                    d['request_status']=history.request_status
+                    lis.append(d)
+                return Response({'historys':lis}, status=status.HTTP_200_OK)
             else:
                 return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
         else:

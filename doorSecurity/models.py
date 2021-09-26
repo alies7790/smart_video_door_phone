@@ -11,15 +11,16 @@ class LicenseToUse(models.Model):
         verbose_name = 'مدیریت lincense بازکردن در'
         verbose_name_plural = 'مدیریت lincense بازکردن در'
     rassperypiInfo=models.OneToOneField(RassperySystem,on_delete=models.CASCADE)
-    start_lincense=models.DateField(auto_created=True)
+    start_lincense=models.DateField(auto_now_add=True)
     end_lincense=models.DateField()
 
 class HistoryDoorSecurity(models.Model):
     class Meta:
         verbose_name = 'مدیریت تاریخچه درخواست درب بازشدن'
         verbose_name_plural = 'مدیریت تاریخچه درخواست درب بازشدن'
-    rassperypiInfo=models.OneToOneField(RassperySystem,on_delete=models.CASCADE)
-    date=models.DateTimeField(auto_created=True)
+    rassperypiInfo=models.ForeignKey(RassperySystem,on_delete=models.CASCADE)
+    date=models.DateTimeField(auto_now_add=True)
+    member=models.ForeignKey('Members',blank=True,null=True,on_delete=models.CASCADE)
     openDoor=1
     not_allow_openDoor=2
     no_memeber=3
@@ -40,9 +41,9 @@ class Members(models.Model):
         verbose_name = 'مدیریت افراد برای باز شدن درب'
         verbose_name_plural = 'مدیریت افراد برای باز شدن درب'
     rassperySystem=models.ForeignKey(RassperySystem, on_delete=models.CASCADE)
-    add_date=models.DateTimeField(auto_created=True)
+    add_date=models.DateTimeField(auto_now_add=True)
     title_member=models.CharField(max_length=20)
-    change_status_date=models.DateTimeField(auto_now_add=True)
+    change_status_date=models.DateTimeField(auto_now=True)
     allow_openDoor=1
     unallow_openDoor=2
     type_status_members=(
