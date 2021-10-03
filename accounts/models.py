@@ -10,7 +10,7 @@ class Profiles(models.Model):
 
     user=models.OneToOneField(User ,on_delete=models.CASCADE, verbose_name='حساب کاربری')
     mobile=models.CharField('تلفن همراه',max_length=11,unique=True)
-
+    serial_reset_password=models.CharField(max_length=12)
 
     def __str__(self):
         return self.user.get_full_name()
@@ -29,6 +29,7 @@ class AuthSMS(models.Model):
         (resetPass, 'ریست کردن پسوورد'),
         (authMobile, 'احراز موبایل')
     )
+
     type_SMS = models.IntegerField(choices=types_SMS, verbose_name='نوع پیام')
     sendSMS=1
     expireSMS=2

@@ -4,11 +4,29 @@ from channels.generic.websocket import WebsocketConsumer
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
 
+from rassperypiInfo.models import RassperySystem
+
+
 class openDoorCunsumer(WebsocketConsumer):
     def connect(self):
-        self.token=str(dict(self.scope['headers'])[b'token'])
-        self.token=self.token[2:len(self.token)-1]
-        self.group_name=f"doorSecurity_{self.token}"
+        try:
+            self.token=str(dict(self.scope['headers'])[b'token'])
+            self.token=self.token[2:len(self.token)-1]
+            self.serial_rasperyPi = str(dict(self.scope['headers'])[b'serial-rasperypi'])
+            self.serial_rasperyPi = self.serial_rasperyPi[2:len(self.serial_rasperyPi) - 1]
+        except:
+            self.send("not serial-rasperypi &| token")
+            self.disconnect(close_code=1)
+        try:
+            rassperypiInfo=RassperySystem.objects.get(serial_rasperyPi=self.serial_rasperyPi , token=self.token)
+            rassperypiInfo.online_status=1
+            self.rassperypiInfo=rassperypiInfo
+        except:
+            self.send("not rassperyPi with informathons")
+            self.disconnect(close_code=1)
+        self.rassperypiInfo.online_status=1
+        self.rassperypiInfo.save()
+        self.group_name=f"doorSecurity_{self.serial_rasperyPi}"
         async_to_sync(self.channel_layer.group_add)(
             self.group_name,
             self.channel_name
@@ -16,6 +34,8 @@ class openDoorCunsumer(WebsocketConsumer):
         self.accept()
 
     def disconnect(self, close_code):
+        self.rassperypiInfo.online_status=2
+        self.rassperypiInfo.save()
         self.channel_layer.group_discard(
             self.group_name,
             self.channel_layer

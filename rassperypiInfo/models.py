@@ -12,8 +12,14 @@ class RassperySystem(models.Model):
         verbose_name_plural = 'سیستم ها(رزپری پای)'
     token=models.CharField(max_length=256,unique=True, verbose_name='توکن اتصال')
     serial_rasperyPi=models.CharField(max_length=16,unique=True ,blank=True, null=True, verbose_name='سریال رزپری پای')
-    serial_reset_password=models.CharField(max_length=12)
-    profile = models.ForeignKey(Profiles, on_delete=models.CASCADE)
 
+    profile = models.ForeignKey(Profiles, on_delete=models.CASCADE)
+    online=1
+    offline=2
+    type_status_online=(
+        (online,'سیستم متصل است'),
+        (offline,'سیستم آفلاین است'),
+    )
+    online_status = models.IntegerField(choices=type_status_online, default=2, verbose_name='وضعیت درخواست')
     def __str__(self):
         return self.serial_rasperyPi

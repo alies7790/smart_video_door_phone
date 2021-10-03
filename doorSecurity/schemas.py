@@ -71,6 +71,7 @@ class openDoor(AutoSchema):
         extra_filds=[]
         if method.lower() == 'post':
             extra_filds = [
+                coreapi.Field('serial_rasperyPi'),
             ]
         manual_fields= super().get_manual_fields(path,method)
         return  manual_fields + extra_filds

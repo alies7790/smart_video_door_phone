@@ -7,6 +7,8 @@ from django.core.serializers import serialize
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 from rest_framework import  status
+
+from rassperypiInfo.models import RassperySystem
 from . import schemas,serializers
 from accounts.models import Profiles
 from .models import LicenseToUse, Members, HistoryDoorSecurity
@@ -116,7 +118,7 @@ class getAllMemberDoorSecurity(APIView):
 class getHistory(APIView):
     schema = schemas.getAllMemberDoorSecurity()
     def post(self,request, *args, **kwargs):
-        serializer = serializers.getAllMemberDoorSecurity(data=request.data)
+        serializer = serializers.getHistory(data=request.data)
         if serializer.is_valid():
             if request.user.is_authenticated:
                 data = serializer.validated_data
@@ -132,7 +134,7 @@ class getHistory(APIView):
                     d={}
                     d['id']=history.id
                     if history.member :
-                        d['title']=history.member.title_member
+                        d['title']=history.member.title
                     d['dateTime']=history.date
                     d['request_status']=history.request_status
                     lis.append(d)
@@ -150,21 +152,27 @@ class getHistory(APIView):
 
 class openDoor(APIView):
     schema = schemas.openDoor()
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            profile=Profiles.objects.get(user_id=request.user.id)
-            channel_layer=get_channel_layer()
-            group_name=f"doorSecurity_{profile.rasspery.token}"
-            async_to_sync(channel_layer.group_send)(
-                group_name,
-                {
-                    'type':'open_door',
-                    'message': json.dumps({'order':'open_door'})
-                })
+    def post(self, request, *args, **kwargs):
+        serializer = serializers.openDoor(data=request.data)
+        if serializer.is_valid():
+            if request.user.is_authenticated:
+                data = serializer.validated_data
+                serial_rasperyPi = data.get('serial_rasperyPi')
+                rassperyInfo=RassperySystem.objects.get(serial_rasperyPi=serial_rasperyPi)
+                if rassperyInfo.online_status==1 :
+                    channel_layer=get_channel_layer()
+                    group_name=f"doorSecurity_{rassperyInfo.serial_rasperyPi}"
+                    async_to_sync(channel_layer.group_send)(
+                        group_name,
+                        {
+                            'type':'open_door',
+                            'message': json.dumps({'order':'open_door'})
+                        })
+                    return Response({"message": "open dooring"}, status=status.HTTP_200_OK)
+                else:
+                    return Response({"message": "not online rassperyPi"}, status=status.HTTP_303_SEE_OTHER)
+            else:
+                return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
         else:
-            return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
-
-
-
-# class addMember(APIView):
-#
+            return Response({"message": "Duplicate code (or other messages)"},
+                            status=status.HTTP_400_BAD_REQUEST)

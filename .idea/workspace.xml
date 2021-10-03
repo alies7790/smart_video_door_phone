@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="add api debug doorsecurity App">
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="edite api door security">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/consumers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/schemas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rassperypiInfo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rassperypiInfo/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +57,29 @@
       <recent name="G:\django\smart_video_door_phone\doorSeurity" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django Server.smart_video_door_phone">
+    <configuration name="custom_middleware" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="smart_video_door_phone" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/doorSecurity/middleware" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="smart_video_door_phone" type="Python.DjangoServer" factoryName="Django server">
       <module name="smart_video_door_phone" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,6 +104,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.custom_middleware" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -97,7 +125,9 @@
       <workItem from="1632323955549" duration="3921000" />
       <workItem from="1632577766670" duration="14701000" />
       <workItem from="1632669995917" duration="8272000" />
-      <workItem from="1632690305592" duration="2257000" />
+      <workItem from="1632690305592" duration="3230000" />
+      <workItem from="1633252063751" duration="7804000" />
+      <workItem from="1633260601182" duration="7005000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug and log">
       <created>1632225561975</created>
@@ -246,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632680679127</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="edite api door security">
+      <created>1632692963539</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1632692963539</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +308,10 @@
     <MESSAGE value="change my structure for rassinfo securety and delete moduleController" />
     <MESSAGE value="add api door security" />
     <MESSAGE value="add api debug doorsecurity App" />
-    <option name="LAST_COMMIT_MESSAGE" value="add api debug doorsecurity App" />
+    <MESSAGE value="edite api door security" />
+    <option name="LAST_COMMIT_MESSAGE" value="edite api door security" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/smart_video_door_phone$custom_middleware.coverage" NAME="custom_middleware Coverage Results" MODIFIED="1633253332044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doorSecurity/middleware" />
   </component>
 </project>

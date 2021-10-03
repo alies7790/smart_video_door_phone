@@ -61,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'doorSecurity.middleware.custom_middleware.exitLincenceMiddleware',
+    'doorSecurity.middleware.custom_middleware.checkLincenseMiddleware',
 ]
 
 
@@ -105,7 +107,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [{'address':("redis-18480.c1.asia-northeast1-1.gce.cloud.redislabs.com", 18480),'password':"jc9FqRMffc0kuE3uoiz9sapgjeHSMlqz",}]
+            "hosts": [{'address':("redis-19661.c251.east-us-mz.azure.cloud.redislabs.com", 19661),'password':"xfWD5WAZKxoMTWFGjceqefkyb49X0E8y",}]
         },
     },
 }

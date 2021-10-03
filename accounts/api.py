@@ -224,16 +224,17 @@ class ChangePasswordWithTokenApi(APIView):
 
             try:
                 profile = authSMS.profileUser
-                try:
-                    rasspery_system = RassperySystem.objects.get(profile=profile,serial_reset_password=serial_rest_password)
-                except:
-                    return Response({"message": "not ture serial reset"}, status=status.HTTP_401_UNAUTHORIZED)
-                if new_password == repeat_newpassword:
-                    profile.user.set_password(new_password)
-                    profile.user.save()
-                    profile.save()
+                if profile.serial_reset_password==serial_rest_password:
+                    if new_password == repeat_newpassword:
+                        profile.user.set_password(new_password)
+                        profile.user.save()
+                        profile.save()
+                    else:
+                        return Response({"message": "newPassword and repeatNewPassword not one "},
+                                        status=status.HTTP_400_BAD_REQUEST)
                 else:
-                    return Response({"message": "newPassword and repeatNewPassword not one "}, status=status.HTTP_400_BAD_REQUEST)
+                    return Response({"message": "not ture serial reset"}, status=status.HTTP_401_UNAUTHORIZED)
+
             except:
                 return Response({"message": "not user with information"}, status=status.HTTP_404_NOT_FOUND)
             return JsonResponse({"message": "change pass"}, status=status.HTTP_200_OK)

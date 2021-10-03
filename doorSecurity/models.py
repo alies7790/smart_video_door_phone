@@ -14,6 +14,11 @@ class LicenseToUse(models.Model):
     start_lincense=models.DateField(auto_now_add=True)
     end_lincense=models.DateField()
 
+
+
+
+
+
 class HistoryDoorSecurity(models.Model):
     class Meta:
         verbose_name = 'مدیریت تاریخچه درخواست درب بازشدن'

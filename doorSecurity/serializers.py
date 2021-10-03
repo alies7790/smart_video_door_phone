@@ -7,6 +7,10 @@ class addMember(serializers.Serializer):
     name = serializers.CharField(max_length=20, min_length=3)
 #     picture
 
+
+class openDoor(serializers.Serializer):
+    serial_rasperyPi = serializers.CharField(max_length=16,min_length=16)
+
 class updateMember(serializers.Serializer):
     id_member = serializers.CharField()
     serial_rasperyPi = serializers.CharField(max_length=16, min_length=16)
