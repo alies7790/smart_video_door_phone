@@ -1,0 +1,4 @@
+
+range 1011-1989 for doorSecurity
+    1011 for request openDoor
+    1012 for off detect and openDoor

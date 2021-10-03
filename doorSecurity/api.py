@@ -3,7 +3,6 @@ import json
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.core.serializers import serialize
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 from rest_framework import  status
@@ -166,7 +165,7 @@ class openDoor(APIView):
                         group_name,
                         {
                             'type':'open_door',
-                            'message': json.dumps({'order':'open_door'})
+                            'message': json.dumps({'massege':'open_door','code':1011})
                         })
                     return Response({"message": "open dooring"}, status=status.HTTP_200_OK)
                 else:
