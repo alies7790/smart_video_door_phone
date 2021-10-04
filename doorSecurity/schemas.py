@@ -64,6 +64,25 @@ class getHistory(AutoSchema):
 
 
 
+class addHistory(AutoSchema):
+    def get_description(self, path, method):
+        return 'add history openDoor use in rass not frontEnd, with serial_rasperyPi , token , id_member(not member -1) ,request_status '
+    def get_manual_fields(self, path, method):
+        extra_filds=[]
+        if method.lower() == 'post':
+            extra_filds = [
+                coreapi.Field('serial_rasperyPi'),
+                coreapi.Field('token'),
+                coreapi.Field('id_member'),
+                coreapi.Field('request_status'),
+
+
+            ]
+        manual_fields= super().get_manual_fields(path,method)
+        return  manual_fields + extra_filds
+
+
+
 class openDoor(AutoSchema):
     def get_description(self, path, method):
         return 'add member to a doorSecurity'

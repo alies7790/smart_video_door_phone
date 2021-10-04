@@ -10,7 +10,7 @@ from rest_framework import  status
 from rassperypiInfo.models import RassperySystem
 from . import schemas,serializers
 from accounts.models import Profiles
-from .models import LicenseToUse, Members, HistoryDoorSecurity
+from .models import LicenseToUse, Members, history
 
 
 class addMember(APIView):
@@ -127,15 +127,15 @@ class getHistory(APIView):
                                                               rassperypiInfo__serial_rasperyPi=serial_rasperyPi)
                 except:
                     return Response({"message": "no lincense for you"}, status=status.HTTP_400_BAD_REQUEST)
-                historys=HistoryDoorSecurity.objects.filter(rassperypiInfo__serial_rasperyPi=serial_rasperyPi).order_by('date')
+                historys=history.objects.filter(rassperypiInfo__serial_rasperyPi=serial_rasperyPi).order_by('date')
                 lis=[]
-                for history in historys:
+                for i in historys:
                     d={}
-                    d['id']=history.id
-                    if history.member :
-                        d['title']=history.member.title
-                    d['dateTime']=history.date
-                    d['request_status']=history.request_status
+                    d['id']=i.id
+                    if i.member :
+                        d['title']=i.member.title
+                    d['dateTime']=i.date
+                    d['request_status']=i.request_status
                     lis.append(d)
                 return Response({'historys':lis}, status=status.HTTP_200_OK)
             else:
@@ -149,6 +149,40 @@ class getHistory(APIView):
 
 
 
+
+class addHistory(APIView):
+    schema = schemas.addHistory()
+    def post(self, request, *args, **kwargs):
+        serializer = serializers.addHistory(data=request.data)
+        if serializer.is_valid():
+            data = serializer.validated_data
+            serial_rasperyPi = data.get('serial_rasperyPi')
+            token = data.get('token')
+            request_status=data.get('request_status')
+            id_member=data.get('id_member')
+            try:
+                rassperyInfo=RassperySystem.objects.get(serial_rasFperyPi=serial_rasperyPi,token=token)
+            except:
+                return Response({"message": "rassperyPi does not exist with these specifications"},
+                                status=status.HTTP_400_BAD_REQUEST)
+            try:
+                if id_member==-1:
+                    history_created=history.objects.create(rassperypiInfo=rassperyInfo,request_status=3)
+                else:
+                    history_created = history.objects.create(rassperypiInfo=rassperyInfo, request_status=request_status,member_id=id_member)
+            except:
+                return Response({"message": "information not true or server busy,please check information send again"},
+                                status=status.HTTP_400_BAD_REQUEST)
+            history_created.save()
+            return Response({"message": "add history succ"}, status=status.HTTP_201_CREATED)
+
+        else:
+            return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+
+
+
 class openDoor(APIView):
     schema = schemas.openDoor()
     def post(self, request, *args, **kwargs):
@@ -157,7 +191,11 @@ class openDoor(APIView):
             if request.user.is_authenticated:
                 data = serializer.validated_data
                 serial_rasperyPi = data.get('serial_rasperyPi')
-                rassperyInfo=RassperySystem.objects.get(serial_rasperyPi=serial_rasperyPi)
+                try:
+                    rassperyInfo=RassperySystem.objects.get(serial_rasperyPi=serial_rasperyPi,profile__user=request.user)
+                except:
+                    return Response({"message": "rassperyPi does not exist with these specifications"},
+                                    status=status.HTTP_400_BAD_REQUEST)
                 if rassperyInfo.online_status==1 :
                     channel_layer=get_channel_layer()
                     group_name=f"doorSecurity_{rassperyInfo.serial_rasperyPi}"

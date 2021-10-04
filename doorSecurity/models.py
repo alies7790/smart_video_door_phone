@@ -19,7 +19,7 @@ class LicenseToUse(models.Model):
 
 
 
-class HistoryDoorSecurity(models.Model):
+class history(models.Model):
     class Meta:
         verbose_name = 'مدیریت تاریخچه درخواست درب بازشدن'
         verbose_name_plural = 'مدیریت تاریخچه درخواست درب بازشدن'

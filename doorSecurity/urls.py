@@ -8,6 +8,7 @@ urlpatterns = [
     path('open-door/', api.openDoor.as_view(), name='بازکردن درب'),
     path('add-member/', api.addMember.as_view(), name='اضافه کردن اعضا'),
     path('update-member/', api.updateMembers.as_view(), name='تغییر اطلاعات فرد'),
-    path('get-all-member/', api.getAllMemberDoorSecurity.as_view(), name='تمام اعضا'),
+    path('get-all-member/', api.getAllMemberDoorSecurity.as_view(), name='گرفتن تمام اعضا'),
     path('get-history/', api.getHistory.as_view(), name='تاریخچه'),
+    path('add-history/', api.addHistory.as_view(), name='اضافه کردن ی تارخچه'),
 ]

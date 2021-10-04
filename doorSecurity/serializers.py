@@ -11,6 +11,12 @@ class addMember(serializers.Serializer):
 class openDoor(serializers.Serializer):
     serial_rasperyPi = serializers.CharField(max_length=16,min_length=16)
 
+class addHistory(serializers.Serializer):
+    request_status=serializers.IntegerField(min_value=1,max_value=3)
+    id_member = serializers.IntegerField()
+    token = serializers.CharField(max_length=256, min_length=256)
+    serial_rasperyPi = serializers.CharField(max_length=16,min_length=16)
+
 class updateMember(serializers.Serializer):
     id_member = serializers.CharField()
     serial_rasperyPi = serializers.CharField(max_length=16, min_length=16)
