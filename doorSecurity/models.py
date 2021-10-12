@@ -6,18 +6,28 @@ from rassperypiInfo.models import RassperySystem
 
 
 
+
+class InformationService(models.Model):
+    class Meta:
+        verbose_name= 'مدیریت اطلاعات سرویس'
+        verbose_name_plural= 'مدیریت اطلاعات سرویس'
+    rassperypiInfo = models.OneToOneField(RassperySystem, on_delete=models.CASCADE)
+    lincense=models.OneToOneField('LicenseToUse',on_delete=models.CASCADE)
+    on = 1
+    off= 2
+    type_status_opendoor=(
+        (on,'باز شود.'),
+        (off,'باز نشود.')
+    )
+    status_opendoor=models.IntegerField(choices=type_status_opendoor,default=1,verbose_name='وضعیت باز شدن درب')
+
+
 class LicenseToUse(models.Model):
     class Meta:
-        verbose_name = 'مدیریت lincense بازکردن در'
-        verbose_name_plural = 'مدیریت lincense بازکردن در'
-    rassperypiInfo=models.OneToOneField(RassperySystem,on_delete=models.CASCADE)
+        verbose_name = 'مدیریت lincense بازکردن درب'
+        verbose_name_plural = 'مدیریت lincense بازکردن درب'
     start_lincense=models.DateField(auto_now_add=True)
     end_lincense=models.DateField()
-
-
-
-
-
 
 class history(models.Model):
     class Meta:

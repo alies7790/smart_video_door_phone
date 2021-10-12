@@ -7,7 +7,7 @@ from datetime import date
 
 
 
-from doorSecurity.models import LicenseToUse
+from doorSecurity.models import LicenseToUse, InformationService
 
 
 class exitLincenceMiddleware(MiddlewareMixin):
@@ -25,7 +25,7 @@ class exitLincenceMiddleware(MiddlewareMixin):
                 body_unicode = request.body.decode('utf-8')
                 body = json.loads(body_unicode)
                 serial_rasperyPi = body['serial_rasperyPi']
-                licenseToUse=LicenseToUse.objects.get(rassperypiInfo__serial_rasperyPi=str(serial_rasperyPi))
+                licenseToUse=InformationService.objects.get(rassperypiInfo__serial_rasperyPi=str(serial_rasperyPi)).lincense
             except:
                 return JsonResponse({"message": "no lincense for you"},
                                 status=status.HTTP_404_NOT_FOUND)
@@ -46,7 +46,7 @@ class checkLincenseMiddleware(MiddlewareMixin):
             body_unicode = request.body.decode('utf-8')
             body = json.loads(body_unicode)
             serial_rasperyPi = body['serial_rasperyPi']
-            licenseToUse=LicenseToUse.objects.get(rassperypiInfo__serial_rasperyPi=str(serial_rasperyPi))
+            licenseToUse=InformationService.objects.get(rassperypiInfo__serial_rasperyPi=str(serial_rasperyPi)).lincense
             now=date.today()
             if licenseToUse.end_lincense >= now:
                 return None

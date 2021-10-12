@@ -20,6 +20,7 @@ class RassperySystem(models.Model):
         (online,'سیستم متصل است'),
         (offline,'سیستم آفلاین است'),
     )
+    address=models.TextField(verbose_name='آدرس محل نصب')
     online_status = models.IntegerField(choices=type_status_online, default=2, verbose_name='وضعیت درخواست')
     def __str__(self):
         return self.serial_rasperyPi

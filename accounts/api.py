@@ -82,7 +82,7 @@ class loginStep2Api(APIView):
             except:
                 return Response({"message": " is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
             login(request, profile.user)
-            return Response({"message": "You are logged in successfully."}, status=status.HTTP_200_OK)
+            return Response({"message": "login successfully."}, status=status.HTTP_200_OK)
             # if user is not None:
             #
             # else:

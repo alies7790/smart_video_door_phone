@@ -10,7 +10,7 @@ from rest_framework import  status
 from rassperypiInfo.models import RassperySystem
 from . import schemas,serializers
 from accounts.models import Profiles
-from .models import LicenseToUse, Members, history
+from .models import  Members, history, InformationService
 
 
 class addMember(APIView):
@@ -24,12 +24,12 @@ class addMember(APIView):
                 title=data.get('title')
                 name = data.get('name')
                 try:
-                    licenseToUse=LicenseToUse.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
-                                                              rassperypiInfo__serial_rasperyPi=serial_rasperyPi)
+                    informationService=InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
+                                                              rassperypiInfo__serial_rasperyPi=serial_rasperyPi,)
                 except:
                     return Response({"message": "no lincense for you"},status=status.HTTP_400_BAD_REQUEST)
                 try:
-                    member = Members.objects.create(title=title, name=name,rassperySystem=licenseToUse.rassperypiInfo)
+                    member = Members.objects.create(title=title, name=name,rassperySystem=informationService.rassperypiInfo)
                     member.save()
                     return Response({"message": "add member succ"}, status=status.HTTP_201_CREATED)
                 except:
@@ -44,7 +44,7 @@ class addMember(APIView):
 
 
 
-class updateMembers(APIView):
+class updateMember(APIView):
     schema = schemas.updateMember()
 
     def patch(self, request, *args, **kwargs):
@@ -58,13 +58,12 @@ class updateMembers(APIView):
                 name=data.get('name')
                 title=data.get('title')
                 try:
-                    licenseToUse = LicenseToUse.objects.get(
-                        rassperypiInfo__profile=Profiles.objects.get(user=request.user),
-                        rassperypiInfo__serial_rasperyPi=serial_rasperyPi)
+                    informationService = InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
+                                                              rassperypiInfo__serial_rasperyPi=serial_rasperyPi,)
                 except:
                     return Response({"message": "no lincense for you"}, status=status.HTTP_400_BAD_REQUEST)
                 try:
-                    member = Members.objects.get(id=id_member, rassperySystem=licenseToUse.rassperypiInfo)
+                    member = Members.objects.get(id=id_member, rassperySystem=informationService.rassperypiInfo)
                     member.allow_status = allow
                     member.title=title
                     member.name=name
@@ -87,12 +86,6 @@ class getAllMemberDoorSecurity(APIView):
             if request.user.is_authenticated:
                 data = serializer.validated_data
                 serial_rasperyPi = data.get('serial_rasperyPi')
-                try:
-                    licenseToUse=LicenseToUse.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
-                                                              rassperypiInfo__serial_rasperyPi=serial_rasperyPi)
-                except:
-                    return Response({"message": "no lincense for you"}, status=status.HTTP_400_BAD_REQUEST)
-
                 members=Members.objects.filter(rassperySystem__serial_rasperyPi=serial_rasperyPi).order_by('add_date')
                 lis = []
                 for member in members:
@@ -122,11 +115,6 @@ class getHistory(APIView):
             if request.user.is_authenticated:
                 data = serializer.validated_data
                 serial_rasperyPi = data.get('serial_rasperyPi')
-                try:
-                    licenseToUse=LicenseToUse.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
-                                                              rassperypiInfo__serial_rasperyPi=serial_rasperyPi)
-                except:
-                    return Response({"message": "no lincense for you"}, status=status.HTTP_400_BAD_REQUEST)
                 historys=history.objects.filter(rassperypiInfo__serial_rasperyPi=serial_rasperyPi).order_by('date')
                 lis=[]
                 for i in historys:
@@ -145,9 +133,33 @@ class getHistory(APIView):
                             status=status.HTTP_400_BAD_REQUEST)
 
 
-
-
-
+class changeStatusOpenDoor(APIView):
+    schema = schemas.changeStatusOpenDoor()
+    def patch(self,request,*args ,**kwargs):
+        serializer=serializers.changeStatusOpenDoor(date=request.data)
+        if serializer.is_valid():
+            data = serializer.validated_data
+            serial_rasperyPi = data.get('serial_rasperyPi')
+            status_openDoor = data.get('status_openDoor')
+            try:
+                informationService = InformationService.objects.get(rassperypiInfo__serial_rasperyPi=serial_rasperyPi)
+                informationService.status_opendoor=status_openDoor
+                informationService.save()
+                channel_layer = get_channel_layer()
+                group_name = f"doorSecurity_{informationService.rassperypiInfo.serial_rasperyPi}"
+                async_to_sync(channel_layer.group_send)(
+                    group_name,
+                    {
+                        'type': 'sendMassege',
+                        'message': json.dumps({'massege': 'change status openDoor', 'code': (1011+status_openDoor)})
+                    })
+                return  Response({"message":"ok"},status=status.HTTP_200_OK)
+            except:
+                return Response({"message": "Duplicate code (or other messages)"},
+                                status=status.HTTP_400_BAD_REQUEST)
+        else:
+            return Response({"message": "Duplicate code (or other messages)"},
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 class addHistory(APIView):
@@ -161,7 +173,7 @@ class addHistory(APIView):
             request_status=data.get('request_status')
             id_member=data.get('id_member')
             try:
-                rassperyInfo=RassperySystem.objects.get(serial_rasFperyPi=serial_rasperyPi,token=token)
+                rassperyInfo=RassperySystem.objects.get(serial_rasperyPi=serial_rasperyPi,token=token)
             except:
                 return Response({"message": "rassperyPi does not exist with these specifications"},
                                 status=status.HTTP_400_BAD_REQUEST)
@@ -177,7 +189,8 @@ class addHistory(APIView):
             return Response({"message": "add history succ"}, status=status.HTTP_201_CREATED)
 
         else:
-            return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
+            return Response({"message": "Duplicate code (or other messages)"},
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -202,8 +215,8 @@ class openDoor(APIView):
                     async_to_sync(channel_layer.group_send)(
                         group_name,
                         {
-                            'type':'open_door',
-                            'message': json.dumps({'massege':'open_door','code':1011})
+                            'type':'sendMassege',
+                            'message': json.dumps({'massege':'open Door','code':1011})
                         })
                     return Response({"message": "open dooring"}, status=status.HTTP_200_OK)
                 else:

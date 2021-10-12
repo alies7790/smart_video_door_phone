@@ -4,6 +4,7 @@ from channels.generic.websocket import WebsocketConsumer
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
 
+from doorSecurity.models import InformationService
 from rassperypiInfo.models import RassperySystem
 
 
@@ -20,6 +21,7 @@ class openDoorCunsumer(WebsocketConsumer):
         try:
             rassperypiInfo=RassperySystem.objects.get(serial_rasperyPi=self.serial_rasperyPi , token=self.token)
             rassperypiInfo.online_status=1
+            rassperypiInfo.save()
             self.rassperypiInfo=rassperypiInfo
         except:
             self.send("not rassperyPi with informathons")
@@ -32,6 +34,12 @@ class openDoorCunsumer(WebsocketConsumer):
             self.channel_name
         )
         self.accept()
+        try:
+            informationService=InformationService.objects.get(rassperypiInfo=self.rassperypiInfo)
+            self.send(json.dumps({'massege': 'change status openDoor', 'code': (1011 + informationService.status_opendoor)}))
+        except:
+            self.send("not rassperyPi with informathons")
+            self.disconnect(close_code=1)
 
     def disconnect(self, close_code):
         self.rassperypiInfo.online_status=2
@@ -49,9 +57,9 @@ class openDoorCunsumer(WebsocketConsumer):
             async_to_sync(channel_layer.group_send)(
                 self.group_name,
                 {
-                    'type': 'open_door',
-                    'message': json.dumps({'order':'open_door'})
+                    'type': 'sendMassege',
+                    'message': json.dumps({'order':'sendMassege'})
                 })
-    def open_door(self,event):
+    def sendMassege(self, event):
         message=event['message']
         self.send(text_data=message)
