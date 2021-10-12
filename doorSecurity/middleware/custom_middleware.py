@@ -14,10 +14,11 @@ class exitLincenceMiddleware(MiddlewareMixin):
 
     WHITELISTED_URLS = [
         '/door-security/open-door/',
-        'get-all-member/',
-        'get-history/'
+        '/door-security/get-all-member/',
+        '/door-security/get-history/'
         '/door-security/update-member/',
-        '/door-security/add-member/'
+        '/door-security/add-member/',
+        '/door-security/add-history/',
     ]
     def process_request(self, request):
         if request.path in self.WHITELISTED_URLS:
@@ -33,12 +34,21 @@ class exitLincenceMiddleware(MiddlewareMixin):
             return None
 
 
-class checkLincenseMiddleware(MiddlewareMixin):
-    # One-time configuration and initialization.
+class checkMemberIsForRasspery(MiddlewareMixin):
     WHITELISTED_URLS = [
         '/door-security/open-door/',
         '/door-security/update-member/',
-        '/door-security/add-member/'
+        '/door-security/add-history/',
+    ]
+
+
+
+class checkLincenseMiddleware(MiddlewareMixin):
+
+    WHITELISTED_URLS = [
+        '/door-security/open-door/',
+        '/door-security/update-member/',
+        '/door-security/add-member/',
     ]
 
     def process_request(self, request):

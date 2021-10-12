@@ -65,13 +65,13 @@ class getHistory(AutoSchema):
 
 class changeStatusOpenDoor(AutoSchema):
     def get_description(self, path, method):
-        return 'change status openDoor'
+        return 'change status openDoor(1 on , 2 off)'
     def get_manual_fields(self, path, method):
         extra_filds=[]
         if method.lower() == 'patch':
             extra_filds = [
                 coreapi.Field('serial_rasperyPi'),
-                coreapi.Field('status'),
+                coreapi.Field('status_openDoor'),
             ]
         manual_fields= super().get_manual_fields(path,method)
         return  manual_fields + extra_filds
@@ -95,7 +95,7 @@ class addHistory(AutoSchema):
 
 class openDoor(AutoSchema):
     def get_description(self, path, method):
-        return 'add member to a doorSecurity'
+        return 'request open door with app'
     def get_manual_fields(self, path, method):
         extra_filds=[]
         if method.lower() == 'post':

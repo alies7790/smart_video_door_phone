@@ -11,4 +11,5 @@ urlpatterns = [
     path('get-all-member/', api.getAllMemberDoorSecurity.as_view(), name='گرفتن تمام اعضا'),
     path('get-history/', api.getHistory.as_view(), name='تاریخچه'),
     path('add-history/', api.addHistory.as_view(), name='اضافه کردن ی تارخچه'),
+    path('update-status-opendoor/', api.changeStatusOpenDoor.as_view(), name='عوض کردن وضعیت باز کردن درب'),
 ]

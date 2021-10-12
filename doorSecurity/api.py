@@ -135,8 +135,8 @@ class getHistory(APIView):
 
 class changeStatusOpenDoor(APIView):
     schema = schemas.changeStatusOpenDoor()
-    def patch(self,request,*args ,**kwargs):
-        serializer=serializers.changeStatusOpenDoor(date=request.data)
+    def patch(self , request, *args, **kwargs):
+        serializer=serializers.changeStatusOpenDoor(data=request.data)
         if serializer.is_valid():
             data = serializer.validated_data
             serial_rasperyPi = data.get('serial_rasperyPi')
@@ -155,7 +155,7 @@ class changeStatusOpenDoor(APIView):
                     })
                 return  Response({"message":"ok"},status=status.HTTP_200_OK)
             except:
-                return Response({"message": "Duplicate code (or other messages)"},
+                return Response({"message": "please try again,later"},
                                 status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response({"message": "Duplicate code (or other messages)"},
