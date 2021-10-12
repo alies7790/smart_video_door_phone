@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="create model openDoor a informationService with lincence&#10;change rassperyInfo from lincence model to informationService &#10;&#10;add on,off service openDoor&#10;&#10;add address to RassperySystem model rassperyinf app">
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="add to url changeStatusOpenDoor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +127,7 @@
       <workItem from="1633260601182" duration="7991000" />
       <workItem from="1633269809321" duration="200000" />
       <workItem from="1633349917200" duration="5649000" />
-      <workItem from="1634042895684" duration="6686000" />
+      <workItem from="1634042895684" duration="7490000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug and log">
       <created>1632225561975</created>
@@ -320,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634049840704</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="add to url changeStatusOpenDoor">
+      <created>1634051112783</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1634051112783</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +355,8 @@
     <MESSAGE value="add app websocketManage,transfer cunsumer and routing from app doorSecurity to them&#10;add code for manage websocket" />
     <MESSAGE value="change name model historyDoorSecurity to history&#10;&#10;add api addHistory" />
     <MESSAGE value="create model openDoor a informationService with lincence&#10;change rassperyInfo from lincence model to informationService &#10;&#10;add on,off service openDoor&#10;&#10;add address to RassperySystem model rassperyinf app" />
-    <option name="LAST_COMMIT_MESSAGE" value="create model openDoor a informationService with lincence&#10;change rassperyInfo from lincence model to informationService &#10;&#10;add on,off service openDoor&#10;&#10;add address to RassperySystem model rassperyinf app" />
+    <MESSAGE value="add to url changeStatusOpenDoor" />
+    <option name="LAST_COMMIT_MESSAGE" value="add to url changeStatusOpenDoor" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/smart_video_door_phone$custom_middleware.coverage" NAME="custom_middleware Coverage Results" MODIFIED="1633253332044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doorSecurity/middleware" />

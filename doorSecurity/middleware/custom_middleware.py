@@ -7,7 +7,7 @@ from datetime import date
 
 
 
-from doorSecurity.models import LicenseToUse, InformationService
+from doorSecurity.models import LicenseToUse, InformationService, Members
 
 
 class exitLincenceMiddleware(MiddlewareMixin):
@@ -30,17 +30,30 @@ class exitLincenceMiddleware(MiddlewareMixin):
             except:
                 return JsonResponse({"message": "no lincense for you"},
                                 status=status.HTTP_404_NOT_FOUND)
+            return None
         else:
             return None
 
 
 class checkMemberIsForRasspery(MiddlewareMixin):
     WHITELISTED_URLS = [
-        '/door-security/open-door/',
         '/door-security/update-member/',
         '/door-security/add-history/',
     ]
-
+    def process_request(self, request):
+        if request.path in self.WHITELISTED_URLS:
+            body_unicode = request.body.decode('utf-8')
+            body = json.loads(body_unicode)
+            serial_rasperyPi = body['serial_rasperyPi']
+            id_member = body['id_member']
+            try:
+                member = Members.objects.get(id=id_member, rassperySystem__serial_rasperyPi=serial_rasperyPi)
+            except:
+                return JsonResponse({"message": "no member exit for you"},
+                                    status=status.HTTP_404_NOT_FOUND)
+            return None
+        else:
+            return None
 
 
 class checkLincenseMiddleware(MiddlewareMixin):

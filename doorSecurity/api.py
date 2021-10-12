@@ -57,11 +57,8 @@ class updateMember(APIView):
                 allow = data.get('allow')
                 name=data.get('name')
                 title=data.get('title')
-                try:
-                    informationService = InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
+                informationService = InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
                                                               rassperypiInfo__serial_rasperyPi=serial_rasperyPi,)
-                except:
-                    return Response({"message": "no lincense for you"}, status=status.HTTP_400_BAD_REQUEST)
                 try:
                     member = Members.objects.get(id=id_member, rassperySystem=informationService.rassperypiInfo)
                     member.allow_status = allow
