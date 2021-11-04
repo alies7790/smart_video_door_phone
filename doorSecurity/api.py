@@ -1,6 +1,8 @@
 
 import json
 
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from channels.layers import get_channel_layer
@@ -18,14 +20,13 @@ class addMember(APIView):
     def post(self,request, *args, **kwargs):
         serializer = serializers.addMember(data=request.data)
         if serializer.is_valid():
-            if request.user.is_authenticated:
                 data = serializer.validated_data
-                serial_rasperyPi=data.get('serial_rasperyPi')
+                hash_serial_rasperyPi=data.get('hash_serial_rasperyPi')
                 title=data.get('title')
                 name = data.get('name')
                 try:
                     informationService=InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
-                                                              rassperypiInfo__serial_rasperyPi=serial_rasperyPi,)
+                                                              rassperypiInfo__hash_serial_rassperyPi=hash_serial_rasperyPi,)
                 except:
                     return Response({"message": "no lincense for you"},status=status.HTTP_400_BAD_REQUEST)
                 try:
@@ -34,8 +35,6 @@ class addMember(APIView):
                     return Response({"message": "add member succ"}, status=status.HTTP_201_CREATED)
                 except:
                     return Response({"message": "please try again later"}, status=status.HTTP_408_REQUEST_TIMEOUT)
-            else:
-                return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
         else:
             return Response({"message": "Duplicate code (or other messages)"},
                                 status=status.HTTP_400_BAD_REQUEST)
@@ -50,15 +49,14 @@ class updateMember(APIView):
     def patch(self, request, *args, **kwargs):
         serializer = serializers.updateMember(data=request.data)
         if serializer.is_valid():
-            if request.user.is_authenticated:
                 data = serializer.validated_data
-                serial_rasperyPi = data.get('serial_rasperyPi')
+                hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
                 id_member = data.get('id_member')
                 allow = data.get('allow')
                 name=data.get('name')
                 title=data.get('title')
                 informationService = InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
-                                                              rassperypiInfo__serial_rasperyPi=serial_rasperyPi,)
+                                                              rassperypiInfo__hash_serial_rasperyPi=hash_serial_rasperyPi,)
                 try:
                     member = Members.objects.get(id=id_member, rassperySystem=informationService.rassperypiInfo)
                     member.allow_status = allow
@@ -68,8 +66,6 @@ class updateMember(APIView):
                     return Response({"message": "update member succ"}, status=status.HTTP_201_CREATED)
                 except:
                     return Response({"message": "please try again later"}, status=status.HTTP_201_CREATED)
-            else:
-                return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
         else:
             return Response({"message": "Duplicate code (or other messages)"},
                             status=status.HTTP_400_BAD_REQUEST)
@@ -80,10 +76,9 @@ class getAllMemberDoorSecurity(APIView):
     def post(self,request, *args, **kwargs):
         serializer = serializers.getAllMember(data=request.data)
         if serializer.is_valid():
-            if request.user.is_authenticated:
                 data = serializer.validated_data
-                serial_rasperyPi = data.get('serial_rasperyPi')
-                members=Members.objects.filter(rassperySystem__serial_rasperyPi=serial_rasperyPi).order_by('add_date')
+                hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
+                members=Members.objects.filter(rassperySystem__hash_serial_rasperyPi=hash_serial_rasperyPi).order_by('add_date')
                 lis = []
                 for member in members:
                     d = {}
@@ -95,8 +90,6 @@ class getAllMemberDoorSecurity(APIView):
                     d['allow_status'] = member.allow_status
                     lis.append(d)
                 return Response({'members':lis},status=status.HTTP_200_OK)
-            else:
-                return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
         else:
             return Response({"message": "Duplicate code (or other messages)"},
                             status=status.HTTP_400_BAD_REQUEST)
@@ -109,10 +102,9 @@ class getHistory(APIView):
     def post(self,request, *args, **kwargs):
         serializer = serializers.getHistory(data=request.data)
         if serializer.is_valid():
-            if request.user.is_authenticated:
                 data = serializer.validated_data
-                serial_rasperyPi = data.get('serial_rasperyPi')
-                historys=history.objects.filter(rassperypiInfo__serial_rasperyPi=serial_rasperyPi).order_by('date')
+                hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
+                historys=history.objects.filter(rassperypiInfo__hash_serial_rasperyPi=hash_serial_rasperyPi).order_by('date')
                 lis=[]
                 for i in historys:
                     d={}
@@ -123,8 +115,6 @@ class getHistory(APIView):
                     d['request_status']=i.request_status
                     lis.append(d)
                 return Response({'historys':lis}, status=status.HTTP_200_OK)
-            else:
-                return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
         else:
             return Response({"message": "Duplicate code (or other messages)"},
                             status=status.HTTP_400_BAD_REQUEST)
@@ -136,14 +126,14 @@ class changeStatusOpenDoor(APIView):
         serializer=serializers.changeStatusOpenDoor(data=request.data)
         if serializer.is_valid():
             data = serializer.validated_data
-            serial_rasperyPi = data.get('serial_rasperyPi')
+            hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
             status_openDoor = data.get('status_openDoor')
             try:
-                informationService = InformationService.objects.get(rassperypiInfo__serial_rasperyPi=serial_rasperyPi)
+                informationService = InformationService.objects.get(rassperypiInfo__hash_serial_rasperyPi=hash_serial_rasperyPi)
                 informationService.status_opendoor=status_openDoor
                 informationService.save()
                 channel_layer = get_channel_layer()
-                group_name = f"doorSecurity_{informationService.rassperypiInfo.serial_rasperyPi}"
+                group_name = f"doorSecurity_{informationService.rassperypiInfo.hash_serial_rasperyPi}"
                 async_to_sync(channel_layer.group_send)(
                     group_name,
                     {
@@ -165,12 +155,12 @@ class addHistory(APIView):
         serializer = serializers.addHistory(data=request.data)
         if serializer.is_valid():
             data = serializer.validated_data
-            serial_rasperyPi = data.get('serial_rasperyPi')
+            hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
             token = data.get('token')
             request_status=data.get('request_status')
             id_member=data.get('id_member')
             try:
-                rassperyInfo=RassperySystem.objects.get(serial_rasperyPi=serial_rasperyPi,token=token)
+                rassperyInfo=RassperySystem.objects.get(hash_serial_rasperyPi=hash_serial_rasperyPi,token_connect_rassperypi=token)
             except:
                 return Response({"message": "rassperyPi does not exist with these specifications"},
                                 status=status.HTTP_400_BAD_REQUEST)
@@ -198,17 +188,16 @@ class openDoor(APIView):
     def post(self, request, *args, **kwargs):
         serializer = serializers.openDoor(data=request.data)
         if serializer.is_valid():
-            if request.user.is_authenticated:
                 data = serializer.validated_data
-                serial_rasperyPi = data.get('serial_rasperyPi')
+                hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
                 try:
-                    rassperyInfo=RassperySystem.objects.get(serial_rasperyPi=serial_rasperyPi,profile__user=request.user)
+                    rassperyInfo=RassperySystem.objects.get(hash_serial_rasperyPi=hash_serial_rasperyPi,profile__user=request.user)
                 except:
                     return Response({"message": "rassperyPi does not exist with these specifications"},
                                     status=status.HTTP_400_BAD_REQUEST)
                 if rassperyInfo.online_status==1 :
                     channel_layer=get_channel_layer()
-                    group_name=f"doorSecurity_{rassperyInfo.serial_rasperyPi}"
+                    group_name=f"doorSecurity_{rassperyInfo.hash_serial_rasperyPi}"
                     async_to_sync(channel_layer.group_send)(
                         group_name,
                         {
@@ -218,8 +207,6 @@ class openDoor(APIView):
                     return Response({"message": "open dooring"}, status=status.HTTP_200_OK)
                 else:
                     return Response({"message": "not online rassperyPi"}, status=status.HTTP_303_SEE_OTHER)
-            else:
-                return Response({"message": "not login"}, status=status.HTTP_401_UNAUTHORIZED)
         else:
             return Response({"message": "Duplicate code (or other messages)"},
                             status=status.HTTP_400_BAD_REQUEST)

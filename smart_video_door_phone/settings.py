@@ -63,6 +63,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'doorSecurity.middleware.custom_middleware.checkLogin',
     'doorSecurity.middleware.custom_middleware.exitLincenceMiddleware',
     'doorSecurity.middleware.custom_middleware.checkLincenseMiddleware',
     'doorSecurity.middleware.custom_middleware.checkMemberIsForRasspery'

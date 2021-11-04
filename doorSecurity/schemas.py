@@ -9,7 +9,7 @@ class addMember(AutoSchema):
         extra_filds=[]
         if method.lower() == 'post':
             extra_filds = [
-                coreapi.Field('serial_rasperyPi'),
+                coreapi.Field('hash_serial_rasperyPi'),
                 coreapi.Field('title'),
                 coreapi.Field('name'),
             #     coreapi.Field('picture'),
@@ -26,7 +26,7 @@ class updateMember(AutoSchema):
         extra_filds=[]
         if method.lower() == 'patch':
             extra_filds = [
-                coreapi.Field('serial_rasperyPi'),
+                coreapi.Field('hash_serial_rasperyPi'),
                 coreapi.Field('title'),
                 coreapi.Field('name'),
                 coreapi.Field('id_member'),
@@ -44,7 +44,7 @@ class getAllMemberDoorSecurity(AutoSchema):
         extra_filds=[]
         if method.lower() == 'post':
             extra_filds = [
-                coreapi.Field('serial_rasperyPi'),
+                coreapi.Field('hash_serial_rasperyPi'),
             ]
         manual_fields= super().get_manual_fields(path,method)
         return  manual_fields + extra_filds
@@ -57,7 +57,7 @@ class getHistory(AutoSchema):
         extra_filds=[]
         if method.lower() == 'post':
             extra_filds = [
-                coreapi.Field('serial_rasperyPi'),
+                coreapi.Field('hash_serial_rasperyPi'),
             ]
         manual_fields= super().get_manual_fields(path,method)
         return  manual_fields + extra_filds
@@ -70,7 +70,7 @@ class changeStatusOpenDoor(AutoSchema):
         extra_filds=[]
         if method.lower() == 'patch':
             extra_filds = [
-                coreapi.Field('serial_rasperyPi'),
+                coreapi.Field('hash_serial_rasperyPi'),
                 coreapi.Field('status_openDoor'),
             ]
         manual_fields= super().get_manual_fields(path,method)
@@ -78,12 +78,12 @@ class changeStatusOpenDoor(AutoSchema):
 
 class addHistory(AutoSchema):
     def get_description(self, path, method):
-        return 'add history openDoor use in rass not frontEnd, with serial_rasperyPi , token , id_member(not member -1) ,request_status '
+        return 'add history openDoor use in rass not frontEnd, with hash_serial_rasperyPi , token , id_member(not member -1) ,request_status '
     def get_manual_fields(self, path, method):
         extra_filds=[]
         if method.lower() == 'post':
             extra_filds = [
-                coreapi.Field('serial_rasperyPi'),
+                coreapi.Field('hash_serial_rasperyPi'),
                 coreapi.Field('token'),
                 coreapi.Field('id_member'),
                 coreapi.Field('request_status'),
@@ -100,7 +100,7 @@ class openDoor(AutoSchema):
         extra_filds=[]
         if method.lower() == 'post':
             extra_filds = [
-                coreapi.Field('serial_rasperyPi'),
+                coreapi.Field('hash_serial_rasperyPi'),
             ]
         manual_fields= super().get_manual_fields(path,method)
         return  manual_fields + extra_filds

@@ -19,7 +19,7 @@ class openDoorCunsumer(WebsocketConsumer):
             self.send("not serial-rasperypi &| token")
             self.disconnect(close_code=1)
         try:
-            rassperypiInfo=RassperySystem.objects.get(serial_rasperyPi=self.serial_rasperyPi , token=self.token)
+            rassperypiInfo=RassperySystem.objects.get(serial_rasperyPi=self.serial_rasperyPi , token_connect_rassperypi=self.token)
             rassperypiInfo.online_status=1
             rassperypiInfo.save()
             self.rassperypiInfo=rassperypiInfo
