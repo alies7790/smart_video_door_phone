@@ -24,7 +24,7 @@ class RassperySystem(models.Model):
     )
     address=models.TextField(verbose_name='آدرس محل نصب')
     online_status = models.IntegerField(choices=type_status_online, default=2, verbose_name='وضعیت درخواست')
-
+    title=models.CharField(max_length=80,verbose_name='عنوان رزری پای')
     def save(self, *args, **kwargs):
         # Make sure this is the first save (pk should be None) and there is no unit_price set
         self.hash_serial_rassperyPi = hashlib.sha256(self.serial_rasperyPi.__str__().encode('utf-8')).hexdigest()
