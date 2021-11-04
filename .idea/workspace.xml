@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="add to url changeStatusOpenDoor">
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="add middleware for check id_member for rassperypi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/schemas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NE" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -127,7 +128,10 @@
       <workItem from="1633260601182" duration="7991000" />
       <workItem from="1633269809321" duration="200000" />
       <workItem from="1633349917200" duration="5649000" />
-      <workItem from="1634042895684" duration="7490000" />
+      <workItem from="1634042895684" duration="8239000" />
+      <workItem from="1635341177320" duration="2627000" />
+      <workItem from="1635432849825" duration="1372000" />
+      <workItem from="1636043841550" duration="288000" />
     </task>
     <task id="LOCAL-00001" summary="fix bug and log">
       <created>1632225561975</created>
@@ -325,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634051112783</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="add middleware for check id_member for rassperypi">
+      <created>1634051778317</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1634051778317</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +367,8 @@
     <MESSAGE value="change name model historyDoorSecurity to history&#10;&#10;add api addHistory" />
     <MESSAGE value="create model openDoor a informationService with lincence&#10;change rassperyInfo from lincence model to informationService &#10;&#10;add on,off service openDoor&#10;&#10;add address to RassperySystem model rassperyinf app" />
     <MESSAGE value="add to url changeStatusOpenDoor" />
-    <option name="LAST_COMMIT_MESSAGE" value="add to url changeStatusOpenDoor" />
+    <MESSAGE value="add middleware for check id_member for rassperypi" />
+    <option name="LAST_COMMIT_MESSAGE" value="add middleware for check id_member for rassperypi" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/smart_video_door_phone$custom_middleware.coverage" NAME="custom_middleware Coverage Results" MODIFIED="1633253332044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doorSecurity/middleware" />

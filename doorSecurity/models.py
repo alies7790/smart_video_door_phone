@@ -63,4 +63,4 @@ class Members(models.Model):
         (unallow_openDoor,'فرد اجازه ورود ندارد')
     )
     allow_status = models.IntegerField(choices=type_status_members, default=1, verbose_name='وضعیت دسترسی فرد')
-#     picture
+    picture=models.ImageField(upload_to='person_image',verbose_name='عکس شخص')
