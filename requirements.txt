@@ -1,6 +1,6 @@
 aioredis==2.0.0
-asgi-redis==1.4.3
-asgiref==3.4.1
+asgi-redis<3
+asgiref<4
 async-timeout==4.0.0
 attrs==21.2.0
 autobahn==21.3.1
