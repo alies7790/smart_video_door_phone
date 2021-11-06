@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="change procfile for channel1" />
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="change procfile for channel1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,14 +156,7 @@
       <workItem from="1636100130225" duration="3350000" />
       <workItem from="1636103564547" duration="183000" />
       <workItem from="1636103854094" duration="1121000" />
-      <workItem from="1636105230066" duration="16662000" />
-    </task>
-    <task id="LOCAL-00015" summary=" api login step2 delete mobile,password">
-      <created>1632308036533</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1632308036533</updated>
+      <workItem from="1636105230066" duration="17301000" />
     </task>
     <task id="LOCAL-00016" summary=" api login step2 delete mobile,password">
       <created>1632332564891</created>
@@ -499,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636202017682</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="change procfile for channel1">
+      <created>1636202379962</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1636202379962</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
