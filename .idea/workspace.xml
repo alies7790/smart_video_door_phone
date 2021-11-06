@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="change procfile for channel" />
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="change procfile for channel">
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/asgi.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,21 +156,7 @@
       <workItem from="1636100130225" duration="3350000" />
       <workItem from="1636103564547" duration="183000" />
       <workItem from="1636103854094" duration="1121000" />
-      <workItem from="1636105230066" duration="11053000" />
-    </task>
-    <task id="LOCAL-00007" summary=" api login step2 delete mobile,password">
-      <created>1632247300248</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1632247300248</updated>
-    </task>
-    <task id="LOCAL-00008" summary=" api login step2 delete mobile,password">
-      <created>1632294125981</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1632294125981</updated>
+      <workItem from="1636105230066" duration="11379000" />
     </task>
     <task id="LOCAL-00009" summary=" api login step2 delete mobile,password">
       <created>1632294690810</created>
@@ -499,7 +487,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636195264623</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="change procfile for channel">
+      <created>1636195540492</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1636195540492</updated>
+    </task>
+    <task id="LOCAL-00057" summary="change procfile for channel">
+      <created>1636195688945</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1636195688945</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
