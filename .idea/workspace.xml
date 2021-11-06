@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="change procfile for channel">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,14 +157,7 @@
       <workItem from="1636100130225" duration="3350000" />
       <workItem from="1636103564547" duration="183000" />
       <workItem from="1636103854094" duration="1121000" />
-      <workItem from="1636105230066" duration="7319000" />
-    </task>
-    <task id="LOCAL-00003" summary="fix bug and log">
-      <created>1632225723442</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1632225723442</updated>
+      <workItem from="1636105230066" duration="8624000" />
     </task>
     <task id="LOCAL-00004" summary="add CORS">
       <created>1632227087186</created>
@@ -501,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636116198150</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="change procfile for channel">
+      <created>1636116528761</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1636116528761</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
