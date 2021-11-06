@@ -16,7 +16,7 @@ daphne==3.0.2
 defusedxml==0.7.1
 dj-database-url==0.5.0
 Django==3.2.7
-django-cors-headers==3.8.0
+django-cors-headers==3.8.0Fdjdjango-heroku
 django-heroku==0.3.1
 django-rest-framework==0.1.0
 django-rest-swagger==2.2.0

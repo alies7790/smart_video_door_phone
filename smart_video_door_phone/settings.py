@@ -111,7 +111,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [{'address':("redis-19661.c251.east-us-mz.azure.cloud.redislabs.com", 19661),'password':"xfWD5WAZKxoMTWFGjceqefkyb49X0E8y",}]
+            "hosts": [{'address':("redis-15347.c251.east-us-mz.azure.cloud.redislabs.com", 15347),'password':"mx5J24eYUt4Yxzd9NmH25nmIvXXZgY58",}]
         },
     },
 }
