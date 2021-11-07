@@ -113,7 +113,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [{'address':("redis-15347.c251.east-us-mz.azure.cloud.redislabs.com", 15347),'password':"mx5J24eYUt4Yxzd9NmH25nmIvXXZgY58",}]
+            "hosts": [{'address':("redis-11841.c251.east-us-mz.azure.cloud.redislabs.com", 11841),'password':"as8qO8oBJBLiOCVNuCr52YNLKNHttUah",}]
         },
     },
 }
@@ -199,7 +199,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
 
 # CELERY SETTINGS
-CELERY_BROKER_URL = 'redis://:@mx5J24eYUt4Yxzd9NmH25nmIvXXZgY58redis-15347.c251.east-us-mz.azure.cloud.redislabs.com:15347'
+CELERY_BROKER_URL = 'redis://:as8qO8oBJBLiOCVNuCr52YNLKNHttUah@redis-11841.c251.east-us-mz.azure.cloud.redislabs.com:11841'
 #CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_ACCEPT_CONTENT = ['application/json']
