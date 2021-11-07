@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="change settings and ....&#10;for celery">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="change settings and ....&#10;for celery" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,21 +177,7 @@
       <workItem from="1636100130225" duration="3350000" />
       <workItem from="1636103564547" duration="183000" />
       <workItem from="1636103854094" duration="1121000" />
-      <workItem from="1636105230066" duration="28111000" />
-    </task>
-    <task id="LOCAL-00026" summary="change name model historyDoorSecurity to history&#10;&#10;add api addHistory">
-      <created>1633355621105</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1633355621105</updated>
-    </task>
-    <task id="LOCAL-00027" summary="create model openDoor a informationService with lincence&#10;change rassperyInfo from lincence model to informationService &#10;&#10;add on,off service openDoor&#10;&#10;add address to RassperySystem model rassperyinf app">
-      <created>1634049840704</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1634049840704</updated>
+      <workItem from="1636105230066" duration="28440000" />
     </task>
     <task id="LOCAL-00028" summary="add to url changeStatusOpenDoor">
       <created>1634051112783</created>
@@ -525,7 +508,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636288850127</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="change settings and ....&#10;for celery">
+      <created>1636289606220</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1636289606220</updated>
+    </task>
+    <task id="LOCAL-00076" summary="change settings and ....&#10;for celery">
+      <created>1636289740761</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1636289740761</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
