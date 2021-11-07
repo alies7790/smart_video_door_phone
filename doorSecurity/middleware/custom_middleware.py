@@ -21,6 +21,7 @@ class checkLogin(MiddlewareMixin):
     def process_request(self, request):
         if request.path in self.WHITELISTED_URLS:
             if request.user.is_authenticated:
+                print("kkk")
                 return  None
             else:
                 return JsonResponse({"message": "no login"},
@@ -72,7 +73,7 @@ class exitLincenceMiddleware(MiddlewareMixin):
             try:
                 body_unicode = request.body.decode('utf-8')
                 body = json.loads(body_unicode)
-                serial_rasperyPi = body['serial_rasperyPi']
+                serial_rasperyPi = body['hash_serial_rasperyPi']
             except:
                 return JsonResponse({"message": "Duplicate code (or other messages)"},
                                 status=status.HTTP_400_BAD_REQUEST)
@@ -97,7 +98,7 @@ class checkMemberIsForRasspery(MiddlewareMixin):
             try:
                 body_unicode = request.body.decode('utf-8')
                 body = json.loads(body_unicode)
-                serial_rasperyPi = body['serial_rasperyPi']
+                serial_rasperyPi = body['hash_serial_rasperyPi']
                 id_member = body['id_member']
             except:
                 return JsonResponse({"message": "Duplicate code (or other messages)"},
@@ -126,7 +127,7 @@ class checkLincenseMiddleware(MiddlewareMixin):
             try:
                 body_unicode = request.body.decode('utf-8')
                 body = json.loads(body_unicode)
-                serial_rasperyPi = body['serial_rasperyPi']
+                serial_rasperyPi = body['hash_serial_rasperyPi']
                 licenseToUse = InformationService.objects.get(
                     rassperypiInfo__serial_rasperyPi=str(serial_rasperyPi)).lincense
                 now = date.today()

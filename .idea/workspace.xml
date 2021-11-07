@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="change procfile for channel1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
       <recent name="G:\django\smart_video_door_phone\websocketManage" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.smart_video_door_phone">
+  <component name="RunManager" selected="Python.s (1)">
     <configuration name="custom_middleware" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="smart_video_door_phone" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -67,6 +68,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="s (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="smart_video_door_phone" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/smart_video_door_phone" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/smart_video_door_phone/s.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -123,6 +146,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.s (1)" />
         <item itemvalue="Python.s" />
         <item itemvalue="Python.custom_middleware" />
       </list>
@@ -156,14 +180,7 @@
       <workItem from="1636100130225" duration="3350000" />
       <workItem from="1636103564547" duration="183000" />
       <workItem from="1636103854094" duration="1121000" />
-      <workItem from="1636105230066" duration="17301000" />
-    </task>
-    <task id="LOCAL-00016" summary=" api login step2 delete mobile,password">
-      <created>1632332564891</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1632332564891</updated>
+      <workItem from="1636105230066" duration="20690000" />
     </task>
     <task id="LOCAL-00017" summary="change my structure for rassinfo securety and delete moduleController">
       <created>1632332698738</created>
@@ -501,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636202379962</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="change procfile for channel1">
+      <created>1636202998312</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1636202998312</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,6 +565,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="change procfile for channel1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/smart_video_door_phone$s__1_.coverage" NAME="s (1) Coverage Results" MODIFIED="1636273303631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/smart_video_door_phone" />
     <SUITE FILE_PATH="coverage/smart_video_door_phone$custom_middleware.coverage" NAME="custom_middleware Coverage Results" MODIFIED="1633253332044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doorSecurity/middleware" />
     <SUITE FILE_PATH="coverage/smart_video_door_phone$s.coverage" NAME="s Coverage Results" MODIFIED="1636100953663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rassperypiInfo" />
   </component>
