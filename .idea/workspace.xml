@@ -180,14 +180,7 @@
       <workItem from="1636100130225" duration="3350000" />
       <workItem from="1636103564547" duration="183000" />
       <workItem from="1636103854094" duration="1121000" />
-      <workItem from="1636105230066" duration="29466000" />
-    </task>
-    <task id="LOCAL-00030" summary="add middleware for check id_member for rassperypi">
-      <created>1636044231308</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1636044231308</updated>
+      <workItem from="1636105230066" duration="30165000" />
     </task>
     <task id="LOCAL-00031" summary="add middleware for check login in doorsecurity app&#10;add midleware for check hash_seriall for member in doorsecurity app&#10;change model rassperyInfo,add hash_serial_rassperypi and change save for set hash from seriall">
       <created>1636050936382</created>
@@ -525,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636292167595</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="change settings and ....&#10;for celery">
+      <created>1636292727603</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1636292727603</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
