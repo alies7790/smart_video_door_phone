@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="change procfile for channel1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" afterDir="false" />
-    </list>
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="ago setting cors" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,21 +177,7 @@
       <workItem from="1636100130225" duration="3350000" />
       <workItem from="1636103564547" duration="183000" />
       <workItem from="1636103854094" duration="1121000" />
-      <workItem from="1636105230066" duration="20690000" />
-    </task>
-    <task id="LOCAL-00017" summary="change my structure for rassinfo securety and delete moduleController">
-      <created>1632332698738</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1632332698738</updated>
-    </task>
-    <task id="LOCAL-00018" summary="add api door security">
-      <created>1632675102169</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1632675102169</updated>
+      <workItem from="1636105230066" duration="21228000" />
     </task>
     <task id="LOCAL-00019" summary="add api debug doorsecurity App">
       <created>1632680572263</created>
@@ -525,7 +508,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636202998312</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="change cors &#10;and fix middlewares doorscuerity">
+      <created>1636278798334</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1636278798334</updated>
+    </task>
+    <task id="LOCAL-00067" summary="ago setting cors">
+      <created>1636279263941</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1636279263941</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +559,9 @@
     <MESSAGE value="change requirments.txt" />
     <MESSAGE value="change procfile for channel" />
     <MESSAGE value="change procfile for channel1" />
-    <option name="LAST_COMMIT_MESSAGE" value="change procfile for channel1" />
+    <MESSAGE value="change cors &#10;and fix middlewares doorscuerity" />
+    <MESSAGE value="ago setting cors" />
+    <option name="LAST_COMMIT_MESSAGE" value="ago setting cors" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/smart_video_door_phone$s__1_.coverage" NAME="s (1) Coverage Results" MODIFIED="1636273303631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/smart_video_door_phone" />
