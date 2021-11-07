@@ -199,7 +199,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
 
 # CELERY SETTINGS
-CELERY_BROKER_URL = 'redis-15347.c251.east-us-mz.azure.cloud.redislabs.com'
+# CELERY_BROKER_URL = 'redis-15347.c251.east-us-mz.azure.cloud.redislabs.com'
 #CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_ACCEPT_CONTENT = ['application/json']
