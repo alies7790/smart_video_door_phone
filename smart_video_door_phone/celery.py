@@ -12,7 +12,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smart_video_door_phone.settings
 app = Celery('smart_video_door_phone')
 app.conf.enable_utc = False
 app.conf.update(timezone='Asia/Kolkata')
-
+app.conf.broker_transport_options = { 'sentinel_kwargs': { 'password': "mx5J24eYUt4Yxzd9NmH25nmIvXXZgY58" } }
 app.config_from_object(settings, namespace='CELERY')
 
 app.conf.beat_schedule = {
