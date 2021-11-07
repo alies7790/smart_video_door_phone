@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="ALLOWED_HOSTS = ['*']">
-      <change afterPath="$PROJECT_DIR$/smart_video_door_phone/celery.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="change settings and ....&#10;for celery" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,14 +177,7 @@
       <workItem from="1636100130225" duration="3350000" />
       <workItem from="1636103564547" duration="183000" />
       <workItem from="1636103854094" duration="1121000" />
-      <workItem from="1636105230066" duration="26528000" />
-    </task>
-    <task id="LOCAL-00021" summary="add api debug doorsecurity App">
-      <created>1632680679127</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1632680679127</updated>
+      <workItem from="1636105230066" duration="26827000" />
     </task>
     <task id="LOCAL-00022" summary="edite api door security">
       <created>1632692963539</created>
@@ -529,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636279677030</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="change settings and ....&#10;for celery">
+      <created>1636288243992</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1636288243992</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +563,8 @@
     <MESSAGE value="ago setting cors" />
     <MESSAGE value="fix procfile" />
     <MESSAGE value="ALLOWED_HOSTS = ['*']" />
-    <option name="LAST_COMMIT_MESSAGE" value="ALLOWED_HOSTS = ['*']" />
+    <MESSAGE value="change settings and ....&#10;for celery" />
+    <option name="LAST_COMMIT_MESSAGE" value="change settings and ....&#10;for celery" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/smart_video_door_phone$s__1_.coverage" NAME="s (1) Coverage Results" MODIFIED="1636273303631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/smart_video_door_phone" />
