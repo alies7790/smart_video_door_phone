@@ -209,5 +209,4 @@ CELERY_TASK_SELERLIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Tehran'
 
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
-DJANGO_CELERY_BEAT_TZ_AWARE=False
 

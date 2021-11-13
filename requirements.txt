@@ -57,6 +57,7 @@ celery
 django_celery_results
 django_celery_beat
 txaio==21.2.1
+redis
 typing-extensions==3.10.0.0
 tzdata==2021.1
 uritemplate==3.0.1
