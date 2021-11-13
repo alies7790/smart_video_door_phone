@@ -24,13 +24,14 @@ class addMember(APIView):
                 hash_serial_rasperyPi=data.get('hash_serial_rasperyPi')
                 title=data.get('title')
                 name = data.get('name')
+                picture = data.get('picture')
                 try:
                     informationService=InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
                                                               rassperypiInfo__hash_serial_rassperyPi=hash_serial_rasperyPi,)
                 except:
-                    return Response({"message": "no lincense for you"},status=status.HTTP_400_BAD_REQUEST)
+                    return Response({"message": "please try later"},status=status.HTTP_408_REQUEST_TIMEOUT)
                 try:
-                    member = Members.objects.create(title=title, name=name,rassperySystem=informationService.rassperypiInfo)
+                    member = Members.objects.create(title=title,picture=picture, name=name,rassperySystem=informationService.rassperypiInfo)
                     member.save()
                     return Response({"message": "add member succ"}, status=status.HTTP_201_CREATED)
                 except:
@@ -55,13 +56,15 @@ class updateMember(APIView):
                 allow = data.get('allow')
                 name=data.get('name')
                 title=data.get('title')
+                picture=data.get('picture')
                 informationService = InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
-                                                              rassperypiInfo__hash_serial_rasperyPi=hash_serial_rasperyPi,)
+                                                              rassperypiInfo__hash_serial_rassperyPi=hash_serial_rasperyPi,)
                 try:
                     member = Members.objects.get(id=id_member, rassperySystem=informationService.rassperypiInfo)
                     member.allow_status = allow
                     member.title=title
                     member.name=name
+                    member.picture = picture
                     member.save()
                     return Response({"message": "update member succ"}, status=status.HTTP_201_CREATED)
                 except:
@@ -78,7 +81,7 @@ class getAllMemberDoorSecurity(APIView):
         if serializer.is_valid():
                 data = serializer.validated_data
                 hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
-                members=Members.objects.filter(rassperySystem__hash_serial_rasperyPi=hash_serial_rasperyPi).order_by('add_date')
+                members=Members.objects.filter(rassperySystem__hash_serial_rassperyPi=hash_serial_rasperyPi).order_by('add_date')
                 lis = []
                 for member in members:
                     d = {}
@@ -88,6 +91,7 @@ class getAllMemberDoorSecurity(APIView):
                     d['add_date'] = member.add_date
                     d['change_status_date'] = member.change_status_date
                     d['allow_status'] = member.allow_status
+                    d['picture'] = member.picture
                     lis.append(d)
                 return Response({'members':lis},status=status.HTTP_200_OK)
         else:
@@ -104,13 +108,14 @@ class getHistory(APIView):
         if serializer.is_valid():
                 data = serializer.validated_data
                 hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
-                historys=history.objects.filter(rassperypiInfo__hash_serial_rasperyPi=hash_serial_rasperyPi).order_by('date')
+                historys=history.objects.filter(rassperypiInfo__hash_serial_rassperyPi=hash_serial_rasperyPi).order_by('date')
                 lis=[]
                 for i in historys:
                     d={}
                     d['id']=i.id
                     if i.member :
                         d['title']=i.member.title
+                        d['picture'] = i.member.picture
                     d['dateTime']=i.date
                     d['request_status']=i.request_status
                     lis.append(d)
@@ -129,11 +134,11 @@ class changeStatusOpenDoor(APIView):
             hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
             status_openDoor = data.get('status_openDoor')
             try:
-                informationService = InformationService.objects.get(rassperypiInfo__hash_serial_rasperyPi=hash_serial_rasperyPi)
+                informationService = InformationService.objects.get(rassperypiInfo__hash_serial_rassperyPi=hash_serial_rasperyPi)
                 informationService.status_opendoor=status_openDoor
                 informationService.save()
                 channel_layer = get_channel_layer()
-                group_name = f"doorSecurity_{informationService.rassperypiInfo.hash_serial_rasperyPi}"
+                group_name = f"doorSecurity_{informationService.rassperypiInfo.hash_serial_rassperyPi}"
                 async_to_sync(channel_layer.group_send)(
                     group_name,
                     {
@@ -159,19 +164,20 @@ class addHistory(APIView):
             token = data.get('token')
             request_status=data.get('request_status')
             id_member=data.get('id_member')
+            picture = data.get('picture')
             try:
-                rassperyInfo=RassperySystem.objects.get(hash_serial_rasperyPi=hash_serial_rasperyPi,token_connect_rassperypi=token)
+                rassperyInfo=RassperySystem.objects.get(hash_serial_rassperyPi=hash_serial_rasperyPi,token_connect_rassperypi=token)
             except:
                 return Response({"message": "rassperyPi does not exist with these specifications"},
                                 status=status.HTTP_400_BAD_REQUEST)
-            try:
-                if id_member==-1:
-                    history_created=history.objects.create(rassperypiInfo=rassperyInfo,request_status=3)
-                else:
-                    history_created = history.objects.create(rassperypiInfo=rassperyInfo, request_status=request_status,member_id=id_member)
-            except:
-                return Response({"message": "information not true or server busy,please check information send again"},
-                                status=status.HTTP_400_BAD_REQUEST)
+            # try:
+            if id_member==-1:
+                history_created=history.objects.create(rassperypiInfo=rassperyInfo,request_status=3,picture=picture)
+            else:
+                history_created = history.objects.create(rassperypiInfo=rassperyInfo, picture=picture,request_status=request_status,member_id=id_member)
+        # except:
+            #     return Response({"message": "information not true or server busy,please check information send again"},
+            #                     status=status.HTTP_400_BAD_REQUEST)
             history_created.save()
             return Response({"message": "add history succ"}, status=status.HTTP_201_CREATED)
 
@@ -210,3 +216,4 @@ class openDoor(APIView):
         else:
             return Response({"message": "Duplicate code (or other messages)"},
                             status=status.HTTP_400_BAD_REQUEST)
+

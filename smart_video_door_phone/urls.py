@@ -43,6 +43,7 @@ schema_view =get_swagger_view('smart_video_door_phone')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/',include('accounts.urls')),
+    path('generall/',include('generallApp.urls')),
     path('door-security/',include('doorSecurity.urls')),
     path('',schema_view),
 

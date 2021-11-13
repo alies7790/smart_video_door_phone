@@ -13,6 +13,7 @@ class InformationService(models.Model):
         verbose_name_plural= 'مدیریت اطلاعات سرویس'
     rassperypiInfo = models.OneToOneField(RassperySystem, on_delete=models.CASCADE)
     lincense=models.OneToOneField('LicenseToUse',on_delete=models.CASCADE)
+    title=models.CharField(max_length=30)
     on = 1
     off= 2
     type_status_opendoor=(
@@ -26,6 +27,7 @@ class LicenseToUse(models.Model):
     class Meta:
         verbose_name = 'مدیریت lincense بازکردن درب'
         verbose_name_plural = 'مدیریت lincense بازکردن درب'
+    rassperypiInfo = models.OneToOneField(RassperySystem, on_delete=models.CASCADE)
     start_lincense=models.DateField(auto_now_add=True)
     end_lincense=models.DateField()
 
@@ -45,7 +47,7 @@ class history(models.Model):
         (no_memeber,'همچین شخصی تعریف نشده است')
     )
     request_status = models.IntegerField(choices=type_status_request, default=1, verbose_name='وضعیت درخواست')
-#     picture
+    picture = models.TextField(verbose_name='عکس شخص')
 
 class Members(models.Model):
     class Meta:
@@ -63,4 +65,4 @@ class Members(models.Model):
         (unallow_openDoor,'فرد اجازه ورود ندارد')
     )
     allow_status = models.IntegerField(choices=type_status_members, default=1, verbose_name='وضعیت دسترسی فرد')
-    picture=models.ImageField(upload_to='person_image',verbose_name='عکس شخص')
+    picture=models.TextField(verbose_name='عکس شخص')

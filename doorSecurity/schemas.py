@@ -12,6 +12,7 @@ class addMember(AutoSchema):
                 coreapi.Field('hash_serial_rasperyPi'),
                 coreapi.Field('title'),
                 coreapi.Field('name'),
+                coreapi.Field('picture')
             #     coreapi.Field('picture'),
             ]
         manual_fields= super().get_manual_fields(path,method)
@@ -30,7 +31,8 @@ class updateMember(AutoSchema):
                 coreapi.Field('title'),
                 coreapi.Field('name'),
                 coreapi.Field('id_member'),
-                coreapi.Field('allow')
+                coreapi.Field('allow'),
+                coreapi.Field('picture')
             #     coreapi.Field('picture'),
             ]
         manual_fields= super().get_manual_fields(path,method)
@@ -87,6 +89,7 @@ class addHistory(AutoSchema):
                 coreapi.Field('token'),
                 coreapi.Field('id_member'),
                 coreapi.Field('request_status'),
+                coreapi.Field('picture')
             ]
         manual_fields= super().get_manual_fields(path,method)
         return  manual_fields + extra_filds
