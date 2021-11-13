@@ -202,7 +202,7 @@ django_heroku.settings(locals())
 # CELERY SETTINGS
 CELERY_BROKER_URL = 'redis://:as8qO8oBJBLiOCVNuCr52YNLKNHttUah@redis-11841.c251.east-us-mz.azure.cloud.redislabs.com:11841/'
 #CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
-CELERY_RESULT_BACKEND = 'django-db'
+CELERY_RESULT_BACKEND = 'redis://:as8qO8oBJBLiOCVNuCr52YNLKNHttUah@redis-11841.c251.east-us-mz.azure.cloud.redislabs.com:11841/'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SELERLIZER = 'json'

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change">
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/s.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/s.py" afterDir="false" />
-    </list>
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,21 +184,7 @@
       <workItem from="1636653086665" duration="116000" />
       <workItem from="1636653772100" duration="2895000" />
       <workItem from="1636666424005" duration="5653000" />
-      <workItem from="1636838939097" duration="4259000" />
-    </task>
-    <task id="LOCAL-00038" summary="change requirments.txt">
-      <created>1636102821644</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1636102821644</updated>
-    </task>
-    <task id="LOCAL-00039" summary="change requirments.txt">
-      <created>1636102870590</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1636102870590</updated>
+      <workItem from="1636838939097" duration="4681000" />
     </task>
     <task id="LOCAL-00040" summary="change requirments.txt">
       <created>1636102964768</created>
@@ -531,7 +515,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636843215776</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="celery setting change">
+      <created>1636843399426</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1636843399426</updated>
+    </task>
+    <task id="LOCAL-00088" summary="celery setting change">
+      <created>1636843685567</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1636843685567</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
