@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change" />
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +55,7 @@
       <recent name="G:\django\smart_video_door_phone\websocketManage" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.s (1)">
+  <component name="RunManager" selected="Django Server.smart_video_door_phone">
     <configuration name="custom_middleware" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="smart_video_door_phone" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -185,28 +187,7 @@
       <workItem from="1636653772100" duration="2895000" />
       <workItem from="1636666424005" duration="5653000" />
       <workItem from="1636838939097" duration="5713000" />
-      <workItem from="1636923956939" duration="4322000" />
-    </task>
-    <task id="LOCAL-00054" summary="change procfile for channel">
-      <created>1636195111012</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1636195111012</updated>
-    </task>
-    <task id="LOCAL-00055" summary="change procfile for channel">
-      <created>1636195264623</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1636195264623</updated>
-    </task>
-    <task id="LOCAL-00056" summary="change procfile for channel">
-      <created>1636195540492</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1636195540492</updated>
+      <workItem from="1636923956939" duration="5302000" />
     </task>
     <task id="LOCAL-00057" summary="change procfile for channel">
       <created>1636195688945</created>
@@ -530,7 +511,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636928147360</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="celery setting change">
+      <created>1636928465244</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1636928465244</updated>
+    </task>
+    <task id="LOCAL-00104" summary="celery setting change">
+      <created>1636928491159</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1636928491159</updated>
+    </task>
+    <task id="LOCAL-00105" summary="celery setting change">
+      <created>1636928643421</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1636928643421</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -137,10 +137,6 @@ DATABASES = {
         'PASSWORD': '4b378f4cd70405b3460ab0f9c3c7671460cdc480716b02c117982ed788006e67'
     }
 }
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-#DATABASES['default'] = dj_database_url.config(default='postgres://...'}
-DATABASES['default'].update(db_from_env)
 
 
 
