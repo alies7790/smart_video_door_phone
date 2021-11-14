@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change">
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,14 +187,7 @@
       <workItem from="1636653772100" duration="2895000" />
       <workItem from="1636666424005" duration="5653000" />
       <workItem from="1636838939097" duration="5713000" />
-      <workItem from="1636923956939" duration="455000" />
-    </task>
-    <task id="LOCAL-00043" summary="change requirments.txt">
-      <created>1636105516360</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1636105516360</updated>
+      <workItem from="1636923956939" duration="955000" />
     </task>
     <task id="LOCAL-00044" summary="change requirments.txt">
       <created>1636106132331</created>
@@ -532,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636923996467</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="celery setting change">
+      <created>1636924442380</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1636924442380</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
