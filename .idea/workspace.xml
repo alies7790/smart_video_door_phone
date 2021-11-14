@@ -187,14 +187,7 @@
       <workItem from="1636653772100" duration="2895000" />
       <workItem from="1636666424005" duration="5653000" />
       <workItem from="1636838939097" duration="5713000" />
-      <workItem from="1636923956939" duration="5302000" />
-    </task>
-    <task id="LOCAL-00057" summary="change procfile for channel">
-      <created>1636195688945</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1636195688945</updated>
+      <workItem from="1636923956939" duration="6132000" />
     </task>
     <task id="LOCAL-00058" summary="change procfile for channel">
       <created>1636195806923</created>
@@ -532,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636928643421</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="celery setting change">
+      <created>1636929426595</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1636929426595</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
