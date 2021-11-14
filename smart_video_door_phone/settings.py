@@ -103,7 +103,7 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'smart_video_door_phone.wsgi.application'
+WSGI_APPLICATION = 'smart_video_door_phone.wsgi.application'
 
 
 
