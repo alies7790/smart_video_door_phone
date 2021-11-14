@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
-import django
+
 import django_heroku
 
 
@@ -103,7 +103,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'smart_video_door_phone.wsgi.application'
+# WSGI_APPLICATION = 'smart_video_door_phone.wsgi.application'
 
 
 
@@ -195,8 +195,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", __file__)
-django.setup()
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 

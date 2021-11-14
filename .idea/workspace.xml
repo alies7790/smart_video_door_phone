@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,14 +188,7 @@
       <workItem from="1636653772100" duration="2895000" />
       <workItem from="1636666424005" duration="5653000" />
       <workItem from="1636838939097" duration="5713000" />
-      <workItem from="1636923956939" duration="2493000" />
-    </task>
-    <task id="LOCAL-00051" summary="change procfile for channel">
-      <created>1636116198150</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1636116198150</updated>
+      <workItem from="1636923956939" duration="3645000" />
     </task>
     <task id="LOCAL-00052" summary="change procfile for channel">
       <created>1636116528761</created>
@@ -532,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636926121343</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="celery setting change">
+      <created>1636926635633</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1636926635633</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
