@@ -53,7 +53,7 @@ social-auth-app-django
 social-auth-core==4.1.0
 sqlparse==0.4.2
 Twisted==21.7.0
-celery=5.1.2
+celery==5.1.2
 django_celery_results
 django_celery_beat
 txaio==21.2.1
