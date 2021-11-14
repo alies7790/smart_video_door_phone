@@ -34,7 +34,7 @@ import django
 from channels.routing import ProtocolTypeRouter, URLRouter
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'channels_celery_heroku_project.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smart_video_door_phone.settings')
 django.setup()
 
 from channels.auth import AuthMiddleware, AuthMiddlewareStack
