@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,14 +189,7 @@
       <workItem from="1636666424005" duration="5653000" />
       <workItem from="1636838939097" duration="5713000" />
       <workItem from="1636923956939" duration="6132000" />
-      <workItem from="1637227977910" duration="6762000" />
-    </task>
-    <task id="LOCAL-00067" summary="ago setting cors">
-      <created>1636279263941</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1636279263941</updated>
+      <workItem from="1637227977910" duration="7182000" />
     </task>
     <task id="LOCAL-00068" summary="fix procfile">
       <created>1636279465320</created>
@@ -533,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637233715115</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="celery setting change">
+      <created>1637235451513</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1637235451513</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -13,7 +13,7 @@ import os
 from pathlib import Path
 
 
-import django_heroku
+# import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -194,7 +194,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 # CELERY SETTINGS
 CELERY_BROKER_URL = 'redis://:as8qO8oBJBLiOCVNuCr52YNLKNHttUah@redis-11841.c251.east-us-mz.azure.cloud.redislabs.com:11841/'
