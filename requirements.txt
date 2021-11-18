@@ -54,8 +54,8 @@ social-auth-core==4.1.0
 sqlparse==0.4.2
 Twisted==21.7.0
 celery==5.1.2
-django_celery_results
-django_celery_beat
+django-celery-beat==2.2.1
+django-celery-results==2.2.0
 txaio==21.2.1
 redis
 typing-extensions==3.10.0.0
