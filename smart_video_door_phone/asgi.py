@@ -31,16 +31,16 @@ https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/
 
 import os
 import django
-from channels.routing import ProtocolTypeRouter, URLRouter
+from channels.routing import ProtocolTypeRouter, URLRouter, ChannelNameRouter
 from django.core.asgi import get_asgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'smart_video_door_phone.settings')
 django.setup()
-
+django_asgi_app = get_asgi_application()
 from channels.auth import AuthMiddleware, AuthMiddlewareStack
 from websocketManage.routing import websocket_urlpatterns as doorSeurity_routing
 application = ProtocolTypeRouter({
-    "http": get_asgi_application(),
+    "http": django_asgi_app,
     "websocket": AuthMiddlewareStack(
         URLRouter(
             doorSeurity_routing
