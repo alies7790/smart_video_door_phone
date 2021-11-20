@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,21 +189,7 @@
       <workItem from="1636838939097" duration="5713000" />
       <workItem from="1636923956939" duration="6132000" />
       <workItem from="1637227977910" duration="10155000" />
-      <workItem from="1637425524298" duration="312000" />
-    </task>
-    <task id="LOCAL-00074" summary="change settings and ....&#10;for celery">
-      <created>1636288850127</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1636288850127</updated>
-    </task>
-    <task id="LOCAL-00075" summary="change settings and ....&#10;for celery">
-      <created>1636289606220</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1636289606220</updated>
+      <workItem from="1637425524298" duration="597000" />
     </task>
     <task id="LOCAL-00076" summary="change settings and ....&#10;for celery">
       <created>1636289740761</created>
@@ -537,7 +520,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637237905981</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="celery setting change">
+      <created>1637425855042</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1637425855042</updated>
+    </task>
+    <task id="LOCAL-00124" summary="celery setting change">
+      <created>1637425975843</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1637425975843</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
