@@ -118,6 +118,7 @@ CHANNEL_LAYERS = {
         'CONFIG': {
             "hosts": [{'address':("redis-11841.c251.east-us-mz.azure.cloud.redislabs.com", 11841),'password':"as8qO8oBJBLiOCVNuCr52YNLKNHttUah",}]
         },
+        "ROUTING": "websocketManage.routing.websocket_urlpatterns",
     },
 }
 
