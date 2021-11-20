@@ -17,6 +17,8 @@ from pathlib import Path
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import dj_database_url
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -137,7 +139,9 @@ DATABASES = {
         'PASSWORD': '4b378f4cd70405b3460ab0f9c3c7671460cdc480716b02c117982ed788006e67'
     }
 }
-
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
 
 
 
