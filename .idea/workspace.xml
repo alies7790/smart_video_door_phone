@@ -187,14 +187,7 @@
       <workItem from="1636838939097" duration="5713000" />
       <workItem from="1636923956939" duration="6132000" />
       <workItem from="1637227977910" duration="10155000" />
-      <workItem from="1637425524298" duration="930000" />
-    </task>
-    <task id="LOCAL-00078" summary="change settings and ....&#10;for celery">
-      <created>1636292167595</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1636292167595</updated>
+      <workItem from="1637425524298" duration="1484000" />
     </task>
     <task id="LOCAL-00079" summary="change settings and ....&#10;for celery">
       <created>1636292727603</created>
@@ -532,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637426461328</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="celery setting change">
+      <created>1637426647270</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1637426647270</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
