@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,27 +190,7 @@
       <workItem from="1636923956939" duration="6132000" />
       <workItem from="1637227977910" duration="10155000" />
       <workItem from="1637425524298" duration="5139000" />
-    </task>
-    <task id="LOCAL-00081" summary="change settings and ....&#10;for celery">
-      <created>1636296334719</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1636296334720</updated>
-    </task>
-    <task id="LOCAL-00082" summary="change settings and ....&#10;for celery">
-      <created>1636296840326</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1636296840326</updated>
-    </task>
-    <task id="LOCAL-00083" summary="add picture to doorSecurity">
-      <created>1636842234403</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1636842234403</updated>
+      <workItem from="1637608618709" duration="950000" />
     </task>
     <task id="LOCAL-00084" summary="add picture to doorSecurity&#10;and&#10;add generallApp">
       <created>1636842260660</created>
@@ -536,7 +514,28 @@
       <option name="project" value="LOCAL" />
       <updated>1637429770932</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="celery setting change">
+      <created>1637608778444</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1637608778444</updated>
+    </task>
+    <task id="LOCAL-00131" summary="celery setting change">
+      <created>1637608864051</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1637608864051</updated>
+    </task>
+    <task id="LOCAL-00132" summary="celery setting change">
+      <created>1637609042363</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1637609042363</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

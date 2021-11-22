@@ -42,7 +42,7 @@ django_asgi_app =get_default_application()
 from channels.auth import AuthMiddleware, AuthMiddlewareStack
 from websocketManage.routing import websocket_urlpatterns as doorSeurity_routing
 application = ProtocolTypeRouter({
-    "http": get_wsgi_application(),
+    "http": get_asgi_application(),
     "websocket": AuthMiddlewareStack(
         URLRouter(
             doorSeurity_routing
