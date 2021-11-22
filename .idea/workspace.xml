@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/websocketManage/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/websocketManage/consumers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,13 +192,6 @@
       <workItem from="1637227977910" duration="10155000" />
       <workItem from="1637425524298" duration="5139000" />
       <workItem from="1637608618709" duration="950000" />
-    </task>
-    <task id="LOCAL-00088" summary="celery setting change">
-      <created>1636843685567</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1636843685567</updated>
     </task>
     <task id="LOCAL-00089" summary="celery setting change">
       <created>1636843851231</created>
@@ -535,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637611589168</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="celery setting change">
+      <created>1637612682989</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1637612682989</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
