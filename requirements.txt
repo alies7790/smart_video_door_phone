@@ -57,6 +57,7 @@ celery==5.1.2
 django-celery-beat==2.2.1
 django-celery-results==2.2.0
 uvicorn
+websockets
 txaio==21.2.1
 redis
 typing-extensions==3.10.0.0
