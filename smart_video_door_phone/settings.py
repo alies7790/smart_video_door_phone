@@ -131,7 +131,7 @@ REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd805ekjcr8l9s6',
         'HOST':'ec2-54-211-160-34.compute-1.amazonaws.com',
         'PORT':5432,
@@ -184,6 +184,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 STATIC_URL = '/static/'
+import os
 # Default primary key field type
 # # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
