@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/websocketManage/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/websocketManage/consumers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -192,13 +193,7 @@
       <workItem from="1637227977910" duration="10155000" />
       <workItem from="1637425524298" duration="5139000" />
       <workItem from="1637608618709" duration="950000" />
-    </task>
-    <task id="LOCAL-00089" summary="celery setting change">
-      <created>1636843851231</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1636843851231</updated>
+      <workItem from="1637681261494" duration="2212000" />
     </task>
     <task id="LOCAL-00090" summary="celery setting change">
       <created>1636844094007</created>
@@ -536,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637612682989</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="celery setting change">
+      <created>1637616884064</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1637616884064</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
