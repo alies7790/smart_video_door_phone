@@ -1,5 +1,9 @@
 
 range 1011-1989 for doorSecurity
-    1011 for request openDoor
-    1012 for on detect and openDoor
-    1013 for off detect and openDoor
+    1011 for request requestOpenDoor
+    1012 for on detect and requestOpenDoor
+    1013 for off detect and requestOpenDoor
+    1014 for add member
+    1015 for update members
+    1016 for ok getMember
+    1017 for  not exit member

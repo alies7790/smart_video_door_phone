@@ -33,6 +33,14 @@ class addMember(APIView):
                 try:
                     member = Members.objects.create(title=title,picture=picture, name=name,rassperySystem=informationService.rassperypiInfo)
                     member.save()
+                    channel_layer = get_channel_layer()
+                    group_name = f"doorSecurity_{informationService.rassperypiInfo.serial_rasperyPi}"
+                    async_to_sync(channel_layer.group_send)(
+                        group_name,
+                        {
+                            'type': 'sendMassege',
+                            'message': json.dumps({'massege': 'add member new', 'code': 1014})
+                        })
                     return Response({"message": "add member succ"}, status=status.HTTP_201_CREATED)
                 except:
                     return Response({"message": "please try again later"}, status=status.HTTP_408_REQUEST_TIMEOUT)
@@ -66,6 +74,14 @@ class updateMember(APIView):
                     member.name=name
                     member.picture = picture
                     member.save()
+                    channel_layer = get_channel_layer()
+                    group_name = f"doorSecurity_{informationService.rassperypiInfo.serial_rasperyPi}"
+                    async_to_sync(channel_layer.group_send)(
+                        group_name,
+                        {
+                            'type': 'sendMassege',
+                            'message': json.dumps({'massege': 'update member', 'code': 1015})
+                        })
                     return Response({"message": "update member succ"}, status=status.HTTP_201_CREATED)
                 except:
                     return Response({"message": "please try again later"}, status=status.HTTP_201_CREATED)
@@ -74,7 +90,7 @@ class updateMember(APIView):
                             status=status.HTTP_400_BAD_REQUEST)
 
 
-class getAllMemberDoorSecurity(APIView):
+class getAllMember(APIView):
     schema = schemas.getAllMemberDoorSecurity()
     def post(self,request, *args, **kwargs):
         serializer = serializers.getAllMember(data=request.data)
@@ -143,7 +159,7 @@ class changeStatusOpenDoor(APIView):
                     group_name,
                     {
                         'type': 'sendMassege',
-                        'message': json.dumps({'massege': 'change status openDoor', 'code': (1011+status_openDoor)})
+                        'message': json.dumps({'massege': 'change status requestOpenDoor', 'code': (1011+status_openDoor)})
                     })
                 return  Response({"message":"ok"},status=status.HTTP_200_OK)
             except:
@@ -189,7 +205,7 @@ class addHistory(APIView):
 
 
 
-class openDoor(APIView):
+class requestOpenDoor(APIView):
     schema = schemas.openDoor()
     def post(self, request, *args, **kwargs):
         serializer = serializers.openDoor(data=request.data)
@@ -213,6 +229,60 @@ class openDoor(APIView):
                     return Response({"message": "open dooring"}, status=status.HTTP_200_OK)
                 else:
                     return Response({"message": "not online rassperyPi"}, status=status.HTTP_303_SEE_OTHER)
+        else:
+            return Response({"message": "Duplicate code (or other messages)"},
+                            status=status.HTTP_400_BAD_REQUEST)
+
+
+
+class getMembersForRassperyPi(APIView):
+    schema = schemas.getMembersForRassSchema()
+    def post(self, request, *args, **kwargs):
+        global lis
+        serializer = serializers.getMembersForRassperyPi(data=request.data)
+        if serializer.is_valid():
+                data = serializer.validated_data
+                serial_rasperyPi = data.get('serial_rasperyPi')
+                token = data.get('token')
+                id_member = data.get('id_member')
+                try:
+                    rassperyInfo = RassperySystem.objects.get(serial_rasperyPi=serial_rasperyPi,
+                                                              token_connect_rassperypi=token)
+                except:
+                    return Response({"message": "rassperyPi does not exist with these specifications"},
+                                    status=status.HTTP_400_BAD_REQUEST)
+                if id_member == -1:
+                    members = Members.objects.filter(
+                        rassperySystem__serial_rasperyPi=serial_rasperyPi).order_by('add_date')
+                    lis = []
+                    for member in members:
+                        d = {}
+                        d['id'] = member.id
+                        d['title'] = member.title
+                        d['name'] = member.name
+                        d['add_date'] = member.add_date
+                        d['change_status_date'] = member.change_status_date
+                        d['allow_status'] = member.allow_status
+                        d['picture'] = member.picture
+                        lis.append(d)
+                    return Response({'members': lis,'code':1016}, status=status.HTTP_200_OK)
+                else:
+                    try:
+                        member = Members.objects.get(
+                            rassperySystem__serial_rasperyPi=serial_rasperyPi, id=id_member).order_by('add_date')
+                        lis = []
+                        d = {}
+                        d['id'] = member.id
+                        d['title'] = member.title
+                        d['name'] = member.name
+                        d['add_date'] = member.add_date
+                        d['change_status_date'] = member.change_status_date
+                        d['allow_status'] = member.allow_status
+                        d['picture'] = member.picture
+                        lis.append(d)
+                        return Response({'code': 1016, 'members': lis}, status=status.HTTP_200_OK)
+                    except:
+                        return Response({'code':1017}, status=status.HTTP_200_OK)
         else:
             return Response({"message": "Duplicate code (or other messages)"},
                             status=status.HTTP_400_BAD_REQUEST)

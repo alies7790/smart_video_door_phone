@@ -11,6 +11,11 @@ class addMember(serializers.Serializer):
 class openDoor(serializers.Serializer):
     hash_serial_rasperyPi = serializers.CharField(max_length=64,min_length=64)
 
+class getMembersForRassperyPi(serializers.Serializer):
+    serial_rasperyPi = serializers.CharField(max_length=16,min_length=16)
+    token = serializers.CharField(max_length=5, min_length=5) #test change to 5 to 256
+    id_member =serializers.IntegerField(min_value=-1)
+
 
 class changeStatusOpenDoor(serializers.Serializer):
     hash_serial_rasperyPi = serializers.CharField(max_length=64,min_length=64)

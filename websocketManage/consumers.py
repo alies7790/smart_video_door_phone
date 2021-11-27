@@ -41,7 +41,7 @@ class openDoorCunsumer(WebsocketConsumer):
 
                 try:
                     informationService=InformationService.objects.get(rassperypiInfo=self.rassperypiInfo)
-                    self.send(json.dumps({'massege': 'change status openDoor', 'code': (1011 + informationService.status_opendoor)}))
+                    self.send(json.dumps({'massege': 'change status requestOpenDoor', 'code': (1011 + informationService.status_opendoor)}))
                 except:
                     self.send("not rassperyPi with informathons")
                     self.disconnect(close_code=1)
