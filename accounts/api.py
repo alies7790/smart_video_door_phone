@@ -5,6 +5,7 @@ import requests
 from django.contrib.auth import authenticate, login, logout
 
 from django.http import JsonResponse
+from django.middleware.csrf import get_token
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 
@@ -18,7 +19,13 @@ from rassperypiInfo.models import RassperySystem
 from . import schemas,serializers,smsHandeller
 from . import cryptografyTokenAndSaveToAuthSMS as cryptografy
 
+class get_csrf_token(APIView):
+    schema = schemas.getCSRFTokenSchema
 
+    def post(self, request, *args, **kwargs):
+        response= Response({"message":"Set CSRF cookie"})
+        response ["X-CSRFToken"]=get_token(request)
+        return response
 
 
 class loginStep1Api(APIView):

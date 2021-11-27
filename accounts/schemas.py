@@ -2,6 +2,17 @@ import coreapi
 from rest_framework.schemas import AutoSchema
 
 
+class getCSRFTokenSchema(AutoSchema):
+    def get_description(self, path, method):
+        return 'for login-step2'
+    def get_manual_fields(self, path, method):
+        extra_filds=[]
+        if method.lower() == 'get':
+            extra_filds = [
+
+            ]
+        manual_fields= super().get_manual_fields(path,method)
+        return  manual_fields + extra_filds
 
 class loginStep1Schema(AutoSchema):
     def get_description(self, path, method):
@@ -16,6 +27,8 @@ class loginStep1Schema(AutoSchema):
             ]
         manual_fields= super().get_manual_fields(path,method)
         return  manual_fields + extra_filds
+
+
 
 
 class loginStep2Schema(AutoSchema):

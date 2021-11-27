@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="celery setting change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/websocketManage/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/websocketManage/consumers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,14 +193,7 @@
       <workItem from="1637227977910" duration="10155000" />
       <workItem from="1637425524298" duration="5139000" />
       <workItem from="1637608618709" duration="950000" />
-      <workItem from="1637681261494" duration="2212000" />
-    </task>
-    <task id="LOCAL-00090" summary="celery setting change">
-      <created>1636844094007</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1636844094007</updated>
+      <workItem from="1637681261494" duration="3919000" />
     </task>
     <task id="LOCAL-00091" summary="celery setting change">
       <created>1636923996467</created>
@@ -538,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637616884064</updated>
     </task>
-    <option name="localTasksCounter" value="139" />
+    <task id="LOCAL-00139" summary="celery setting change">
+      <created>1637683530739</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1637683530739</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

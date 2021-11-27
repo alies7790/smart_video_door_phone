@@ -59,7 +59,7 @@ class openDoorCunsumer(WebsocketConsumer):
 
     def receive(self, text_data=None, bytes_data=None):
         if text_data:
-            self.group_name = f"doorSecurity_{self.token}"
+            self.group_name = f"doorSecurity_{self.serial_rasperyPi}"
             channel_layer = get_channel_layer()
             async_to_sync(channel_layer.group_send)(
                 self.group_name,

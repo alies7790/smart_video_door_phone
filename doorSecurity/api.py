@@ -197,13 +197,13 @@ class openDoor(APIView):
                 data = serializer.validated_data
                 hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
                 try:
-                    rassperyInfo=RassperySystem.objects.get(hash_serial_rasperyPi=hash_serial_rasperyPi,profile__user=request.user)
+                    rassperyInfo=RassperySystem.objects.get(hash_serial_rassperyPi=hash_serial_rasperyPi,profile__user=request.user)
                 except:
                     return Response({"message": "rassperyPi does not exist with these specifications"},
                                     status=status.HTTP_400_BAD_REQUEST)
                 if rassperyInfo.online_status==1 :
                     channel_layer=get_channel_layer()
-                    group_name=f"doorSecurity_{rassperyInfo.hash_serial_rasperyPi}"
+                    group_name=f"doorSecurity_{rassperyInfo.serial_rasperyPi}"
                     async_to_sync(channel_layer.group_send)(
                         group_name,
                         {
