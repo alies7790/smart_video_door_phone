@@ -22,6 +22,13 @@ class RassperySystem(models.Model):
         (online,'سیستم متصل است'),
         (offline,'سیستم آفلاین است'),
     )
+    rassperyPi4=0
+    rassperyPIZero=1
+    a_type_rassperyPi = (
+        (rassperyPi4, 'رزپری پای4'),
+        (rassperyPIZero, 'رزپری پای صفر'),
+    )
+    type_rassperyPi=models.IntegerField(choices=a_type_rassperyPi, verbose_name='نوع رزپری پای')
     address=models.TextField(verbose_name='آدرس محل نصب')
     online_status = models.IntegerField(choices=type_status_online, default=2, verbose_name='وضعیت درخواست')
     title=models.CharField(max_length=80,verbose_name='عنوان رزری پای')
