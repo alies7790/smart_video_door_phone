@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="add api getMembersForRassperyPi in securityDoor&#10;&#10;add to api updateMember and addMember send message channel in securityDoor">
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="add to model RassperySystem,type rass in rassperipiInfo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codeWebsocketmManage.txt" beforeDir="false" afterPath="$PROJECT_DIR$/codeWebsocketmManage.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocketManage/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/websocketManage/consumers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,21 +192,8 @@
       <workItem from="1637425524298" duration="5139000" />
       <workItem from="1637608618709" duration="950000" />
       <workItem from="1637681261494" duration="3919000" />
-      <workItem from="1638042795965" duration="4054000" />
-    </task>
-    <task id="LOCAL-00093" summary="celery setting change">
-      <created>1636924938409</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1636924938409</updated>
-    </task>
-    <task id="LOCAL-00094" summary="celery setting change">
-      <created>1636925174445</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1636925174445</updated>
+      <workItem from="1638042795965" duration="4620000" />
+      <workItem from="1639207295772" duration="367000" />
     </task>
     <task id="LOCAL-00095" summary="celery setting change">
       <created>1636925563368</created>
@@ -544,7 +524,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638046909082</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="add to model RassperySystem,type rass in rassperipiInfo">
+      <created>1638047394735</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1638047394735</updated>
+    </task>
+    <task id="LOCAL-00143" summary="add to model RassperySystem,type rass in rassperipiInfo">
+      <created>1638047403211</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1638047403211</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +557,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change my structure for rassinfo securety and delete moduleController" />
     <MESSAGE value="add api door security" />
     <MESSAGE value="add api debug doorsecurity App" />
     <MESSAGE value="edite api door security" />
@@ -588,7 +581,8 @@
     <MESSAGE value="celery setting change" />
     <MESSAGE value="front login&#10;add api get_csrf_token" />
     <MESSAGE value="add api getMembersForRassperyPi in securityDoor&#10;&#10;add to api updateMember and addMember send message channel in securityDoor" />
-    <option name="LAST_COMMIT_MESSAGE" value="add api getMembersForRassperyPi in securityDoor&#10;&#10;add to api updateMember and addMember send message channel in securityDoor" />
+    <MESSAGE value="add to model RassperySystem,type rass in rassperipiInfo" />
+    <option name="LAST_COMMIT_MESSAGE" value="add to model RassperySystem,type rass in rassperipiInfo" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/smart_video_door_phone$s__1_.coverage" NAME="s (1) Coverage Results" MODIFIED="1636839804850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/smart_video_door_phone" />
