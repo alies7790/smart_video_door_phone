@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from django.middleware.csrf import get_token
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -19,7 +20,8 @@ from rassperypiInfo.models import RassperySystem
 from . import schemas,serializers,smsHandeller
 from . import cryptografyTokenAndSaveToAuthSMS as cryptografy
 
-class get_csrf_token(APIView):
+@api_view(['GET'])
+def get_csrf_token(request):
     schema = schemas.getCSRFTokenSchema
 
     def post(self, request, *args, **kwargs):

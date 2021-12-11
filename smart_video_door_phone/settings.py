@@ -82,6 +82,7 @@ MIDDLEWARE = [
 
 # CORS enable
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'smart_video_door_phone.urls'
 
