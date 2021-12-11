@@ -22,12 +22,9 @@ from . import cryptografyTokenAndSaveToAuthSMS as cryptografy
 
 @api_view(['GET'])
 def get_csrf_token(request):
-    schema = schemas.getCSRFTokenSchema
-
-    def post(self, request, *args, **kwargs):
-        response= Response({"message":"Set CSRF cookie"})
-        response ["X-CSRFToken"]=get_token(request)
-        return response
+    response= Response({"message":"Set CSRF cookie"})
+    response ["X-CSRFToken"]=get_token(request)
+    return response
 
 
 class loginStep1Api(APIView):
