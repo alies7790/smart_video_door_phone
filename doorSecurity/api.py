@@ -3,6 +3,8 @@ import json
 
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from channels.layers import get_channel_layer
@@ -207,6 +209,8 @@ class addHistory(APIView):
 
 class requestOpenDoor(APIView):
     schema = schemas.openDoor()
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
     def post(self, request, *args, **kwargs):
         serializer = serializers.openDoor(data=request.data)
         if serializer.is_valid():
