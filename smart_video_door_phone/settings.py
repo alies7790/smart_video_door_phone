@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'generallApp.apps.GenerallappConfig',
     'djoser',
     'rest_framework',
+    'rest_framework.authtoken',
     'rest_framework_swagger',
     'websocketManage.apps.WebsocketmanageConfig',
     'django_celery_beat',
@@ -75,7 +76,25 @@ MIDDLEWARE = [
     'doorSecurity.middleware.custom_middleware.checkMemberIsForRasspery'
 ]
 
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+    'api_key': {
+        'type': 'apiKey',
+        'in': 'header',
+        'name': 'Authorization'
+    }
+},  # setting to pass token in header
+'USE_SESSION_AUTH': False,
+# set to True if session based authentication needed
+'JSON_EDITOR': True,
+'api_path': 'api/',
+'api_version': 'v0',
 
+"is_authenticated": False,  # Set to True to enforce user authentication,
+"is_superuser": False,  # Set to True to enforce admin only access
+'unauthenticated_user': 'django.contrib.auth.models.AnonymousUser',
+# unauthenticated user will be shown as Anonymous user in swagger UI.
+}
 
 
 
@@ -124,9 +143,13 @@ CHANNEL_LAYERS = {
 
 
 #swagger
-REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+                   'DEFAULT_AUTHENTICATION_CLASSES': [
+                        'rest_framework.authentication.SessionAuthentication',
+                       'rest_framework.authentication.TokenAuthentication',
 
-
+                   ],
+                   }
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 

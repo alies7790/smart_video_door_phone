@@ -8,7 +8,10 @@ from django.http import JsonResponse
 from django.middleware.csrf import get_token
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.authtoken.models import Token
+from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAuthenticated
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -19,6 +22,8 @@ from rest_framework import  status
 from rassperypiInfo.models import RassperySystem
 from . import schemas,serializers,smsHandeller
 from . import cryptografyTokenAndSaveToAuthSMS as cryptografy
+
+
 
 @api_view(['GET'])
 def get_csrf_token(request):
@@ -87,8 +92,8 @@ class loginStep2Api(APIView):
                 cryptografy.decodeAndSaveStateSMS(authSMS=auth_sms, token=token)
             except:
                 return Response({"message": " is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
-            login(request, profile.user)
-            return Response({"message": "login successfully."}, status=status.HTTP_200_OK)
+            token, created = Token.objects.get_or_create(user=profile.user)
+            return Response({"token": "TOKEN "+token.key}, status=status.HTTP_200_OK)
             # if user is not None:
             #
             # else:
@@ -102,7 +107,7 @@ class loginStep2Api(APIView):
 
 class LogoutApi(APIView):
     schema = schemas.logoutSchema()
-
+    permission_classes = (IsAuthenticated,)
     @csrf_exempt
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
