@@ -25,12 +25,6 @@ from . import cryptografyTokenAndSaveToAuthSMS as cryptografy
 
 
 
-@api_view(['GET'])
-def get_csrf_token(request):
-    response= Response({"message":"Set CSRF cookie"})
-    response ["X-CSRFToken"]=get_token(request)
-    return response
-
 
 class loginStep1Api(APIView):
     schema =schemas.loginStep1Schema()
@@ -110,12 +104,8 @@ class LogoutApi(APIView):
     permission_classes = (IsAuthenticated,)
     @csrf_exempt
     def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated:
-            print(request.data)
-            logout(request)
-            return Response({"message": "you are logout."}, status=status.HTTP_200_OK)
-        else:
-            return Response({"message": "not login for logout"}, status=status.HTTP_401_UNAUTHORIZED)
+        request.user.auth_token.delete()
+        return Response(status=status.HTTP_200_OK)
 
 
 

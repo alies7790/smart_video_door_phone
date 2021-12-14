@@ -17,6 +17,7 @@ class checkHashRassSerial(MiddlewareMixin):
         '/door-security/get-history/'
         '/door-security/update-member/',
         '/door-security/add-member/',
+        '/generall/get-information/'
     ]
     def process_request(self, request):
         if request.path in self.WHITELISTED_URLS:

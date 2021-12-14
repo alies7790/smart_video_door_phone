@@ -13,14 +13,22 @@
 # # print(r.cookies)
 #
 #
-# from PIL import Image
-#
-# basewidth = 300
-# img = Image.open('rsz_120181122_162949.jpg')
-# wpercent = (basewidth/float(img.size[0]))
-# hsize = int((float(img.size[1])*float(wpercent)))
-# img = img.resize((basewidth,hsize), Image.ANTIALIAS)
-# img.save('somepic.jpg')
+from PIL import Image
+from io import BytesIO
+import base64
+basewidth = 300
+img = Image.open('۲۰۱۹۰۹۱۸_۱۳۱۹۵۳.jpg')
+wpercent = (basewidth/float(img.size[0]))
+hsize = int((float(img.size[1])*float(wpercent)))
+img = img.resize((basewidth,hsize), Image.ANTIALIAS)
+
+buffered = BytesIO()
+
+img.save(buffered, format="JPEG")
+
+img_str = base64.b64encode(buffered.getvalue())
+print(img_str)
+
 #
 #
 # import base64
@@ -42,7 +50,7 @@
 #
 # im = Image.open(BytesIO(base64.b64decode(b64_string)))
 # im.save('image.png', 'PNG')
-
+#
 
 
 

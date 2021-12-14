@@ -30,11 +30,11 @@ class addHistory(serializers.Serializer):
 
 class updateMember(serializers.Serializer):
     id_member = serializers.CharField()
-    hash_serial_rasperyPi = serializers.CharField(max_length=64, min_length=64)
-    title=serializers.CharField(min_length=3,max_length=20)
-    name = serializers.CharField(min_length=3, max_length=20)
-    allow = serializers.IntegerField(min_value=1, max_value=2)
-    picture = serializers.CharField()
+    hash_serial_rasperyPi = serializers.CharField(max_length=64, min_length=64,required=False)
+    title=serializers.CharField(min_length=3,max_length=20,required=False)
+    name = serializers.CharField(min_length=3, max_length=20,required=False)
+    allow = serializers.IntegerField(min_value=1, max_value=2,required=False)
+    picture = serializers.CharField(required=False)
 
 class getAllMember(serializers.Serializer):
     hash_serial_rasperyPi = serializers.CharField(max_length=64, min_length=64)
