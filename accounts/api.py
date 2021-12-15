@@ -5,13 +5,11 @@ import requests
 from django.contrib.auth import authenticate, login, logout
 
 from django.http import JsonResponse
-from django.middleware.csrf import get_token
-from django.utils.decorators import method_decorator
+
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.models import Token
-from rest_framework.authtoken.views import ObtainAuthToken
-from rest_framework.decorators import api_view
+
 from rest_framework.permissions import IsAuthenticated
 
 from rest_framework.response import Response
@@ -20,7 +18,6 @@ from rest_framework.views import APIView
 from accounts.models import Profiles, AuthSMS
 from rest_framework import  status
 
-from rassperypiInfo.models import RassperySystem
 from . import schemas,serializers,smsHandeller
 from . import cryptografyTokenAndSaveToAuthSMS as cryptografy
 
@@ -85,6 +82,7 @@ class loginStep2Api(APIView):
                 auth_sms = AuthSMS.objects.get(state_SMS=1, type_SMS=2, token=token,codeSended=int(sms_code))
                 profile = auth_sms.profileUser
                 cryptografy.decodeAndSaveStateSMS(authSMS=auth_sms, token=token)
+                # request.user.auth_token.delete()
             except:
                 return Response({"message": " is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
             token, created = Token.objects.get_or_create(user=profile.user)
@@ -232,6 +230,7 @@ class ChangePasswordWithTokenApi(APIView):
                         profile.user.set_password(new_password)
                         profile.user.save()
                         profile.save()
+                        request.user.auth_token.delete()
                     else:
                         return Response({"message": "newPassword and repeatNewPassword not one "},
                                         status=status.HTTP_400_BAD_REQUEST)
