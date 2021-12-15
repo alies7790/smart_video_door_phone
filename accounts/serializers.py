@@ -4,7 +4,7 @@ from rest_framework import serializers
 
 class LoginStep1Serializer(serializers.Serializer):
     mobile = serializers.CharField(max_length=11,min_length=11)
-    password = serializers.CharField()
+    password = serializers.RegexField(regex=r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')
 
 
 class LoginStep2Serializer(serializers.Serializer):
@@ -24,5 +24,6 @@ class ReciveCodeSmsAndSendTokenSerializer(serializers.Serializer):
 class ChangePasswordWithTokenSerializer(serializers.Serializer):
     serial_rest_password=serializers.CharField(max_length=12,min_length=12)
     token = serializers.CharField()
-    new_password=serializers.CharField()
-    repeat_newpassword=serializers.CharField()
+    new_password=serializers.RegexField(regex=r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')
+    repeat_newpassword=serializers.RegexField(regex=r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')
+

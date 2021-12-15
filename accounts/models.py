@@ -34,12 +34,10 @@ class AuthSMS(models.Model):
     sendSMS=1
     expireSMS=2
     useSMS=3
-    changePass=4
     states_SMS = (
         (sendSMS, 'پیام ارسال شده'),
         (expireSMS,'منقضی شده'),
-        (useSMS,'از پیام برای احراز استفاده شده'),
-        (changePass, 'از پیام برای تغییر رمز استفاده شد')
+        (useSMS,'استفاده شده'),
     )
     state_SMS = models.IntegerField(choices=states_SMS, default=1, verbose_name='وضعیت پیام')
     def __str__(self):

@@ -1,7 +1,3 @@
-
-import random
-
-import requests
 from django.contrib.auth import authenticate, login, logout
 
 from django.http import JsonResponse
@@ -20,8 +16,6 @@ from rest_framework import  status
 
 from . import schemas,serializers,smsHandeller
 from . import cryptografyTokenAndSaveToAuthSMS as cryptografy
-
-
 
 
 class loginStep1Api(APIView):
@@ -80,12 +74,15 @@ class loginStep2Api(APIView):
             sms_code=data.get('sms_code')
             try:
                 auth_sms = AuthSMS.objects.get(state_SMS=1, type_SMS=2, token=token,codeSended=int(sms_code))
+                auth_sms.state_SMS=3
+                auth_sms.save()
                 profile = auth_sms.profileUser
                 cryptografy.decodeAndSaveStateSMS(authSMS=auth_sms, token=token)
-                # request.user.auth_token.delete()
             except:
                 return Response({"message": " is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
-            token, created = Token.objects.get_or_create(user=profile.user)
+            token=Token.objects.get(user=profile.user)
+            token.delete()
+            token, created = Token.objects.update_or_create(user=profile.user)
             return Response({"token": "TOKEN "+token.key}, status=status.HTTP_200_OK)
             # if user is not None:
             #
@@ -171,6 +168,8 @@ class ReciveCodeSmsTokenAndSendTokenApi(APIView):
 
             try:
                 authSMS = AuthSMS.objects.get(token=token, state_SMS=1, codeSended=sms_code,type_SMS=1)
+                authSMS.state_SMS=3
+                authSMS.save()
                 try:
                     profile = authSMS.profileUser
                 except:
@@ -181,7 +180,6 @@ class ReciveCodeSmsTokenAndSendTokenApi(APIView):
             for authSms in AuthSMS.objects.filter(profileUser=profile, state_SMS=3,type_SMS=1):
                 authSms.state_SMS = 2
                 authSms.save()
-            cryptografy.decodeAndSaveStateSMS(token=token,authSMS=authSMS)
             if cryptografy.decodeAndSaveStateSMS(token=token,authSMS=authSMS) == False:
                 return Response({"message": "expire token and token not true"}, status=status.HTTP_401_UNAUTHORIZED)
             # edit
@@ -219,7 +217,7 @@ class ChangePasswordWithTokenApi(APIView):
             try:
                 authSMS = AuthSMS.objects.get(token=token, state_SMS=3,type_SMS=1)
             except:
-                return Response({"message": "sms not send or expire"}, status=status.HTTP_401_UNAUTHORIZED)
+                return Response({"message": "sms not send"}, status=status.HTTP_401_UNAUTHORIZED)
             if cryptografy.decodeAndSaveStateSMS(token=token,authSMS=authSMS) == False:
                 return Response({"message": "expire token and token not true"}, status=status.HTTP_401_UNAUTHORIZED)
 
@@ -230,7 +228,6 @@ class ChangePasswordWithTokenApi(APIView):
                         profile.user.set_password(new_password)
                         profile.user.save()
                         profile.save()
-                        request.user.auth_token.delete()
                     else:
                         return Response({"message": "newPassword and repeatNewPassword not one "},
                                         status=status.HTTP_400_BAD_REQUEST)

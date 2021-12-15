@@ -17,13 +17,16 @@ from PIL import Image
 from io import BytesIO
 import base64
 basewidth = 300
-img = Image.open('۲۰۱۹۰۹۱۸_۱۳۱۹۵۳.jpg')
+with open("ali.jpeg", "rb") as img_file:
+    b64_string = base64.b64encode(img_file.read())
+print(b64_string)
+img = Image.open('moji.jpeg')
 wpercent = (basewidth/float(img.size[0]))
 hsize = int((float(img.size[1])*float(wpercent)))
 img = img.resize((basewidth,hsize), Image.ANTIALIAS)
 
 buffered = BytesIO()
-
+img.save('moji1.png', 'PNG')
 img.save(buffered, format="JPEG")
 
 img_str = base64.b64encode(buffered.getvalue())

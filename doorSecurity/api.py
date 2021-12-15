@@ -2,9 +2,7 @@
 import json
 
 
-import base64
-from PIL import Image
-from io import BytesIO
+
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -17,6 +15,7 @@ from rassperypiInfo.models import RassperySystem
 from . import schemas,serializers
 from accounts.models import Profiles
 from .models import  Members, history, InformationService
+from .resize_image import resizeImage
 
 
 class addMember(APIView):
@@ -31,14 +30,7 @@ class addMember(APIView):
                 title=data.get('title')
                 name = data.get('name')
                 picture = data.get('picture')
-                img = Image.open(BytesIO(base64.b64decode(picture)))
-                basewidth = 500
-                wpercent = (basewidth / float(img.size[0]))
-                hsize = int((float(img.size[1]) * float(wpercent)))
-                img = img.resize((basewidth, hsize), Image.ANTIALIAS)
-                buffered = BytesIO()
-                img.save(buffered, format="JPEG")
-                picture = base64.b64encode(buffered.getvalue())
+                picture = resizeImage(picture)
 
                 try:
                     informationService=InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
@@ -84,14 +76,7 @@ class updateMember(APIView):
                 informationService = InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
                                                               rassperypiInfo__hash_serial_rassperyPi=hash_serial_rasperyPi,)
                 try:
-                    img = Image.open(BytesIO(base64.b64decode(picture)))
-                    basewidth = 500
-                    wpercent = (basewidth / float(img.size[0]))
-                    hsize = int((float(img.size[1]) * float(wpercent)))
-                    img = img.resize((basewidth, hsize), Image.ANTIALIAS)
-                    buffered = BytesIO()
-                    img.save(buffered, format="JPEG")
-                    picture = base64.b64encode(buffered.getvalue())
+                    picture = resizeImage(picture)
                     member = Members.objects.get(id=id_member, rassperySystem=informationService.rassperypiInfo)
                     member.allow_status = allow
                     member.title=title
@@ -212,14 +197,7 @@ class addHistory(APIView):
             request_status=data.get('request_status')
             id_member=data.get('id_member')
             picture = data.get('picture')
-            img = Image.open(BytesIO(base64.b64decode(picture)))
-            basewidth = 500
-            wpercent = (basewidth / float(img.size[0]))
-            hsize = int((float(img.size[1]) * float(wpercent)))
-            img = img.resize((basewidth, hsize), Image.ANTIALIAS)
-            buffered = BytesIO()
-            img.save(buffered, format="JPEG")
-            picture = base64.b64encode(buffered.getvalue())
+            picture = resizeImage(picture)
             try:
                 rassperyInfo=RassperySystem.objects.get(hash_serial_rassperyPi=hash_serial_rasperyPi,token_connect_rassperypi=token)
             except:
