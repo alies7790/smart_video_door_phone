@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="token for login">
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="image&#10;and middlware hash_serial_... added url generall api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/s.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/s.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/somepic.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/somepic.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generallApp/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/generallApp/api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +57,7 @@
       <recent name="G:\django\smart_video_door_phone\websocketManage" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.s (1)">
+  <component name="RunManager" selected="Django Server.smart_video_door_phone">
     <configuration name="custom_middleware" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="smart_video_door_phone" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,7 +80,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="s (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="s (1)" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="smart_video_door_phone" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -155,7 +150,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.s (1)" />
         <item itemvalue="Python.s" />
         <item itemvalue="Python.custom_middleware" />
       </list>
@@ -202,14 +196,8 @@
       <workItem from="1638042795965" duration="4620000" />
       <workItem from="1639207295772" duration="6184000" />
       <workItem from="1639375262292" duration="6460000" />
-      <workItem from="1639520693629" duration="4649000" />
-    </task>
-    <task id="LOCAL-00101" summary="celery setting change">
-      <created>1636927753593</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1636927753593</updated>
+      <workItem from="1639520693629" duration="5102000" />
+      <workItem from="1639556068833" duration="367000" />
     </task>
     <task id="LOCAL-00102" summary="celery setting change">
       <created>1636928147360</created>
@@ -547,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639381131607</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <task id="LOCAL-00150" summary="image&#10;and middlware hash_serial_... added url generall api">
+      <created>1639525532660</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1639525532660</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +561,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add app websocketManage,transfer cunsumer and routing from app doorSecurity to them&#10;add code for manage websocket" />
     <MESSAGE value="change name model historyDoorSecurity to history&#10;&#10;add api addHistory" />
     <MESSAGE value="create model openDoor a informationService with lincence&#10;change rassperyInfo from lincence model to informationService &#10;&#10;add on,off service openDoor&#10;&#10;add address to RassperySystem model rassperyinf app" />
     <MESSAGE value="add to url changeStatusOpenDoor" />
@@ -591,7 +585,8 @@
     <MESSAGE value="corf" />
     <MESSAGE value="csrf" />
     <MESSAGE value="token for login" />
-    <option name="LAST_COMMIT_MESSAGE" value="token for login" />
+    <MESSAGE value="image&#10;and middlware hash_serial_... added url generall api" />
+    <option name="LAST_COMMIT_MESSAGE" value="image&#10;and middlware hash_serial_... added url generall api" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/smart_video_door_phone$s__1_.coverage" NAME="s (1) Coverage Results" MODIFIED="1639525162629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/smart_video_door_phone" />

@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from django.middleware.csrf import get_token
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.models import Token
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.decorators import api_view
@@ -102,6 +103,7 @@ class loginStep2Api(APIView):
 class LogoutApi(APIView):
     schema = schemas.logoutSchema()
     permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
     @csrf_exempt
     def get(self, request, *args, **kwargs):
         request.user.auth_token.delete()

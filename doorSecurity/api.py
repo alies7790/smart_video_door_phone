@@ -21,6 +21,8 @@ from .models import  Members, history, InformationService
 
 class addMember(APIView):
     schema=schemas.addMember()
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
     def post(self,request, *args, **kwargs):
         serializer = serializers.addMember(data=request.data)
         if serializer.is_valid():
@@ -67,7 +69,8 @@ class addMember(APIView):
 
 class updateMember(APIView):
     schema = schemas.updateMember()
-
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
     def patch(self, request, *args, **kwargs):
         serializer = serializers.updateMember(data=request.data)
         if serializer.is_valid():
@@ -114,6 +117,8 @@ class updateMember(APIView):
 
 class getAllMember(APIView):
     schema = schemas.getAllMemberDoorSecurity()
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
     def post(self,request, *args, **kwargs):
         serializer = serializers.getAllMember(data=request.data)
         if serializer.is_valid():
@@ -141,6 +146,8 @@ class getAllMember(APIView):
 
 class getHistory(APIView):
     schema = schemas.getAllMemberDoorSecurity()
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
     def post(self,request, *args, **kwargs):
         serializer = serializers.getHistory(data=request.data)
         if serializer.is_valid():
@@ -165,6 +172,8 @@ class getHistory(APIView):
 
 class changeStatusOpenDoor(APIView):
     schema = schemas.changeStatusOpenDoor()
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
     def patch(self , request, *args, **kwargs):
         serializer=serializers.changeStatusOpenDoor(data=request.data)
         if serializer.is_valid():
