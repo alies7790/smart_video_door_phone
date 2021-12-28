@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="resize Image">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="resize Image" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,14 +196,7 @@
       <workItem from="1639556068833" duration="1795000" />
       <workItem from="1639571914590" duration="841000" />
       <workItem from="1639604176419" duration="5646000" />
-      <workItem from="1640705025627" duration="701000" />
-    </task>
-    <task id="LOCAL-00107" summary="celery setting change">
-      <created>1637228027837</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1637228027839</updated>
+      <workItem from="1640705025627" duration="1026000" />
     </task>
     <task id="LOCAL-00108" summary="celery setting change">
       <created>1637229430084</created>
@@ -543,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640705677783</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="resize Image">
+      <created>1640705875419</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1640705875419</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
