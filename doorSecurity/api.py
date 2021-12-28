@@ -31,6 +31,9 @@ class addMember(APIView):
                 name = data.get('name')
                 picture = data.get('picture')
                 picture = resizeImage(picture)
+                if picture == False:
+                    Response({"message": "not base64"},
+                             status=status.HTTP_400_BAD_REQUEST)
 
                 try:
                     informationService=InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
@@ -77,6 +80,9 @@ class updateMember(APIView):
                                                               rassperypiInfo__hash_serial_rassperyPi=hash_serial_rasperyPi,)
                 try:
                     picture = resizeImage(picture)
+                    if picture == False:
+                        Response({"message": "not base64"},
+                                 status=status.HTTP_400_BAD_REQUEST)
                     member = Members.objects.get(id=id_member, rassperySystem=informationService.rassperypiInfo)
                     member.allow_status = allow
                     member.title=title
@@ -198,6 +204,9 @@ class addHistory(APIView):
             id_member=data.get('id_member')
             picture = data.get('picture')
             picture = resizeImage(picture)
+            if picture ==False:
+                Response({"message": "not base64"},
+                         status=status.HTTP_400_BAD_REQUEST)
             try:
                 rassperyInfo=RassperySystem.objects.get(hash_serial_rassperyPi=hash_serial_rasperyPi,token_connect_rassperypi=token)
             except:

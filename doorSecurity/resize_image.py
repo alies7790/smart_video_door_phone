@@ -8,8 +8,7 @@ def resizeImage(picture):
     try:
         img = Image.open(BytesIO(base64.b64decode(picture)))
     except:
-        return Response({"message": "not base64"},
-                                status=status.HTTP_400_BAD_REQUEST)
+        return False
     basewidth = 300
     wpercent = (basewidth / float(img.size[0]))
     hsize = int((float(img.size[1]) * float(wpercent)))
