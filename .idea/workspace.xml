@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="expire token when login and resetpassword">
-      <change afterPath="$PROJECT_DIR$/doorSecurity/resize_image.py" afterDir="false" />
+    <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="resize Image">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/cryptografyTokenAndSaveToAuthSMS.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/cryptografyTokenAndSaveToAuthSMS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/rsz_120181122_162949.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/s.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/s.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/somepic.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,28 +197,8 @@
       <workItem from="1639520693629" duration="5102000" />
       <workItem from="1639556068833" duration="1795000" />
       <workItem from="1639571914590" duration="841000" />
-      <workItem from="1639604176419" duration="5341000" />
-    </task>
-    <task id="LOCAL-00104" summary="celery setting change">
-      <created>1636928491159</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1636928491159</updated>
-    </task>
-    <task id="LOCAL-00105" summary="celery setting change">
-      <created>1636928643421</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1636928643421</updated>
-    </task>
-    <task id="LOCAL-00106" summary="celery setting change">
-      <created>1636929426595</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1636929426595</updated>
+      <workItem from="1639604176419" duration="5646000" />
+      <workItem from="1640705025627" duration="701000" />
     </task>
     <task id="LOCAL-00107" summary="celery setting change">
       <created>1637228027837</created>
@@ -551,7 +522,28 @@
       <option name="project" value="LOCAL" />
       <updated>1639562292425</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="resize Image&#10;token authoraize delete ago token when login new device&#10;jwt for steps login and forget">
+      <created>1639609908284</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1639609908284</updated>
+    </task>
+    <task id="LOCAL-00154" summary="resize Image&#10;token authoraize delete ago token when login new device&#10;jwt for steps login and forget">
+      <created>1640705284560</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1640705284560</updated>
+    </task>
+    <task id="LOCAL-00155" summary="resize Image">
+      <created>1640705677783</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1640705677783</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,8 +562,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add to url changeStatusOpenDoor" />
-    <MESSAGE value="add middleware for check id_member for rassperypi" />
     <MESSAGE value="add middleware for check login in doorsecurity app&#10;add midleware for check hash_seriall for member in doorsecurity app&#10;change model rassperyInfo,add hash_serial_rassperypi and change save for set hash from seriall" />
     <MESSAGE value="add title to model rassperypiInfo app" />
     <MESSAGE value="change requirments.txt" />
@@ -595,10 +585,12 @@
     <MESSAGE value="image&#10;and middlware hash_serial_... added url generall api" />
     <MESSAGE value="add ISAuthecated" />
     <MESSAGE value="expire token when login and resetpassword" />
-    <option name="LAST_COMMIT_MESSAGE" value="expire token when login and resetpassword" />
+    <MESSAGE value="resize Image&#10;token authoraize delete ago token when login new device&#10;jwt for steps login and forget" />
+    <MESSAGE value="resize Image" />
+    <option name="LAST_COMMIT_MESSAGE" value="resize Image" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/smart_video_door_phone$s__1_.coverage" NAME="s (1) Coverage Results" MODIFIED="1639609551496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/smart_video_door_phone" />
+    <SUITE FILE_PATH="coverage/smart_video_door_phone$s__1_.coverage" NAME="s (1) Coverage Results" MODIFIED="1640705239742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/smart_video_door_phone" />
     <SUITE FILE_PATH="coverage/smart_video_door_phone$custom_middleware.coverage" NAME="custom_middleware Coverage Results" MODIFIED="1633253332044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doorSecurity/middleware" />
     <SUITE FILE_PATH="coverage/smart_video_door_phone$s.coverage" NAME="s Coverage Results" MODIFIED="1636100953663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rassperypiInfo" />
   </component>
