@@ -297,7 +297,7 @@ class getMembersForRassperyPi(APIView):
                 else:
                     try:
                         member = Members.objects.get(
-                            rassperySystem__serial_rasperyPi=serial_rasperyPi, id=id_member).order_by('add_date')
+                            rassperySystem__serial_rasperyPi=serial_rasperyPi, id=id_member)
                         lis = []
                         d = {}
                         d['id'] = member.id
