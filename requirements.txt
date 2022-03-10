@@ -67,3 +67,4 @@ urllib3==1.26.6
 pillow
 whitenoise==5.3.0
 zope.interface==5.4.0
+channels_postgres

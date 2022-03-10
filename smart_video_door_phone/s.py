@@ -1,61 +1,25 @@
-# # import requests
-# # pload = {
-# #   "mobile": "09215164458",
-# #   "password": "ali25ali25"
-# # }
-# # pload1 = {
-# #   "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYWxpIiwicGFzc3dvcmQiOiJwYmtkZjJfc2hhMjU2JDI2MDAwMCRvM1lKUkYxU0FSRXdMTTRTYVU5aHpwJDR2RjZoQWxVK1hMOWNtUld0NXQvUUZzbnUvR2hkcy9tT1gxYjFFN3dlZU09In0.LNAjW1qO1fIk9V5m9LBJvOcRF6_bH_326oN68jFCIYE",
-# #   "sms_code": "123456"
-# # }
-# # # r = requests.post('http://127.0.0.1:8000/accounts/login-step1/',data = pload)
-# # r = requests.post('http://127.0.0.1:8000/accounts/login-step2/',data = pload1)
-# # print(r.text)
-# # print(r.cookies)
-#
-#
-from PIL import Image
-from io import BytesIO
-import base64
-basewidth = 300
-with open("ali.jpeg", "rb") as img_file:
-    b64_string = base64.b64encode(img_file.read())
-print(b64_string)
-img = Image.open('moji.jpeg')
-wpercent = (basewidth/float(img.size[0]))
-hsize = int((float(img.size[1])*float(wpercent)))
-img = img.resize((basewidth,hsize), Image.ANTIALIAS)
+from multiprocessing import Pool,Manager,Value,Process
+import time
 
-buffered = BytesIO()
-img.save('moji1.png', 'PNG')
-img.save(buffered, format="JPEG")
 
-img_str = base64.b64encode(buffered.getvalue())
-print(img_str)
 
-#
-#
-# import base64
-#
-# with open("rsz_120181122_162949.jpg", "rb") as img_file:
-#     b64_string = base64.b64encode(img_file.read())
-# print(b64_string)
-#
-# import numpy as np
-# import base64
-# import urllib
-# from PIL import Image
-#
-#
-# import base64
-# from PIL import Image
-# from io import BytesIO
-#
-#
-# im = Image.open(BytesIO(base64.b64decode(b64_string)))
-# im.save('image.png', 'PNG')
-#
+
+def a(i,s,p):
+    while(i.value[0]<10):
+        time.sleep(s+1)
+        print(str(i.value[0])+' '+str(s))
+        i.value[0]=i.value[0]+1
 
 
 
 
 
+
+# if __name__=='__main__':
+#     i=Value('i',[0,10])
+#     # with Pool(8) as p:
+#     #     p.starmap(a,[(i,'1',1),(i,'2',3)])
+#     for j in range(2):
+#         Process(target=a, args=[i,j,1]).start()
+#
+#     print('final'+str(i))

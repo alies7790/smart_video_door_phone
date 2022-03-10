@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'channels',
+    'channels_postgres',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -132,15 +133,29 @@ WSGI_APPLICATION = 'smart_video_door_phone.wsgi.application'
 #channels
 ASGI_APPLICATION = 'smart_video_door_phone.routing.application'
 
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {
+#             "hosts": [{'address':("redis-17762.c282.east-us-mz.azure.cloud.redislabs.com", 17762),'password':"VtAcXvcsq1m7LT9rbyDj2NOBdx90naBm",}]
+#         },
+#     },
+# }
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'BACKEND': 'channels_postgres.core.PostgresChannelLayer',
         'CONFIG': {
-            "hosts": [{'address':("redis-17762.c282.east-us-mz.azure.cloud.redislabs.com", 17762),'password':"VtAcXvcsq1m7LT9rbyDj2NOBdx90naBm",}]
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'd8ck4udaie15qu',
+            'USER': 'xtnwclpqmfkrqx',
+            'PASSWORD': 'bdcf0b66fcf820d60f3ba3fb5f4615ec4826c7ddca431cb9b88bad6c593c272f',
+            'HOST': 'ec2-3-222-204-187.compute-1.amazonaws.com',
+            'PORT': '5432',
+
+
         },
     },
 }
-
 
 #swagger
 REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
