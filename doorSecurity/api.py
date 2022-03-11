@@ -49,7 +49,7 @@ class addMember(APIView):
                         group_name,
                         {
                             'type': 'sendMassege',
-                            'message': json.dumps({'massege': 'add member new', 'code': 1014})
+                            'message': json.dumps({'massege': 'add member new', 'code': 1014 , 'id_member':member.id})
                         })
                     return Response({"message": "add member succ"}, status=status.HTTP_201_CREATED)
                 except:
@@ -96,7 +96,7 @@ class updateMember(APIView):
                         group_name,
                         {
                             'type': 'sendMassege',
-                            'message': json.dumps({'massege': 'update member', 'code': 1015})
+                            'message': json.dumps({'massege': 'update member', 'code': 1015 , 'id_member':member.id})
                         })
                     return Response({"message": "update member succ"}, status=status.HTTP_201_CREATED)
                 except:

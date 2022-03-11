@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="56237c24-50f0-4f8a-84e5-ccd85a6bedac" name="Default Changelist" comment="CHANNEL_LAYERS change database redis to postgress">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smart_video_door_phone/s.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/s.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +57,7 @@
       <recent name="G:\django\smart_video_door_phone\websocketManage" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.smart_video_door_phone">
+  <component name="RunManager" selected="Python.s (1)">
     <configuration name="m (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="smart_video_door_phone" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -169,7 +168,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="s (1)" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="s (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="smart_video_door_phone" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -217,11 +216,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.s (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.m" />
         <item itemvalue="Python.m1 (1)" />
         <item itemvalue="Python.m (1)" />
-        <item itemvalue="Python.m2 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -281,21 +280,8 @@
       <workItem from="1645986360304" duration="7000" />
       <workItem from="1646065778272" duration="768000" />
       <workItem from="1646580609301" duration="8000" />
-      <workItem from="1646944508416" duration="1191000" />
-    </task>
-    <task id="LOCAL-00111" summary="celery setting change">
-      <created>1637231359558</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1637231359558</updated>
-    </task>
-    <task id="LOCAL-00112" summary="celery setting change">
-      <created>1637232038266</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1637232038267</updated>
+      <workItem from="1646944508416" duration="4608000" />
+      <workItem from="1647024861213" duration="2551000" />
     </task>
     <task id="LOCAL-00113" summary="celery setting change">
       <created>1637233310851</created>
@@ -626,7 +612,21 @@
       <option name="project" value="LOCAL" />
       <updated>1645734238120</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="CHANNEL_LAYERS change database redis to postgress">
+      <created>1646945952806</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1646945952808</updated>
+    </task>
+    <task id="LOCAL-00161" summary="CHANNEL_LAYERS change database redis to postgress">
+      <created>1647024895356</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1647024895357</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,7 +701,7 @@
     <SUITE FILE_PATH="coverage/smart_video_door_phone$m2.coverage" NAME="m2 Coverage Results" MODIFIED="1642693169820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/python brute/part1" />
     <SUITE FILE_PATH="coverage/smart_video_door_phone$m.coverage" NAME="m Coverage Results" MODIFIED="1642833473727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/python brute/part1" />
     <SUITE FILE_PATH="coverage/smart_video_door_phone$main.coverage" NAME="main Coverage Results" MODIFIED="1645733422220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/python brute" />
-    <SUITE FILE_PATH="coverage/smart_video_door_phone$s__1_.coverage" NAME="s (1) Coverage Results" MODIFIED="1642872915637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/smart_video_door_phone" />
+    <SUITE FILE_PATH="coverage/smart_video_door_phone$s__1_.coverage" NAME="s (1) Coverage Results" MODIFIED="1647029466311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/smart_video_door_phone" />
     <SUITE FILE_PATH="coverage/smart_video_door_phone$custom_middleware.coverage" NAME="custom_middleware Coverage Results" MODIFIED="1633253332044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/doorSecurity/middleware" />
     <SUITE FILE_PATH="coverage/smart_video_door_phone$m1__1_.coverage" NAME="m1 (1) Coverage Results" MODIFIED="1642693176157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/python brute/part2" />
     <SUITE FILE_PATH="coverage/smart_video_door_phone$m1.coverage" NAME="m1 Coverage Results" MODIFIED="1642693167211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop/python brute/part1" />
