@@ -146,12 +146,11 @@ CHANNEL_LAYERS = {
         'BACKEND': 'channels_postgres.core.PostgresChannelLayer',
         'CONFIG': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'd8ck4udaie15qu',
-            'USER': 'xtnwclpqmfkrqx',
-            'PASSWORD': 'bdcf0b66fcf820d60f3ba3fb5f4615ec4826c7ddca431cb9b88bad6c593c272f',
-            'HOST': 'ec2-3-222-204-187.compute-1.amazonaws.com',
-            'PORT': '5432',
-
+            'NAME': 'd805ekjcr8l9s6',
+            'HOST':'ec2-54-211-160-34.compute-1.amazonaws.com',
+            'PORT':5432,
+            'USER': 'pjmrwufklrusgp',
+            'PASSWORD': '4b378f4cd70405b3460ab0f9c3c7671460cdc480716b02c117982ed788006e67'
 
         },
     },
