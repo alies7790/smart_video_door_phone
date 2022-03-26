@@ -315,3 +315,7 @@ class getMembersForRassperyPi(APIView):
             return Response({"message": "Duplicate code (or other messages)"},
                             status=status.HTTP_400_BAD_REQUEST)
 
+
+
+class deleteMember():
+    pass

@@ -4,7 +4,7 @@ from rest_framework.schemas import AutoSchema
 
 class getInformationSchema(AutoSchema):
     def get_description(self, path, method):
-        return 'for login Step1'
+        return 'get information account'
     def get_manual_fields(self, path, method):
         extra_filds=[]
         if method.lower() == 'get':

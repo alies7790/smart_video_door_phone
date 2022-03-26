@@ -55,7 +55,7 @@ import base64
 from io import BytesIO
 
 from PIL import Image
-img = Image.open(r'C:\Users\ali\Desktop\IMAG1183 (2).jpg')
+img = Image.open(r'C:\Users\ali\Desktop\WhatsApp Image 2022-03-16 at 8.23.42 PM.jpeg')
 basewidth = 300
 wpercent = (basewidth / float(img.size[0]))
 hsize = int((float(img.size[1]) * float(wpercent)))
