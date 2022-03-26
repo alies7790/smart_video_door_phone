@@ -80,8 +80,11 @@ class loginStep2Api(APIView):
                 cryptografy.decodeAndSaveStateSMS(authSMS=auth_sms, token=token)
             except:
                 return Response({"message": " is incorrect."}, status=status.HTTP_401_UNAUTHORIZED)
-            token=Token.objects.get(user=profile.user)
-            token.delete()
+            try:
+                token=Token.objects.get(user=profile.user)
+                token.delete()
+            except:
+                 pass
             token, created = Token.objects.update_or_create(user=profile.user)
             return Response({"token": "TOKEN "+token.key}, status=status.HTTP_200_OK)
             # if user is not None:
