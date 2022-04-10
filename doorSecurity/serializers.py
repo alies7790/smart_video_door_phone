@@ -33,7 +33,7 @@ class updateMember(serializers.Serializer):
     hash_serial_rasperyPi = serializers.CharField(max_length=64, min_length=64,required=False)
     title=serializers.CharField(min_length=3,max_length=20,required=False)
     name = serializers.CharField(min_length=3, max_length=20,required=False)
-    allow = serializers.IntegerField(min_value=1, max_value=2,required=False)
+    allow = serializers.IntegerField(min_value=0, max_value=1,required=False)
     picture = serializers.CharField(required=False)
 
 class getAllMember(serializers.Serializer):
