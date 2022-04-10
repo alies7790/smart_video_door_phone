@@ -152,7 +152,10 @@ class getHistory(APIView):
                     if i.member :
                         d['title']=i.member.title
                         d['name'] = i.member.name
-                        d['picture'] = i.member.picture
+                    else:
+                        d['title'] = None
+                        d['name'] = None
+                    d['picture'] = i.member.picture
                     d['dateTime']=i.date
                     d['request_status']=i.request_status
                     lis.append(d)

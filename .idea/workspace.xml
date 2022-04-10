@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c1be0db-8d5d-473c-8ba7-4cf85a64374a" name="Default Changelist" comment="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf" />
+    <list default="true" id="5c1be0db-8d5d-473c-8ba7-4cf85a64374a" name="Default Changelist" comment="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
+      <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +13,12 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="27IaqcTAlpfscl6DZ0zUr9aVKgJ" />
@@ -63,7 +71,7 @@
       <workItem from="1649577529732" duration="62000" />
       <workItem from="1649577606033" duration="116000" />
       <workItem from="1649577751239" duration="1897000" />
-      <workItem from="1649583023139" duration="620000" />
+      <workItem from="1649583023139" duration="2291000" />
     </task>
     <task id="LOCAL-00001" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
       <created>1649583638086</created>
@@ -72,7 +80,42 @@
       <option name="project" value="LOCAL" />
       <updated>1649583638086</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
+      <created>1649583870102</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649583870102</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
+      <created>1649584205074</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649584205074</updated>
+    </task>
+    <task id="LOCAL-00004" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
+      <created>1649584221867</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649584221867</updated>
+    </task>
+    <task id="LOCAL-00005" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
+      <created>1649584561373</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1649584561373</updated>
+    </task>
+    <task id="LOCAL-00006" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
+      <created>1649584612214</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649584612214</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,7 +126,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
