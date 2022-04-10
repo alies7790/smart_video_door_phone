@@ -151,7 +151,7 @@ class getHistory(APIView):
                     d['id']=i.id
                     if i.member :
                         d['title']=i.member.title
-                        d['name'] = i.member.name,
+                        d['name'] = i.member.name
                         d['picture'] = i.member.picture
                     d['dateTime']=i.date
                     d['request_status']=i.request_status
