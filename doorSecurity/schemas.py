@@ -54,7 +54,7 @@ class getAllMemberDoorSecurity(AutoSchema):
 
 class getHistory(AutoSchema):
     def get_description(self, path, method):
-        return 'get history doorSecurity,request_status 1 opendoor,2 not_allow_openDoor,3 no_memeber'
+        return 'get history doorSecurity,request_status 1 opendoor,2 not_allow_openDoor,3 unknow_memeber'
     def get_manual_fields(self, path, method):
         extra_filds=[]
         if method.lower() == 'post':
@@ -80,7 +80,7 @@ class changeStatusOpenDoor(AutoSchema):
 
 class addHistory(AutoSchema):
     def get_description(self, path, method):
-        return 'add history requestOpenDoor use in rass not frontEnd, with hash_serial_rasperyPi , token , id_member(not member -1) ,request_status '
+        return 'add history requestOpenDoor use in rass not frontEnd, with hash_serial_rasperyPi , token , id_member(not member -1) ,request_status(1 opendoor,2 not_allow_openDoor,3 unknow_memeber) '
     def get_manual_fields(self, path, method):
         extra_filds=[]
         if method.lower() == 'post':
