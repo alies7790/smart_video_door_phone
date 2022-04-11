@@ -81,7 +81,7 @@ class updateMember(APIView):
                 try:
                     picture = resizeImage(picture)
                     if picture == False:
-                        return Response({"message": "not base64"},
+                        return  Response({"message": "not base64"},
                                  status=status.HTTP_400_BAD_REQUEST)
                     member = Members.objects.get(id=id_member, rassperySystem=informationService.rassperypiInfo)
                     member.allow_status = allow
