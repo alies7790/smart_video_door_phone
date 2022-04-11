@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c1be0db-8d5d-473c-8ba7-4cf85a64374a" name="Default Changelist" comment="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +72,8 @@
       <workItem from="1649577529732" duration="62000" />
       <workItem from="1649577606033" duration="116000" />
       <workItem from="1649577751239" duration="1897000" />
-      <workItem from="1649583023139" duration="2291000" />
+      <workItem from="1649583023139" duration="2729000" />
+      <workItem from="1649663818992" duration="1068000" />
     </task>
     <task id="LOCAL-00001" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
       <created>1649583638086</created>
@@ -115,7 +117,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649584612214</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
+      <created>1649585364907</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1649585364907</updated>
+    </task>
+    <task id="LOCAL-00008" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
+      <created>1649585634539</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1649585634539</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +174,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf" />
