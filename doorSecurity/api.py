@@ -98,9 +98,9 @@ class updateMember(APIView):
                             'type': 'sendMassege',
                             'message': json.dumps({'massege': 'update member', 'code': 1015 , 'id_member':member.id})
                         })
-                    return Response({"message": "update member succ"}, status=status.HTTP_201_CREATED)
+                    return Response({"message": "update member succ"}, status=status.HTTP_200_OK)
                 except:
-                    return Response({"message": "please try again later"}, status=status.HTTP_201_CREATED)
+                    return Response({"message": "please try again later"}, status=status.HTTP_408_REQUEST_TIMEOUT)
         else:
             return Response({"message": "Duplicate code (or other messages)"},
                             status=status.HTTP_400_BAD_REQUEST)

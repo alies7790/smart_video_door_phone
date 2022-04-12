@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c1be0db-8d5d-473c-8ba7-4cf85a64374a" name="Default Changelist" comment="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +29,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../NE" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -74,6 +74,7 @@
       <workItem from="1649577751239" duration="1897000" />
       <workItem from="1649583023139" duration="2729000" />
       <workItem from="1649663818992" duration="1068000" />
+      <workItem from="1649752733500" duration="652000" />
     </task>
     <task id="LOCAL-00001" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
       <created>1649583638086</created>
