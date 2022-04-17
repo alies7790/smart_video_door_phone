@@ -78,29 +78,29 @@ class updateMember(APIView):
                 picture=data.get('picture')
                 informationService = InformationService.objects.get(rassperypiInfo__profile=Profiles.objects.get(user=request.user),
                                                               rassperypiInfo__hash_serial_rassperyPi=hash_serial_rasperyPi,)
-                try:
-                    picture = resizeImage(picture)
-                    if picture == False:
-                        return  Response({"message": "not base64"},
-                                 status=status.HTTP_400_BAD_REQUEST)
-                    member = Members.objects.get(id=id_member, rassperySystem=informationService.rassperypiInfo)
-                    member.allow_status = allow
-                    member.title=title
-                    member.name=name
-                    member.picture = picture
+                # try:
+                picture = resizeImage(picture)
+                if picture == False:
+                    return  Response({"message": "not base64"},
+                             status=status.HTTP_400_BAD_REQUEST)
+                member = Members.objects.get(id=id_member, rassperySystem=informationService.rassperypiInfo)
+                member.allow_status = allow
+                member.title=title
+                member.name=name
+                member.picture = picture
 
-                    member.save()
-                    channel_layer = get_channel_layer()
-                    group_name = f"doorSecurity_{informationService.rassperypiInfo.serial_rasperyPi}"
-                    async_to_sync(channel_layer.group_send)(
-                        group_name,
-                        {
-                            'type': 'sendMassege',
-                            'message': json.dumps({'massege': 'update member', 'code': 1015 , 'id_member':member.id})
-                        })
-                    return Response({"message": "update member succ"}, status=status.HTTP_200_OK)
-                except:
-                    return Response({"message": "please try again later"}, status=status.HTTP_408_REQUEST_TIMEOUT)
+                member.save()
+                channel_layer = get_channel_layer()
+                group_name = f"doorSecurity_{informationService.rassperypiInfo.serial_rasperyPi}"
+                async_to_sync(channel_layer.group_send)(
+                    group_name,
+                    {
+                        'type': 'sendMassege',
+                        'message': json.dumps({'massege': 'update member', 'code': 1015 , 'id_member':member.id})
+                    })
+                return Response({"message": "update member succ"}, status=status.HTTP_200_OK)
+                # except:
+                #     return Response({"message": "please try again later"}, status=status.HTTP_408_REQUEST_TIMEOUT)
         else:
             return Response({"message": "Duplicate code (or other messages)"},
                             status=status.HTTP_400_BAD_REQUEST)
