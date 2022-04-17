@@ -59,7 +59,7 @@ class Members(models.Model):
     name=models.CharField(max_length=20)
     change_status_date=models.DateTimeField(auto_now=True)
     allow_openDoor=1
-    unallow_openDoor=0
+    unallow_openDoor=2
     type_status_members=(
         (allow_openDoor,'فرد اجازه ورود دارد'),
         (unallow_openDoor,'فرد اجازه ورود ندارد')

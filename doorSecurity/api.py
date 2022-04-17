@@ -30,7 +30,7 @@ class addMember(APIView):
                 title=data.get('title')
                 name = data.get('name')
                 picture = data.get('picture')
-                picture = resizeImage(picture)
+                picture= resizeImage(picture)
                 if picture == False:
                     return Response({"message": "image not base64"},
                              status=status.HTTP_400_BAD_REQUEST)

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c1be0db-8d5d-473c-8ba7-4cf85a64374a" name="Default Changelist" comment="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
-      <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
+    <list default="true" id="f05d136b-ba8d-4820-a988-d0cc18472b33" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,15 +14,9 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
-      </GitPushTagMode>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="27IaqcTAlpfscl6DZ0zUr9aVKgJ" />
+  <component name="ProjectId" id="27uvElqXUAiG8aNI23xROIGLHLp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,110 +24,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NE" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RunManager">
-    <configuration name="smart_door_phone" type="Python.DjangoServer" factoryName="Django server">
-      <module name="smart_video_door_phone" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="DJANGO_SETTINGS_MODULE" value="smart_video_door_phone.settings" />
-      </envs>
-      <option name="SDK_HOME" value="G:\django\smart_video_door_phone\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5c1be0db-8d5d-473c-8ba7-4cf85a64374a" name="Default Changelist" comment="" />
-      <created>1649010253636</created>
+      <changelist id="f05d136b-ba8d-4820-a988-d0cc18472b33" name="Default Changelist" comment="" />
+      <created>1650182683049</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1649010253636</updated>
-      <workItem from="1649010258366" duration="32000" />
-      <workItem from="1649577529732" duration="62000" />
-      <workItem from="1649577606033" duration="116000" />
-      <workItem from="1649577751239" duration="1897000" />
-      <workItem from="1649583023139" duration="2729000" />
-      <workItem from="1649663818992" duration="1068000" />
-      <workItem from="1649752733500" duration="652000" />
+      <updated>1650182683049</updated>
+      <workItem from="1650182687700" duration="641000" />
     </task>
-    <task id="LOCAL-00001" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
-      <created>1649583638086</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1649583638086</updated>
-    </task>
-    <task id="LOCAL-00002" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
-      <created>1649583870102</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1649583870102</updated>
-    </task>
-    <task id="LOCAL-00003" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
-      <created>1649584205074</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1649584205074</updated>
-    </task>
-    <task id="LOCAL-00004" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
-      <created>1649584221867</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1649584221867</updated>
-    </task>
-    <task id="LOCAL-00005" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
-      <created>1649584561373</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1649584561373</updated>
-    </task>
-    <task id="LOCAL-00006" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
-      <created>1649584612214</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1649584612214</updated>
-    </task>
-    <task id="LOCAL-00007" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
-      <created>1649585364907</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1649585364907</updated>
-    </task>
-    <task id="LOCAL-00008" summary="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf">
-      <created>1649585634539</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1649585634539</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,45 +47,10 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/master" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf" />
-    <option name="LAST_COMMIT_MESSAGE" value="change status-member 0 unallow&#10;get-history doorsecurity add name&#10;fix login error crf" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/smart_video_door_phone$venv.coverage" NAME="smart_video_door_phone Coverage Results" MODIFIED="1649577892369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
   </component>
 </project>
