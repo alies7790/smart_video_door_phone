@@ -13,4 +13,6 @@ urlpatterns = [
     path('add-history/', api.addHistory.as_view(), name='اضافه کردن ی تارخچه'),
     path('update-status-opendoor/', api.changeStatusOpenDoor.as_view(), name='عوض کردن وضعیت باز کردن درب'),
     path('get-member-for-rass/', api.getMembersForRassperyPi.as_view(), name='گرفتن ممبر برای rass'),
+    path('delete-member/', api.deleteMember.as_view(), name='پاک کرد عوض'),
+
 ]

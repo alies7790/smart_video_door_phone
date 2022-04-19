@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f05d136b-ba8d-4820-a988-d0cc18472b33" name="Default Changelist" comment="fix" />
+    <list default="true" id="f05d136b-ba8d-4820-a988-d0cc18472b33" name="Default Changelist" comment="fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +32,32 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="RunManager">
+    <configuration name="smart" type="Python.DjangoServer" factoryName="Django server">
+      <module name="smart_video_door_phone" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="smart_video_door_phone.settings" />
+      </envs>
+      <option name="SDK_HOME" value="G:\django\smart_video_door_phone\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -32,7 +66,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650182683049</updated>
-      <workItem from="1650182687700" duration="2054000" />
+      <workItem from="1650182687700" duration="3805000" />
+      <workItem from="1650398494452" duration="7634000" />
     </task>
     <task id="LOCAL-00001" summary="fix">
       <created>1650183723702</created>
@@ -55,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650184938146</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix">
+      <created>1650185640449</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1650185640449</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,6 +113,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix" />

@@ -119,3 +119,16 @@ class openDoor(AutoSchema):
             ]
         manual_fields= super().get_manual_fields(path,method)
         return  manual_fields + extra_filds
+
+class DeleteMemberSchema(AutoSchema):
+    def get_description(self, path, method):
+        return 'id_member for delete '
+    def get_manual_fields(self, path, method):
+        extra_filds=[]
+        if method.lower() == 'post':
+            extra_filds = [
+                coreapi.Field('hash_serial_rasperyPi'),
+                coreapi.Field('id_member'),
+            ]
+        manual_fields= super().get_manual_fields(path,method)
+        return  manual_fields + extra_filds

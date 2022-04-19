@@ -13,7 +13,7 @@ from doorSecurity.models import LicenseToUse, InformationService, Members
 class checkHashRassSerial(MiddlewareMixin):
     WHITELISTED_URLS = [
         '/door-security/open-door/',
-        '/door-security/get-all-member/',
+        '/door-security/get-all-member-for-front/',
         '/door-security/get-history/'
         '/door-security/update-member/',
         '/door-security/add-member/',
@@ -74,6 +74,7 @@ class checkMemberIsForRasspery(MiddlewareMixin):
     WHITELISTED_URLS = [
         '/door-security/update-member/',
         '/door-security/add-history/',
+        '/door-security/delete-member/',
     ]
     def process_request(self, request):
         if request.path in self.WHITELISTED_URLS:

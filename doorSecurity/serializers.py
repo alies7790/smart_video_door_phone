@@ -42,3 +42,7 @@ class getAllMember(serializers.Serializer):
 
 class getHistory(serializers.Serializer):
     hash_serial_rasperyPi = serializers.CharField(max_length=64, min_length=64)
+
+class deleteMember(serializers.Serializer):
+    hash_serial_rasperyPi = serializers.CharField(max_length=64, min_length=64)
+    id_member =serializers.IntegerField(min_value=1)
