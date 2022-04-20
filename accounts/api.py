@@ -262,7 +262,7 @@ class checkToken(APIView):
             try:
                 token=Token.objects.get(key=token)
             except:
-               return JsonResponse({"message": "not ok token"}, status=status.HTTP_200_OK)
+               return JsonResponse({"message": "not ok token"}, status=status.HTTP_401_UNAUTHORIZED)
             return JsonResponse({"message": "ok token"}, status=status.HTTP_200_OK)
         else:
             return JsonResponse({"message": "Duplicate code (or other messages)"}, status=status.HTTP_400_BAD_REQUEST)
