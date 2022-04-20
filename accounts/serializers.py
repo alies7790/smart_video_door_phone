@@ -27,3 +27,7 @@ class ChangePasswordWithTokenSerializer(serializers.Serializer):
     new_password=serializers.RegexField(regex=r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')
     repeat_newpassword=serializers.RegexField(regex=r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')
 
+
+class checkTokenSerializer(serializers.Serializer):
+    token = serializers.CharField()
+

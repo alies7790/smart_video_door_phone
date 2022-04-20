@@ -94,6 +94,9 @@ class loginStep2Api(APIView):
 
 
 
+
+
+
         return Response({'success': "Failed"}, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -240,5 +243,26 @@ class ChangePasswordWithTokenApi(APIView):
             except:
                 return Response({"message": "not user with information"}, status=status.HTTP_404_NOT_FOUND)
             return JsonResponse({"message": "change pass"}, status=status.HTTP_200_OK)
+        else:
+            return JsonResponse({"message": "Duplicate code (or other messages)"}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+
+class checkToken(APIView):
+    schema = schemas.checkTokenSchema()
+    def post(self,request,*args,**kwargs):
+        serializer = serializers.checkTokenSerializer(data=request.data)
+        if serializer.is_valid():
+            data=serializer.validated_data
+            token=data.get('token')
+            token = token.replace("TOKEN ","")
+
+            try:
+                token=Token.objects.get(key=token)
+            except:
+               return JsonResponse({"message": "not ok token"}, status=status.HTTP_200_OK)
+            return JsonResponse({"message": "ok token"}, status=status.HTTP_200_OK)
         else:
             return JsonResponse({"message": "Duplicate code (or other messages)"}, status=status.HTTP_400_BAD_REQUEST)

@@ -11,6 +11,8 @@ urlpatterns=[
  path('request-send-reset-pass/', api.SendMassegeToResetPasswordAndGetTokenApi.as_view(), name='ارسال پیام احرازهویت ریست پسوورد و دادن توکن'),
  path('recive-codesms-and-send-token/', api.ReciveCodeSmsTokenAndSendTokenApi.as_view(), name='دریافت SMS توکن و ارسال توکن'),
  path('change-password-with-token/', api.ChangePasswordWithTokenApi.as_view(), name='دریافت توکن و تغییر رمز'),
- path('api-token-auth/', views.obtain_auth_token)
+ path('api-token-auth/', views.obtain_auth_token),
+ path('check-token/', api.checkToken.as_view(),name="برای چک کردن توکن"),
+
 
 ]

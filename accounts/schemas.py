@@ -103,3 +103,15 @@ class ChangePasswordWithTokenSchema(AutoSchema):
             ]
         manual_fields = super().get_manual_fields(path, method)
         return manual_fields + extra_filds
+
+class checkTokenSchema(AutoSchema):
+    def get_description(self, path, method):
+        return 'token'
+    def get_manual_fields(self, path, method):
+        extra_filds=[]
+        if method.lower() == 'post':
+            extra_filds =[
+                coreapi.Field('token'),
+            ]
+        manual_fields = super().get_manual_fields(path, method)
+        return manual_fields + extra_filds
