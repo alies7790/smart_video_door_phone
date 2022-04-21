@@ -7,6 +7,7 @@ range 1011-1989 for doorSecurity
     1015 for update members
     1016 for ok
     1017 for  not exit member
+    1018 for delete member
 
 
 heroku git:remote -a smartvideodoorphoneproject
