@@ -338,29 +338,26 @@ class deleteMember(APIView):
             data = serializer.validated_data
             id_member = data.get('id_member')
             hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
-            # try:
-            #     rassperyInfo = RassperySystem.objects.get(hash_serial_rassperyPi=hash_serial_rasperyPi,
-            #                                               profile__user=request.user)
-            # except:
-            #     return Response({"message": "rassperyPi does not exist with these specifications"},
-            #                     status=status.HTTP_400_BAD_REQUEST)
-            member = Members.objects.get(id=id_member)
             try:
                 rassperyInfo = RassperySystem.objects.get(hash_serial_rassperyPi=hash_serial_rasperyPi,
                                                           profile__user=request.user)
             except:
                 return Response({"message": "rassperyPi does not exist with these specifications"},
                                 status=status.HTTP_400_BAD_REQUEST)
-            if rassperyInfo.online_status == 1:
-                channel_layer = get_channel_layer()
-                group_name = f"doorSecurity_{rassperyInfo.serial_rasperyPi}"
-                async_to_sync(channel_layer.group_send)(
-                    group_name,
-                    {
-                        'type': 'sendMassege',
-                        'message': json.dumps({'massege': 'delete member', 'code': 1018})
-                    })
-            member.delete()
+            member = Members.objects.get(id=id_member)
+            try:
+                if rassperyInfo.online_status == 1:
+                    channel_layer = get_channel_layer()
+                    group_name = f"doorSecurity_{rassperyInfo.serial_rasperyPi}"
+                    async_to_sync(channel_layer.group_send)(
+                        group_name,
+                        {
+                            'type': 'sendMassege',
+                            'message': json.dumps({'massege': 'delete member', 'code': 1018})
+                        })
+                member.delete()
+            except:
+                return Response({"message": "please try again last time"}, status=status.HTTP_303_SEE_OTHER)
             return Response({"message": "delete member"}, status=status.HTTP_200_OK)
         else:
             return Response({"message": "Duplicate code (or other messages)"},
