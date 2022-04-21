@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63da4e05-075f-4245-900a-b75759fa2e0a" name="Default Changelist" comment="fix addhestory doorsecurity app with serial rass">
+    <list default="true" id="63da4e05-075f-4245-900a-b75759fa2e0a" name="Default Changelist" comment="fix add history">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doorSecurity/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650541515855</updated>
-      <workItem from="1650541521204" duration="4096000" />
+      <workItem from="1650541521204" duration="5660000" />
     </task>
     <task id="LOCAL-00001" summary="fix addmember 408 not save member">
       <created>1650541947736</created>
@@ -88,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650546980488</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix add history">
+      <created>1650549132857</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650549132857</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +115,7 @@
     <MESSAGE value="fix addmember 408 not save member" />
     <MESSAGE value="add chanele delete member" />
     <MESSAGE value="fix addhestory doorsecurity app with serial rass" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix addhestory doorsecurity app with serial rass" />
+    <MESSAGE value="fix add history" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix add history" />
   </component>
 </project>

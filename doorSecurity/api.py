@@ -215,7 +215,7 @@ class addHistory(APIView):
             picture = data.get('picture')
             picture = resizeImage(picture)
             if picture == False:
-                Response({"message": "not base64"},
+                return Response({"message": "not base64"},
                          status=status.HTTP_400_BAD_REQUEST)
             try:
                 rassperyInfo = RassperySystem.objects.get(serial_rasperyPi=serial_rasperyPi,
