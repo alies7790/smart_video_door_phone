@@ -208,7 +208,7 @@ class addHistory(APIView):
         serializer = serializers.addHistory(data=request.data)
         if serializer.is_valid():
             data = serializer.validated_data
-            hash_serial_rasperyPi = data.get('hash_serial_rasperyPi')
+            serial_rasperyPi = data.get('serial_rasperyPi')
             token = data.get('token')
             request_status = data.get('request_status')
             id_member = data.get('id_member')
@@ -218,7 +218,7 @@ class addHistory(APIView):
                 Response({"message": "not base64"},
                          status=status.HTTP_400_BAD_REQUEST)
             try:
-                rassperyInfo = RassperySystem.objects.get(hash_serial_rassperyPi=hash_serial_rasperyPi,
+                rassperyInfo = RassperySystem.objects.get(serial_rasperyPi=serial_rasperyPi,
                                                           token_connect_rassperypi=token)
             except:
                 return Response({"message": "rassperyPi does not exist with these specifications"},

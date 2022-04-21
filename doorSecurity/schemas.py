@@ -85,7 +85,7 @@ class addHistory(AutoSchema):
         extra_filds=[]
         if method.lower() == 'post':
             extra_filds = [
-                coreapi.Field('hash_serial_rasperyPi'),
+                coreapi.Field('serial_rasperyPi'),
                 coreapi.Field('token'),
                 coreapi.Field('id_member'),
                 coreapi.Field('request_status'),

@@ -25,7 +25,7 @@ class addHistory(serializers.Serializer):
     request_status=serializers.IntegerField(min_value=1,max_value=3)
     id_member = serializers.IntegerField()
     token = serializers.CharField(max_length=5, min_length=5) #test change to 5 to 256
-    hash_serial_rasperyPi = serializers.CharField(max_length=64,min_length=64)
+    serial_rasperyPi = serializers.CharField(max_length=16,min_length=16)
     picture = serializers.CharField()
 
 class updateMember(serializers.Serializer):
