@@ -42,7 +42,7 @@ class addMember(APIView):
             try:
                 member = Members.objects.create(title=title, picture=picture, name=name,
                                                 rassperySystem=informationService.rassperypiInfo)
-                member.save()
+
                 channel_layer = get_channel_layer()
                 group_name = f"doorSecurity_{informationService.rassperypiInfo.serial_rasperyPi}"
                 async_to_sync(channel_layer.group_send)(
@@ -51,6 +51,7 @@ class addMember(APIView):
                         'type': 'sendMassege',
                         'message': json.dumps({'massege': 'add member new', 'code': 1014, 'id_member': member.id})
                     })
+                member.save()
                 return Response({"message": "add member succ"}, status=status.HTTP_201_CREATED)
             except:
                 return Response({"message": "please try again later"}, status=status.HTTP_408_REQUEST_TIMEOUT)
