@@ -157,7 +157,7 @@ class getHistory(APIView):
                 else:
                     d['title'] = None
                     d['name'] = None
-                d['picture'] = i.member.picture
+                d['picture'] = i.picture
                 d['dateTime'] = i.date
                 d['request_status'] = i.request_status
                 lis.append(d)
@@ -223,10 +223,17 @@ class addHistory(APIView):
             except:
                 return Response({"message": "rassperyPi does not exist with these specifications"},
                                 status=status.HTTP_400_BAD_REQUEST)
+
             # try:
             if id_member == -1:
                 history_created = history.objects.create(rassperypiInfo=rassperyInfo, request_status=3, picture=picture)
             else:
+                try:
+                    member = Members.objects.get(
+                        rassperySystem__serial_rasperyPi=serial_rasperyPi, id=id_member)
+                except:
+                    return Response({"message": "is not member"},
+                                    status=status.HTTP_404_NOT_FOUND)
                 history_created = history.objects.create(rassperypiInfo=rassperyInfo, picture=picture,
                                                          request_status=request_status, member_id=id_member)
             # except:

@@ -73,7 +73,6 @@ class exitLincenceMiddleware(MiddlewareMixin):
 class checkMemberIsForRasspery(MiddlewareMixin):
     WHITELISTED_URLS = [
         '/door-security/update-member/',
-        '/door-security/add-history/',
         '/door-security/delete-member/',
     ]
     def process_request(self, request):
