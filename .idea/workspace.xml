@@ -3,6 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="63da4e05-075f-4245-900a-b75759fa2e0a" name="Default Changelist" comment="fix addhistory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/middleware/custom_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doorSecurity/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/doorSecurity/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generallApp/middleware/custom_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/generallApp/middleware/custom_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartLamp/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartLamp/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartLamp/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartLamp/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartLamp/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartLamp/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartLamp/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/ali.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/ali1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/amir.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/amir1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/moji.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/moji1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/parsa.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/parsa1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/smart_video_door_phone/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart_video_door_phone/۲۰۱۹۰۹۱۸_۱۳۱۹۵۳.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +77,9 @@
       <option name="presentableId" value="Default" />
       <updated>1650541515855</updated>
       <workItem from="1650541521204" duration="6301000" />
+      <workItem from="1650572001636" duration="927000" />
+      <workItem from="1652637750118" duration="7000" />
+      <workItem from="1654792990522" duration="2758000" />
     </task>
     <task id="LOCAL-00001" summary="fix addmember 408 not save member">
       <created>1650541947736</created>
@@ -100,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650561585115</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix addhistory">
+      <created>1650572316298</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1650572316298</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +146,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix addmember 408 not save member" />

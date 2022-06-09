@@ -27,7 +27,6 @@ class LicenseToUse(models.Model):
     class Meta:
         verbose_name = 'مدیریت lincense بازکردن درب'
         verbose_name_plural = 'مدیریت lincense بازکردن درب'
-    rassperypiInfo = models.OneToOneField(RassperySystem, on_delete=models.CASCADE)
     start_lincense=models.DateField(auto_now_add=True)
     end_lincense=models.DateField()
 

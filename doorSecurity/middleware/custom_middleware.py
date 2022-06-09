@@ -8,7 +8,7 @@ from datetime import date
 
 
 from doorSecurity.models import LicenseToUse, InformationService, Members
-
+from rassperypiInfo.models import RassperySystem
 
 class checkHashRassSerial(MiddlewareMixin):
     WHITELISTED_URLS = [
@@ -25,13 +25,6 @@ class checkHashRassSerial(MiddlewareMixin):
                 body_unicode = request.body.decode('utf-8')
                 body = json.loads(body_unicode)
                 hash_serial_rasperyPi = body['hash_serial_rasperyPi']
-                licenseToUse = InformationService.objects.get(
-                    rassperypiInfo__hash_serial_rasperyPi=str(hash_serial_rasperyPi),rassperypiInfo__profile__user=request.user).lincense
-            except:
-                return JsonResponse({"message": "Duplicate code (or other messages)"},
-                                status=status.HTTP_400_BAD_REQUEST)
-
-            try:
                 licenseToUse = InformationService.objects.get(
                     rassperypiInfo__hash_serial_rasperyPi=str(hash_serial_rasperyPi),
                     rassperypiInfo__profile__user=request.user).lincense
