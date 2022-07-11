@@ -73,7 +73,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'doorSecurity.middleware.custom_middleware.exitLincenceMiddleware',
     'doorSecurity.middleware.custom_middleware.checkLincenseMiddleware',
-    'doorSecurity.middleware.custom_middleware.checkMemberIsForRasspery'
+    'doorSecurity.middleware.custom_middleware.checkMemberIsForRasspery',
 ]
 
 SWAGGER_SETTINGS = {

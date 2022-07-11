@@ -13,6 +13,4 @@ urlpatterns=[
  path('change-password-with-token/', api.ChangePasswordWithTokenApi.as_view(), name='دریافت توکن و تغییر رمز'),
  path('api-token-auth/', views.obtain_auth_token),
  path('check-token/', api.checkToken.as_view(),name="برای چک کردن توکن"),
-
-
 ]

@@ -34,8 +34,10 @@ class checkHashRassSerial(MiddlewareMixin):
             return None
         else:
             return None
-class exitLincenceMiddleware(MiddlewareMixin):
 
+
+
+class exitLincenceMiddleware(MiddlewareMixin):
     WHITELISTED_URLS = [
         '/door-security/open-door/',
         '/door-security/get-all-member/',
@@ -61,6 +63,7 @@ class exitLincenceMiddleware(MiddlewareMixin):
             return None
         else:
             return None
+
 
 
 class checkMemberIsForRasspery(MiddlewareMixin):
@@ -89,14 +92,14 @@ class checkMemberIsForRasspery(MiddlewareMixin):
             return None
 
 
-class checkLincenseMiddleware(MiddlewareMixin):
 
+
+class checkLincenseMiddleware(MiddlewareMixin):
     WHITELISTED_URLS = [
         '/door-security/open-door/',
         '/door-security/update-member/',
         '/door-security/add-member/',
     ]
-
     def process_request(self, request):
         if request.path in self.WHITELISTED_URLS:
             try:
